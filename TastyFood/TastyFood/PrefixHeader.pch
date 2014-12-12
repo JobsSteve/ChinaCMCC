@@ -1,0 +1,70 @@
+//
+//  PrefixHeader.pch
+//  TastyFood
+//
+//  Created by love_ping891122 on 14/12/9.
+//  Copyright (c) 2014年 love_ping891122. All rights reserved.
+//
+
+#ifndef TastyFood_PrefixHeader_pch
+#define TastyFood_PrefixHeader_pch
+
+
+#import "UIButton+BindArgs.h"
+#import "ImagePlayerView.h"
+#import "UIImageView+WebCache.h"
+
+
+/* 颜色宏定义 */
+
+#define RGBAcolor(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+/* 屏幕尺寸宏定义 */
+#define WIGHT   [UIScreen mainScreen].applicationFrame.size.width
+#define HEIGHT  [UIScreen mainScreen].applicationFrame.size.height
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+//IOS版本
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define IOS_7   (IOS_VERSION >= 7.0)
+#define IOS_8   (IOS_VERSION >= 8.0)
+
+//****线程操作******/
+
+/*开启异步线程*/
+#define kASync(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+/*开启后台线程*/
+#define kBackground(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), block)
+/*启用主线程，如刷新UI等操作*/
+#define kHandleMain(block) dispatch_sync(dispatch_get_main_queue(),block);
+
+
+
+
+
+
+/*--NSUserDefaults--*/
+
+//用户信息存储
+#define Defaults_Loginbool     @"login" //用户登录状态
+#define Defaults_LoginName     @"username" //登录名
+#define Defaults_LoginPsw      @"password"//密码
+#define Defaults_isRememberPsw @"isRememberPsw" //用户登录状态
+#define Defaults_Token         @"kDefaults_Token" //token
+
+
+#define GetLoginStatus [[NSUserDefaults standardUserDefaults] stringForKey:Defaults_Loginbool]
+#define GetLoginName   [[NSUserDefaults standardUserDefaults] stringForKey:Defaults_LoginName]
+#define GetLoginPwd   [[NSUserDefaults standardUserDefaults] stringForKey:Defaults_LoginPsw]
+#define GetToken   [[NSUserDefaults standardUserDefaults] stringForKey:Defaults_Token]
+
+
+//NSUserDefaults get set 方法
+#define SetDefaults(key,value)       [[NSUserDefaults standardUserDefaults] setObject:value forKey:key]
+#define GetDefaults(key)             [[NSUserDefaults standardUserDefaults] objectForKey:key]
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
