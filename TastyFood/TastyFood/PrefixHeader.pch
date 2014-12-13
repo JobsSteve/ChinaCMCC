@@ -11,9 +11,17 @@
 
 
 #import "UIButton+BindArgs.h"
-#import "ImagePlayerView.h"
+#import "UIScrollView+BindArgs.h"
 #import "UIImageView+WebCache.h"
+#import "UIView+BindArgs.h"
+#import "UIImageView+WebCache.h"
+#import "UIImageView+BindArgs.h"
+#import "UITableView+BindArgs.h"
+#import "UILabel+BindArgs.h"
+#import "ImagePlayerView.h"
 
+
+#import "CellViews.h"
 
 /* 颜色宏定义 */
 

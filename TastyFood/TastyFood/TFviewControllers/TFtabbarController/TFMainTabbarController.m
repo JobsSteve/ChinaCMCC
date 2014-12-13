@@ -58,7 +58,12 @@
         secondNav.navigationBar.translucent = NO;
         thirdNav.navigationBar.translucent = NO;
         fourNav.navigationBar.translucent = NO;
-        
+    
+        firstNav.navigationBar.tintColor = [UIColor whiteColor];
+        secondNav.navigationBar.tintColor = [UIColor whiteColor];
+        thirdNav.navigationBar.tintColor = [UIColor whiteColor];
+        fourNav.navigationBar.tintColor = [UIColor whiteColor];
+    
         NSArray *viewControls = @[firstNav,secondNav,thirdNav,fourNav];
         [self setViewControllers:viewControls animated:YES];
 }

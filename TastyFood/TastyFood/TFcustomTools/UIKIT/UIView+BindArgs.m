@@ -30,6 +30,13 @@
     [view setBackgroundColor:bcolor];
     return view;
 }
+/*初始化横线方法*/
++(instancetype)lineViewWithx:(float)linex y:(float)liney wight:(float)wight :(UIColor*)linecolor
+{
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(linex, liney, WIGHT, 0.5)];
+    [view setBackgroundColor:linecolor];
+    return view;
+}
 
 +(void)startShake:(UIView*)shakeView
 {

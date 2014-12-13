@@ -8,11 +8,17 @@
 
 #import "TFpersonViewController.h"
 #import "TFloginViewController.h"
-@interface TFpersonViewController ()
+@interface TFpersonViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *tableview;
+}
+@property(nonatomic,strong)UITableView *tableview;
 
 @end
 
 @implementation TFpersonViewController
+@synthesize tableview;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,10 +46,78 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
+    
+    self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) tag:1];
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    [self.view addSubview:self.tableview];
+    
+    UIView *bottomView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 100) :[UIColor clearColor]];
+    
+    
+    
+    UIButton *logout_bt=[UIButton ButtonWithFrame:CGRectMake(30, 50, WIGHT-30*2, 35) Normal:[UIImage imageNamed:@"loginbtn_image.png"] Select:[UIImage imageNamed:@"loginbtn_image.png"] Title:@"注销登录"];
+    logout_bt.backgroundColor = RGBAcolor(255, 157, 7, 1);
+    [logout_bt addTarget:self action:@selector(ClickBt_Logout:) forControlEvents:UIControlEventTouchUpInside];
+    [bottomView addSubview:logout_bt];
+    
+    self.tableview.tableFooterView = bottomView;
    
     
-    // Do any additional setup after loading the view.
+}
+-(void)ClickBt_Logout:(UIButton*)button
+{
+    
+}
+#pragma mark ---------TableViewDataSource And TableViewDelegate
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section==0) {
+        return 1;
+    }
+    return 3;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 45;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    static NSString *CellIdentifier = @"CelebrityCheckTableCell";
+    [tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell==nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.selectionStyle= UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = [UIColor blackColor];
+
+    }
+    cell.imageView.image = [UIImage imageNamed:@"tabbar_04.png"];
+    if (indexPath.section==0) {
+        cell.textLabel.text = @"13717677776";
+    }
+    if (indexPath.section==1) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSArray *list = @[@"常用地址",@"历史订单",@"修改密码"];
+        cell.textLabel.text = list[indexPath.row];
+    }
+  
+    
+    return cell;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

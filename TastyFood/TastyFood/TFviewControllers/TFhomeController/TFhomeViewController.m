@@ -8,11 +8,15 @@
 
 #import "TFhomeViewController.h"
 #import "TFloginViewController.h"
-@interface TFhomeViewController ()<ImagePlayerViewDelegate>
+@interface TFhomeViewController ()<ImagePlayerViewDelegate,UIScrollViewDelegate>
 {
+    UIScrollView *BottomScrollview;
     ImagePlayerView *imagePlayerView;
     NSArray *imagelist;
 }
+
+@property(nonatomic,strong)UIScrollView *BottomScrollview;
+
 @property(nonatomic,strong)ImagePlayerView *imagePlayerView;
 @property(nonatomic,strong)NSArray *imagelist;
 
@@ -21,6 +25,7 @@
 @implementation TFhomeViewController
 @synthesize imagePlayerView;
 @synthesize imagelist;
+@synthesize BottomScrollview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,12 +41,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self initContentview];
     [self initBanner];
     [self inithomeMenuButton];
+    [self inithomeProductsButton];
     
 }
+-(void)initContentview
+{
+    self.BottomScrollview = [UIScrollView ScrollViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) contentSize:CGSizeMake(WIGHT, 640) tag:1];
+    self.BottomScrollview.delegate = self;
+    [self.view addSubview:self.BottomScrollview];
+}
 
+//banner 高度150
 -(void)initBanner
 {
     self.imagePlayerView = [[ImagePlayerView alloc]initWithFrame:CGRectMake(0, 0, WIGHT, 150)];
@@ -53,7 +66,7 @@
     self.imagePlayerView.scrollInterval = 5.0f;
     self.imagePlayerView.hidePageControl = NO;
     self.imagePlayerView.pageControlPosition = ICPageControlPosition_BottomRight;
-    [self.view addSubview:self.imagePlayerView];
+    [self.BottomScrollview addSubview:self.imagePlayerView];
 }
 
 #pragma mark - ImagePlayerViewDelegate
@@ -66,31 +79,53 @@
 {
     NSLog(@"点击第%d张图片", (int)index);
 }
+//banner＝150 ＋间距10   y = 160 开始  height＝200
 -(void)inithomeMenuButton
 {
    
-    
-    UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10, 160, 140, 200) Normal:[UIImage imageNamed:@"menu_1.png"] Select:[UIImage imageNamed:@"menu_1.png"] Title:nil];
-    UIButton *button1 =[UIButton ButtonWithFrame:CGRectMake(160, 160, 70, 60) Normal:[UIImage imageNamed:@"menu_2.png"] Select:[UIImage imageNamed:@"menu_2.png"] Title:nil];
-    UIButton *button2 =[UIButton ButtonWithFrame:CGRectMake(240, 160, 70, 60) Normal:[UIImage imageNamed:@"menu_3.png"] Select:[UIImage imageNamed:@"menu_3.png"] Title:nil];
-    UIButton *button3 =[UIButton ButtonWithFrame:CGRectMake(160, 160+60+10, 70, 60) Normal:[UIImage imageNamed:@"menu_4.png"] Select:[UIImage imageNamed:@"menu_4.png"] Title:nil];
-    UIButton *button4 =[UIButton ButtonWithFrame:CGRectMake(240, 160+60+10, 70, 60) Normal:[UIImage imageNamed:@"menu_5.png"] Select:[UIImage imageNamed:@"menu_5.png"] Title:nil];
-    UIButton *button5 =[UIButton ButtonWithFrame:CGRectMake(160, 160+60*2+10*2, 70, 60) Normal:[UIImage imageNamed:@"menu_6.png"] Select:[UIImage imageNamed:@"menu_6.png"] Title:nil];
-    UIButton *button6 =[UIButton ButtonWithFrame:CGRectMake(240, 160+60*2+10*2, 70, 60) Normal:[UIImage imageNamed:@"menu_7.png"] Select:[UIImage imageNamed:@"menu_7.png"] Title:nil];
-    
-    
-    
-    
-    [self.view addSubview:button];
-    [self.view addSubview:button1];
-    [self.view addSubview:button2];
-    [self.view addSubview:button3];
-    [self.view addSubview:button4];
-    [self.view addSubview:button5];
-    [self.view addSubview:button6];
+    UIView *Menu_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 160, WIGHT, 210) :[UIColor whiteColor]];
+//    [Menu_Buttomview addSubview:[UIView lineViewWithx:0 y:0 wight:WIGHT :[UIColor grayColor]]];
 
-    [button addTarget:self action:@selector(pushthis) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10, 10, 140, 200) Normal:[UIImage imageNamed:@"menu_1.png"] Select:[UIImage imageNamed:@"menu_1.png"] Title:nil];
+    UIButton *button1 =[UIButton ButtonWithFrame:CGRectMake(160, 10, 70, 60) Normal:[UIImage imageNamed:@"menu_2.png"] Select:[UIImage imageNamed:@"menu_2.png"] Title:nil];
+    UIButton *button2 =[UIButton ButtonWithFrame:CGRectMake(240, 10, 70, 60) Normal:[UIImage imageNamed:@"menu_3.png"] Select:[UIImage imageNamed:@"menu_3.png"] Title:nil];
+    UIButton *button3 =[UIButton ButtonWithFrame:CGRectMake(160, 10+60+10, 70, 60) Normal:[UIImage imageNamed:@"menu_4.png"] Select:[UIImage imageNamed:@"menu_4.png"] Title:nil];
+    UIButton *button4 =[UIButton ButtonWithFrame:CGRectMake(240, 10+60+10, 70, 60) Normal:[UIImage imageNamed:@"menu_5.png"] Select:[UIImage imageNamed:@"menu_5.png"] Title:nil];
+    UIButton *button5 =[UIButton ButtonWithFrame:CGRectMake(160, 10+60*2+10*2, 70, 60) Normal:[UIImage imageNamed:@"menu_6.png"] Select:[UIImage imageNamed:@"menu_6.png"] Title:nil];
+    UIButton *button6 =[UIButton ButtonWithFrame:CGRectMake(240, 10+60*2+10*2, 70, 60) Normal:[UIImage imageNamed:@"menu_7.png"] Select:[UIImage imageNamed:@"menu_7.png"] Title:nil];
+    
+    
+    NSArray *buttonlist =@[button,button1,button2,button3,button4,button5,button6];
+    for (UIButton *btn in buttonlist) {
+        [btn addTarget:self action:@selector(pushthis) forControlEvents:UIControlEventTouchUpInside];
+        [Menu_Buttomview addSubview:btn];
+    }
 
+    [self.BottomScrollview addSubview:Menu_Buttomview];;
+
+}
+// 360 + 10 , y =370开始
+-(void)inithomeProductsButton
+{
+    UIView *Product_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 380, WIGHT, 200) :[UIColor whiteColor]];
+    [Product_Buttomview addSubview:[UIView lineViewWithx:0 y:0 wight:WIGHT :RGBAcolor(210, 210, 210, 1)]];
+
+    [Product_Buttomview addSubview:[UIImageView imageViewWithFrame:CGRectMake(10, 0, 80, 30) :@"menu_7.png" ]];
+    
+    
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<3; j++) {
+            NSArray *imagename_list = (i==0?@[@"product_1.png",@"product_2.png",@"product_3.png"]:@[@"product_4.png",@"product_5.png",@"product_6.png"]);
+            [NSString stringWithFormat:@"product_%d.png",i*j+j];
+            UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10+j*(WIGHT-10*2)/3, 40+i*80, (WIGHT-25*2)/3, 80) Normal:[UIImage imageNamed:imagename_list[j]] Select:[UIImage imageNamed:imagename_list[j]] Title:nil];
+            [Product_Buttomview addSubview:button];
+
+        }
+    }
+    [self.BottomScrollview addSubview:Product_Buttomview];
+
+    
 }
 
 

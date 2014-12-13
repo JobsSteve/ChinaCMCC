@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C760C1CE1A3B327300040DF2 /* UIScrollView+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C1CD1A3B327300040DF2 /* UIScrollView+BindArgs.m */; };
+		C760C1D61A3B3BEA00040DF2 /* product_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C760C1D01A3B3BEA00040DF2 /* product_1.png */; };
+		C760C1D71A3B3BEA00040DF2 /* product_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C760C1D11A3B3BEA00040DF2 /* product_2.png */; };
+		C760C1D81A3B3BEA00040DF2 /* product_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C760C1D21A3B3BEA00040DF2 /* product_3.png */; };
+		C760C1D91A3B3BEA00040DF2 /* product_4.png in Resources */ = {isa = PBXBuildFile; fileRef = C760C1D31A3B3BEA00040DF2 /* product_4.png */; };
+		C760C1DA1A3B3BEA00040DF2 /* product_5.png in Resources */ = {isa = PBXBuildFile; fileRef = C760C1D41A3B3BEA00040DF2 /* product_5.png */; };
+		C760C1DB1A3B3BEA00040DF2 /* product_6.png in Resources */ = {isa = PBXBuildFile; fileRef = C760C1D51A3B3BEA00040DF2 /* product_6.png */; };
+		C760C1DE1A3B408200040DF2 /* UIImageView+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C1DD1A3B408200040DF2 /* UIImageView+BindArgs.m */; };
+		C760C1E11A3B45AC00040DF2 /* UITableView+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C1E01A3B45AC00040DF2 /* UITableView+BindArgs.m */; };
+		C760C1FF1A3B59E000040DF2 /* CellViews.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C1FE1A3B59E000040DF2 /* CellViews.m */; };
+		C760C2081A3B5BE200040DF2 /* UILabel+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C2071A3B5BE200040DF2 /* UILabel+BindArgs.m */; };
 		C76FE4591A3801F600C973BF /* TFhomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FE4581A3801F600C973BF /* TFhomeViewController.m */; };
 		C76FE45C1A38020A00C973BF /* TFshoppingcartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FE45B1A38020A00C973BF /* TFshoppingcartViewController.m */; };
 		C76FE45F1A38023C00C973BF /* TFfoodMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FE45E1A38023C00C973BF /* TFfoodMarketViewController.m */; };
@@ -84,6 +95,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C760C1CC1A3B327300040DF2 /* UIScrollView+BindArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BindArgs.h"; sourceTree = "<group>"; };
+		C760C1CD1A3B327300040DF2 /* UIScrollView+BindArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BindArgs.m"; sourceTree = "<group>"; };
+		C760C1D01A3B3BEA00040DF2 /* product_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_1.png; sourceTree = "<group>"; };
+		C760C1D11A3B3BEA00040DF2 /* product_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_2.png; sourceTree = "<group>"; };
+		C760C1D21A3B3BEA00040DF2 /* product_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_3.png; sourceTree = "<group>"; };
+		C760C1D31A3B3BEA00040DF2 /* product_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_4.png; sourceTree = "<group>"; };
+		C760C1D41A3B3BEA00040DF2 /* product_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_5.png; sourceTree = "<group>"; };
+		C760C1D51A3B3BEA00040DF2 /* product_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product_6.png; sourceTree = "<group>"; };
+		C760C1DC1A3B408200040DF2 /* UIImageView+BindArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BindArgs.h"; sourceTree = "<group>"; };
+		C760C1DD1A3B408200040DF2 /* UIImageView+BindArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+BindArgs.m"; sourceTree = "<group>"; };
+		C760C1DF1A3B45AC00040DF2 /* UITableView+BindArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+BindArgs.h"; sourceTree = "<group>"; };
+		C760C1E01A3B45AC00040DF2 /* UITableView+BindArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+BindArgs.m"; sourceTree = "<group>"; };
+		C760C1FD1A3B59E000040DF2 /* CellViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellViews.h; sourceTree = "<group>"; };
+		C760C1FE1A3B59E000040DF2 /* CellViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellViews.m; sourceTree = "<group>"; };
+		C760C2061A3B5BE200040DF2 /* UILabel+BindArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BindArgs.h"; sourceTree = "<group>"; };
+		C760C2071A3B5BE200040DF2 /* UILabel+BindArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BindArgs.m"; sourceTree = "<group>"; };
 		C76FE4571A3801F600C973BF /* TFhomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFhomeViewController.h; sourceTree = "<group>"; };
 		C76FE4581A3801F600C973BF /* TFhomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFhomeViewController.m; sourceTree = "<group>"; };
 		C76FE45A1A38020A00C973BF /* TFshoppingcartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFshoppingcartViewController.h; sourceTree = "<group>"; };
@@ -206,6 +233,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C760C1CF1A3B3BEA00040DF2 /* homeproduct_icons */ = {
+			isa = PBXGroup;
+			children = (
+				C760C1D01A3B3BEA00040DF2 /* product_1.png */,
+				C760C1D11A3B3BEA00040DF2 /* product_2.png */,
+				C760C1D21A3B3BEA00040DF2 /* product_3.png */,
+				C760C1D31A3B3BEA00040DF2 /* product_4.png */,
+				C760C1D41A3B3BEA00040DF2 /* product_5.png */,
+				C760C1D51A3B3BEA00040DF2 /* product_6.png */,
+			);
+			path = homeproduct_icons;
+			sourceTree = "<group>";
+		};
+		C760C1FC1A3B59BE00040DF2 /* TFmodleAndView */ = {
+			isa = PBXGroup;
+			children = (
+				C760C1FD1A3B59E000040DF2 /* CellViews.h */,
+				C760C1FE1A3B59E000040DF2 /* CellViews.m */,
+			);
+			path = TFmodleAndView;
+			sourceTree = "<group>";
+		};
 		C76FE4501A38007900C973BF /* TFtabbarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +334,8 @@
 		C7798E301A36EA30005EC0D4 /* UIKIT */ = {
 			isa = PBXGroup;
 			children = (
+				C760C2061A3B5BE200040DF2 /* UILabel+BindArgs.h */,
+				C760C2071A3B5BE200040DF2 /* UILabel+BindArgs.m */,
 				C7798E311A36EA30005EC0D4 /* NSURLRequest+NSURLRequestWithIgnoreSSL.h */,
 				C7798E321A36EA30005EC0D4 /* NSURLRequest+NSURLRequestWithIgnoreSSL.m */,
 				C7798E331A36EA30005EC0D4 /* UIAlertView+BindArgs.h */,
@@ -295,6 +346,12 @@
 				C7798E381A36EA30005EC0D4 /* UIImageView+WebCache.m */,
 				C7798E391A36EA30005EC0D4 /* UIView+BindArgs.h */,
 				C7798E3A1A36EA30005EC0D4 /* UIView+BindArgs.m */,
+				C760C1CC1A3B327300040DF2 /* UIScrollView+BindArgs.h */,
+				C760C1CD1A3B327300040DF2 /* UIScrollView+BindArgs.m */,
+				C760C1DC1A3B408200040DF2 /* UIImageView+BindArgs.h */,
+				C760C1DD1A3B408200040DF2 /* UIImageView+BindArgs.m */,
+				C760C1DF1A3B45AC00040DF2 /* UITableView+BindArgs.h */,
+				C760C1E01A3B45AC00040DF2 /* UITableView+BindArgs.m */,
 			);
 			path = UIKIT;
 			sourceTree = "<group>";
@@ -322,6 +379,7 @@
 			children = (
 				C788D5BF1A36C76F009BA362 /* AppDelegate.h */,
 				C788D5C01A36C76F009BA362 /* AppDelegate.m */,
+				C760C1FC1A3B59BE00040DF2 /* TFmodleAndView */,
 				C788D5EC1A36CB8C009BA362 /* TFviewControllers */,
 				C788D5EB1A36CB87009BA362 /* TFcustomTools */,
 				C788D5EA1A36CB62009BA362 /* TFresource */,
@@ -372,6 +430,7 @@
 		C788D5EA1A36CB62009BA362 /* TFresource */ = {
 			isa = PBXGroup;
 			children = (
+				C760C1CF1A3B3BEA00040DF2 /* homeproduct_icons */,
 				C7E4B2B51A388ED5000699B4 /* homemenu_icons */,
 				C77382E51A38325800ABDA7D /* tabbaricons */,
 				C76FE4661A38092700C973BF /* LaunchImage */,
@@ -605,24 +664,30 @@
 				C76FE47D1A38092700C973BF /* LaunchImage-800-Landscape-736h@3x.png in Resources */,
 				C7E4B2BD1A388ED5000699B4 /* menu_1.png in Resources */,
 				C7798E481A36F8D0005EC0D4 /* icnbox_no.png in Resources */,
+				C760C1D71A3B3BEA00040DF2 /* product_2.png in Resources */,
 				C7E4B2BE1A388ED5000699B4 /* menu_2.png in Resources */,
+				C760C1DA1A3B3BEA00040DF2 /* product_5.png in Resources */,
 				C788D5CF1A36C76F009BA362 /* LaunchScreen.xib in Resources */,
 				C7798E451A36F7D6005EC0D4 /* username@2x.png in Resources */,
 				C7E4B2C31A388ED5000699B4 /* menu_7.png in Resources */,
 				C76FE47C1A38092700C973BF /* LaunchImage-800-667h@2x.png in Resources */,
+				C760C1D91A3B3BEA00040DF2 /* product_4.png in Resources */,
 				C77382ED1A38329E00ABDA7D /* tabbar_04@2x.png in Resources */,
 				C77382EB1A38325800ABDA7D /* tabbar_03@2x.png in Resources */,
 				C7E4B2C11A388ED5000699B4 /* menu_5.png in Resources */,
 				C7798E491A36F8D0005EC0D4 /* icnbox_ok.png in Resources */,
 				C7E4B2BF1A388ED5000699B4 /* menu_3.png in Resources */,
+				C760C1DB1A3B3BEA00040DF2 /* product_6.png in Resources */,
 				C76FE4761A38092700C973BF /* Default-Landscape~ipad.png in Resources */,
 				C76FE4771A38092700C973BF /* Default-Portrait@2x~ipad.png in Resources */,
 				C788D5CC1A36C76F009BA362 /* Images.xcassets in Resources */,
 				C76FE4791A38092700C973BF /* Default.png in Resources */,
 				C7E4B2C01A388ED5000699B4 /* menu_4.png in Resources */,
+				C760C1D81A3B3BEA00040DF2 /* product_3.png in Resources */,
 				C76FE47E1A38092700C973BF /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				C76FE4751A38092700C973BF /* Default-Landscape@2x~ipad.png in Resources */,
 				C76FE4741A38092700C973BF /* Default-568h@2x.png in Resources */,
+				C760C1D61A3B3BEA00040DF2 /* product_1.png in Resources */,
 				C7798E431A36F709005EC0D4 /* password@2x.png in Resources */,
 				C76FE47B1A38092700C973BF /* LaunchImage-700-568h@2x.png in Resources */,
 				C77382EA1A38325800ABDA7D /* tabbar_02@2x.png in Resources */,
@@ -650,11 +715,13 @@
 			files = (
 				C7E4B2AC1A3849DD000699B4 /* SDWebImageDecoder.m in Sources */,
 				C7798E3B1A36EA30005EC0D4 /* NSURLRequest+NSURLRequestWithIgnoreSSL.m in Sources */,
+				C760C1FF1A3B59E000040DF2 /* CellViews.m in Sources */,
 				C7798E3D1A36EA30005EC0D4 /* UIButton+BindArgs.m in Sources */,
 				C7798E3F1A36EA30005EC0D4 /* UIView+BindArgs.m in Sources */,
 				C7E4B2B41A3849DD000699B4 /* UIImageView+WebCache.m in Sources */,
 				C7E4B2891A384665000699B4 /* EGOImageView.m in Sources */,
 				C7E4B2A91A3849DD000699B4 /* NSData+GIF.m in Sources */,
+				C760C1DE1A3B408200040DF2 /* UIImageView+BindArgs.m in Sources */,
 				C7E4B2861A384665000699B4 /* EGOImageButton.m in Sources */,
 				C7E4B2881A384665000699B4 /* EGOImageLoader.m in Sources */,
 				C7E4B2AB1A3849DD000699B4 /* SDWebImageCompat.m in Sources */,
@@ -667,6 +734,7 @@
 				C7798E3E1A36EA30005EC0D4 /* UIImageView+WebCache.m in Sources */,
 				C76FE45F1A38023C00C973BF /* TFfoodMarketViewController.m in Sources */,
 				C7798E3C1A36EA30005EC0D4 /* UIAlertView+BindArgs.m in Sources */,
+				C760C1CE1A3B327300040DF2 /* UIScrollView+BindArgs.m in Sources */,
 				C77382F21A3837CA00ABDA7D /* ImagePlayerView.m in Sources */,
 				C76FE4651A38046D00C973BF /* TFpersonViewController.m in Sources */,
 				C788D5F01A36CB8C009BA362 /* TFloginViewController.m in Sources */,
@@ -679,8 +747,10 @@
 				C788D5C11A36C76F009BA362 /* AppDelegate.m in Sources */,
 				C788D5BE1A36C76F009BA362 /* main.m in Sources */,
 				C76FE4621A3803A000C973BF /* TFMainTabbarController.m in Sources */,
+				C760C2081A3B5BE200040DF2 /* UILabel+BindArgs.m in Sources */,
 				C7E4B2851A384665000699B4 /* EGOCache.m in Sources */,
 				C76FE45C1A38020A00C973BF /* TFshoppingcartViewController.m in Sources */,
+				C760C1E11A3B45AC00040DF2 /* UITableView+BindArgs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

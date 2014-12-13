@@ -41,8 +41,8 @@
         [bt setBackgroundImage:normal forState:UIControlStateNormal];
     }
     if (select) {
-//        [bt setBackgroundImage:select forState:UIControlStateSelected];
-//        [bt setBackgroundImage:select forState:UIControlStateHighlighted];
+        [bt setBackgroundImage:select forState:UIControlStateSelected];
+        [bt setBackgroundImage:select forState:UIControlStateHighlighted];
     }
     return bt;
    

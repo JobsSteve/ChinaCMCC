@@ -12,6 +12,7 @@
 
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;
 
+
 /*根据键值绑定数据*/
 -(void)bindData:(NSString *)key Value:(id)value;
 /*根据键值获取绑定的数据*/

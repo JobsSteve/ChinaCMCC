@@ -83,6 +83,8 @@
     }
 }
 
+
+
 -(void)bindData:(NSString *)key Value:(id)value
 {
     objc_setAssociatedObject(self, [key cStringUsingEncoding:30], value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

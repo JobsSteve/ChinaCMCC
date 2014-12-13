@@ -8,7 +8,11 @@
 
 #import "TFfoodMarketViewController.h"
 
-@interface TFfoodMarketViewController ()
+@interface TFfoodMarketViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *tableview;
+}
+@property(nonatomic,strong)UITableView *tableview;
 
 @end
 
@@ -25,10 +29,47 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+    self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) tag:2];
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    [self.view addSubview:self.tableview];
+    
     // Do any additional setup after loading the view.
 }
+#pragma mark ---------TableViewDataSource And TableViewDelegate
 
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+   
+    return 10;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 100;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    static NSString *CellIdentifier = @"CelebrityCheckTableCell";
+    [tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell==nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.selectionStyle= UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = [UIColor blackColor];
+        
+    }
+    
+    [cell.contentView addSubview:[CellViews CellViewWithShoplist:nil]];
+   
+    
+    return cell;
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
