@@ -58,6 +58,21 @@
 		C788D5DB1A36C770009BA362 /* TastyFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C788D5DA1A36C770009BA362 /* TastyFoodTests.m */; };
 		C788D5E91A36CB41009BA362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C788D5E81A36CB41009BA362 /* Foundation.framework */; };
 		C788D5F01A36CB8C009BA362 /* TFloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C788D5EF1A36CB8C009BA362 /* TFloginViewController.m */; };
+		C7DBA16F1A3D84A10087596E /* TboxKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA16E1A3D84A10087596E /* TboxKit.m */; };
+		C7DBA1751A3D8DFD0087596E /* UITextView+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1741A3D8DFD0087596E /* UITextView+BindArgs.m */; };
+		C7DBA1781A3D92570087596E /* UITextField+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1771A3D92570087596E /* UITextField+BindArgs.m */; };
+		C7DBA1811A3DAA6C0087596E /* TFeditPswViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1801A3DAA6C0087596E /* TFeditPswViewController.m */; };
+		C7DBA1841A3DAF320087596E /* TFeditAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1831A3DAF320087596E /* TFeditAddressViewController.m */; };
+		C7DBA1871A3DB13D0087596E /* TFmyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1861A3DB13D0087596E /* TFmyOrderViewController.m */; };
+		C7DBA19A1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA18C1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorFade.m */; };
+		C7DBA19B1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA18E1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScale.m */; };
+		C7DBA19C1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1901A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		C7DBA19D1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1921A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlide.m */; };
+		C7DBA19E1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1941A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
+		C7DBA19F1A3DDE4F0087596E /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DBA1961A3DDE4F0087596E /* menu-button.png */; };
+		C7DBA1A01A3DDE4F0087596E /* menu-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7DBA1971A3DDE4F0087596E /* menu-button@2x.png */; };
+		C7DBA1A11A3DDE4F0087596E /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1991A3DDE4F0087596E /* SlideNavigationController.m */; };
+		C7DBA1A41A3DE6470087596E /* welcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA1A31A3DE6470087596E /* welcomeViewController.m */; };
 		C7E4B2851A384665000699B4 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B2791A384665000699B4 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C7E4B2861A384665000699B4 /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B27C1A384665000699B4 /* EGOImageButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C7E4B2871A384665000699B4 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B27F1A384665000699B4 /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -170,6 +185,35 @@
 		C788D5E81A36CB41009BA362 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C788D5EE1A36CB8C009BA362 /* TFloginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFloginViewController.h; sourceTree = "<group>"; };
 		C788D5EF1A36CB8C009BA362 /* TFloginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFloginViewController.m; sourceTree = "<group>"; };
+		C7DBA16D1A3D84A10087596E /* TboxKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TboxKit.h; sourceTree = "<group>"; };
+		C7DBA16E1A3D84A10087596E /* TboxKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TboxKit.m; sourceTree = "<group>"; };
+		C7DBA1731A3D8DFD0087596E /* UITextView+BindArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+BindArgs.h"; sourceTree = "<group>"; };
+		C7DBA1741A3D8DFD0087596E /* UITextView+BindArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+BindArgs.m"; sourceTree = "<group>"; };
+		C7DBA1761A3D92570087596E /* UITextField+BindArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+BindArgs.h"; sourceTree = "<group>"; };
+		C7DBA1771A3D92570087596E /* UITextField+BindArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+BindArgs.m"; sourceTree = "<group>"; };
+		C7DBA17F1A3DAA6C0087596E /* TFeditPswViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFeditPswViewController.h; sourceTree = "<group>"; };
+		C7DBA1801A3DAA6C0087596E /* TFeditPswViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFeditPswViewController.m; sourceTree = "<group>"; };
+		C7DBA1821A3DAF320087596E /* TFeditAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFeditAddressViewController.h; sourceTree = "<group>"; };
+		C7DBA1831A3DAF320087596E /* TFeditAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFeditAddressViewController.m; sourceTree = "<group>"; };
+		C7DBA1851A3DB13D0087596E /* TFmyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFmyOrderViewController.h; sourceTree = "<group>"; };
+		C7DBA1861A3DB13D0087596E /* TFmyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFmyOrderViewController.m; sourceTree = "<group>"; };
+		C7DBA18A1A3DDE4F0087596E /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		C7DBA18B1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		C7DBA18C1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		C7DBA18D1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		C7DBA18E1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		C7DBA18F1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		C7DBA1901A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		C7DBA1911A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		C7DBA1921A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
+		C7DBA1931A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		C7DBA1941A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
+		C7DBA1961A3DDE4F0087596E /* menu-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button.png"; sourceTree = "<group>"; };
+		C7DBA1971A3DDE4F0087596E /* menu-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button@2x.png"; sourceTree = "<group>"; };
+		C7DBA1981A3DDE4F0087596E /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationController.h; sourceTree = "<group>"; };
+		C7DBA1991A3DDE4F0087596E /* SlideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationController.m; sourceTree = "<group>"; };
+		C7DBA1A21A3DE6470087596E /* welcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welcomeViewController.h; sourceTree = "<group>"; };
+		C7DBA1A31A3DE6470087596E /* welcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welcomeViewController.m; sourceTree = "<group>"; };
 		C7E4B2781A384665000699B4 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		C7E4B2791A384665000699B4 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		C7E4B27B1A384665000699B4 /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
@@ -249,6 +293,8 @@
 		C760C1FC1A3B59BE00040DF2 /* TFmodleAndView */ = {
 			isa = PBXGroup;
 			children = (
+				C7DBA16D1A3D84A10087596E /* TboxKit.h */,
+				C7DBA16E1A3D84A10087596E /* TboxKit.m */,
 				C760C1FD1A3B59E000040DF2 /* CellViews.h */,
 				C760C1FE1A3B59E000040DF2 /* CellViews.m */,
 			);
@@ -352,6 +398,10 @@
 				C760C1DD1A3B408200040DF2 /* UIImageView+BindArgs.m */,
 				C760C1DF1A3B45AC00040DF2 /* UITableView+BindArgs.h */,
 				C760C1E01A3B45AC00040DF2 /* UITableView+BindArgs.m */,
+				C7DBA1731A3D8DFD0087596E /* UITextView+BindArgs.h */,
+				C7DBA1741A3D8DFD0087596E /* UITextView+BindArgs.m */,
+				C7DBA1761A3D92570087596E /* UITextField+BindArgs.h */,
+				C7DBA1771A3D92570087596E /* UITextField+BindArgs.m */,
 			);
 			path = UIKIT;
 			sourceTree = "<group>";
@@ -379,6 +429,8 @@
 			children = (
 				C788D5BF1A36C76F009BA362 /* AppDelegate.h */,
 				C788D5C01A36C76F009BA362 /* AppDelegate.m */,
+				C7DBA1A21A3DE6470087596E /* welcomeViewController.h */,
+				C7DBA1A31A3DE6470087596E /* welcomeViewController.m */,
 				C760C1FC1A3B59BE00040DF2 /* TFmodleAndView */,
 				C788D5EC1A36CB8C009BA362 /* TFviewControllers */,
 				C788D5EB1A36CB87009BA362 /* TFcustomTools */,
@@ -445,6 +497,7 @@
 		C788D5EB1A36CB87009BA362 /* TFcustomTools */ = {
 			isa = PBXGroup;
 			children = (
+				C7DBA1881A3DDE4F0087596E /* SlideMenuViewsdk */,
 				C7E4B28A1A3849DD000699B4 /* SDWebImage */,
 				C7E4B2761A384665000699B4 /* EGOImagesdk */,
 				C77382EF1A3837CA00ABDA7D /* AutoScrollerbannerView */,
@@ -474,8 +527,52 @@
 				C7798E4B1A36FEC6005EC0D4 /* TFregistViewController.m */,
 				C76FE4631A38046D00C973BF /* TFpersonViewController.h */,
 				C76FE4641A38046D00C973BF /* TFpersonViewController.m */,
+				C7DBA17F1A3DAA6C0087596E /* TFeditPswViewController.h */,
+				C7DBA1801A3DAA6C0087596E /* TFeditPswViewController.m */,
+				C7DBA1821A3DAF320087596E /* TFeditAddressViewController.h */,
+				C7DBA1831A3DAF320087596E /* TFeditAddressViewController.m */,
+				C7DBA1851A3DB13D0087596E /* TFmyOrderViewController.h */,
+				C7DBA1861A3DB13D0087596E /* TFmyOrderViewController.m */,
 			);
 			path = TFpersonCenter;
+			sourceTree = "<group>";
+		};
+		C7DBA1881A3DDE4F0087596E /* SlideMenuViewsdk */ = {
+			isa = PBXGroup;
+			children = (
+				C7DBA1891A3DDE4F0087596E /* Animations */,
+				C7DBA1951A3DDE4F0087596E /* Assets */,
+				C7DBA1981A3DDE4F0087596E /* SlideNavigationController.h */,
+				C7DBA1991A3DDE4F0087596E /* SlideNavigationController.m */,
+			);
+			path = SlideMenuViewsdk;
+			sourceTree = "<group>";
+		};
+		C7DBA1891A3DDE4F0087596E /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C7DBA18A1A3DDE4F0087596E /* SlideNavigationContorllerAnimator.h */,
+				C7DBA18B1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorFade.h */,
+				C7DBA18C1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorFade.m */,
+				C7DBA18D1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScale.h */,
+				C7DBA18E1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScale.m */,
+				C7DBA18F1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
+				C7DBA1901A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
+				C7DBA1911A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlide.h */,
+				C7DBA1921A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlide.m */,
+				C7DBA1931A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
+				C7DBA1941A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		C7DBA1951A3DDE4F0087596E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C7DBA1961A3DDE4F0087596E /* menu-button.png */,
+				C7DBA1971A3DDE4F0087596E /* menu-button@2x.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		C7E4B2761A384665000699B4 /* EGOImagesdk */ = {
@@ -688,11 +785,13 @@
 				C76FE4751A38092700C973BF /* Default-Landscape@2x~ipad.png in Resources */,
 				C76FE4741A38092700C973BF /* Default-568h@2x.png in Resources */,
 				C760C1D61A3B3BEA00040DF2 /* product_1.png in Resources */,
+				C7DBA1A01A3DDE4F0087596E /* menu-button@2x.png in Resources */,
 				C7798E431A36F709005EC0D4 /* password@2x.png in Resources */,
 				C76FE47B1A38092700C973BF /* LaunchImage-700-568h@2x.png in Resources */,
 				C77382EA1A38325800ABDA7D /* tabbar_02@2x.png in Resources */,
 				C7E4B2C21A388ED5000699B4 /* menu_6.png in Resources */,
 				C76FE4731A38092700C973BF /* Contents.json in Resources */,
+				C7DBA19F1A3DDE4F0087596E /* menu-button.png in Resources */,
 				C76FE47A1A38092700C973BF /* Default@2x.png in Resources */,
 				C77382E91A38325800ABDA7D /* tabbar_01@2x.png in Resources */,
 				C76FE4781A38092700C973BF /* Default-Portrait~ipad.png in Resources */,
@@ -716,11 +815,15 @@
 				C7E4B2AC1A3849DD000699B4 /* SDWebImageDecoder.m in Sources */,
 				C7798E3B1A36EA30005EC0D4 /* NSURLRequest+NSURLRequestWithIgnoreSSL.m in Sources */,
 				C760C1FF1A3B59E000040DF2 /* CellViews.m in Sources */,
+				C7DBA19B1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				C7798E3D1A36EA30005EC0D4 /* UIButton+BindArgs.m in Sources */,
 				C7798E3F1A36EA30005EC0D4 /* UIView+BindArgs.m in Sources */,
+				C7DBA19E1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				C7E4B2B41A3849DD000699B4 /* UIImageView+WebCache.m in Sources */,
 				C7E4B2891A384665000699B4 /* EGOImageView.m in Sources */,
 				C7E4B2A91A3849DD000699B4 /* NSData+GIF.m in Sources */,
+				C7DBA1841A3DAF320087596E /* TFeditAddressViewController.m in Sources */,
+				C7DBA19A1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				C760C1DE1A3B408200040DF2 /* UIImageView+BindArgs.m in Sources */,
 				C7E4B2861A384665000699B4 /* EGOImageButton.m in Sources */,
 				C7E4B2881A384665000699B4 /* EGOImageLoader.m in Sources */,
@@ -728,14 +831,20 @@
 				C7E4B2AA1A3849DD000699B4 /* SDImageCache.m in Sources */,
 				C7E4B2B31A3849DD000699B4 /* UIImage+MultiFormat.m in Sources */,
 				C7E4B2B21A3849DD000699B4 /* UIImage+GIF.m in Sources */,
+				C7DBA16F1A3D84A10087596E /* TboxKit.m in Sources */,
 				C7E4B2AD1A3849DD000699B4 /* SDWebImageDownloader.m in Sources */,
+				C7DBA19D1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				C76FE4591A3801F600C973BF /* TFhomeViewController.m in Sources */,
 				C7E4B2B11A3849DD000699B4 /* UIButton+WebCache.m in Sources */,
 				C7798E3E1A36EA30005EC0D4 /* UIImageView+WebCache.m in Sources */,
 				C76FE45F1A38023C00C973BF /* TFfoodMarketViewController.m in Sources */,
+				C7DBA1781A3D92570087596E /* UITextField+BindArgs.m in Sources */,
+				C7DBA1751A3D8DFD0087596E /* UITextView+BindArgs.m in Sources */,
 				C7798E3C1A36EA30005EC0D4 /* UIAlertView+BindArgs.m in Sources */,
+				C7DBA1A11A3DDE4F0087596E /* SlideNavigationController.m in Sources */,
 				C760C1CE1A3B327300040DF2 /* UIScrollView+BindArgs.m in Sources */,
 				C77382F21A3837CA00ABDA7D /* ImagePlayerView.m in Sources */,
+				C7DBA1871A3DB13D0087596E /* TFmyOrderViewController.m in Sources */,
 				C76FE4651A38046D00C973BF /* TFpersonViewController.m in Sources */,
 				C788D5F01A36CB8C009BA362 /* TFloginViewController.m in Sources */,
 				C7E4B2AE1A3849DD000699B4 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -743,6 +852,7 @@
 				C7E4B2871A384665000699B4 /* EGOImageLoadConnection.m in Sources */,
 				C7E4B2B01A3849DD000699B4 /* SDWebImagePrefetcher.m in Sources */,
 				C7E4B2AF1A3849DD000699B4 /* SDWebImageManager.m in Sources */,
+				C7DBA1A41A3DE6470087596E /* welcomeViewController.m in Sources */,
 				C788D5C41A36C76F009BA362 /* TastyFood.xcdatamodeld in Sources */,
 				C788D5C11A36C76F009BA362 /* AppDelegate.m in Sources */,
 				C788D5BE1A36C76F009BA362 /* main.m in Sources */,
@@ -750,7 +860,9 @@
 				C760C2081A3B5BE200040DF2 /* UILabel+BindArgs.m in Sources */,
 				C7E4B2851A384665000699B4 /* EGOCache.m in Sources */,
 				C76FE45C1A38020A00C973BF /* TFshoppingcartViewController.m in Sources */,
+				C7DBA19C1A3DDE4F0087596E /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				C760C1E11A3B45AC00040DF2 /* UITableView+BindArgs.m in Sources */,
+				C7DBA1811A3DAA6C0087596E /* TFeditPswViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

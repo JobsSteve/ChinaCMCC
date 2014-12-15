@@ -37,6 +37,13 @@
     [view setBackgroundColor:linecolor];
     return view;
 }
+/*初始化竖线方法*/
++(instancetype)lineViewWithx:(float)linex y:(float)liney height:(float)lineheight :(UIColor*)linecolor
+{
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(linex, liney, 0.5, lineheight)];
+    [view setBackgroundColor:linecolor];
+    return view;
+}
 
 +(void)startShake:(UIView*)shakeView
 {
@@ -52,4 +59,7 @@
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [shakeView.layer addAnimation:animation forKey:kAFViewShakerAnimationKey];
 }
+
+
+
 @end

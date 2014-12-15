@@ -31,7 +31,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"登录";
-        
+        [SlideNavigationController sharedInstance].title = @"登录";
         
         
     }

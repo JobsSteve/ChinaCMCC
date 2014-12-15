@@ -18,7 +18,15 @@
 #import "UIImageView+BindArgs.h"
 #import "UITableView+BindArgs.h"
 #import "UILabel+BindArgs.h"
+#import "UITextView+BindArgs.h"
+#import "UITextField+BindArgs.h"
+
+
 #import "ImagePlayerView.h"
+
+
+
+#import "SlideNavigationController.h"
 
 
 #import "CellViews.h"
@@ -26,6 +34,15 @@
 /* 颜色宏定义 */
 
 #define RGBAcolor(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
+//主题黄色
+#define YellowColor_APP RGBAcolor(250, 140, 0, 1)
+//主题青绿色
+#define GreenColor_APP  RGBAcolor(70, 220, 220, 1)
+//背景灰色 （衬托白色）
+#define GrayColor_APP  RGBAcolor(230, 230, 230, 1)
+
+
 /* 屏幕尺寸宏定义 */
 #define WIGHT   [UIScreen mainScreen].applicationFrame.size.width
 #define HEIGHT  [UIScreen mainScreen].applicationFrame.size.height
@@ -68,6 +85,9 @@
 //NSUserDefaults get set 方法
 #define SetDefaults(key,value)       [[NSUserDefaults standardUserDefaults] setObject:value forKey:key]
 #define GetDefaults(key)             [[NSUserDefaults standardUserDefaults] objectForKey:key]
+
+
+
 
 
 

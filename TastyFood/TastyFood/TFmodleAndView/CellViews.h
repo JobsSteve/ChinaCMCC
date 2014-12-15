@@ -18,7 +18,7 @@
 #pragma mark ----- 11.26 号的custom cell
 +(UIView *)CellViewWithShoplist:(NSDictionary*)detailInfo;
 
-
++(UIView *)CellViewWithShopchartlistpart:(NSDictionary*)detailInfo;
 
 @end
 

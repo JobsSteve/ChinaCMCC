@@ -8,7 +8,7 @@
 
 #import "TFhomeViewController.h"
 #import "TFloginViewController.h"
-@interface TFhomeViewController ()<ImagePlayerViewDelegate,UIScrollViewDelegate>
+@interface TFhomeViewController ()<ImagePlayerViewDelegate,UIScrollViewDelegate,SlideNavigationControllerDelegate>
 {
     UIScrollView *BottomScrollview;
     ImagePlayerView *imagePlayerView;
@@ -33,6 +33,8 @@
     if (self) {
         
         self.title = @"首页";
+        [SlideNavigationController sharedInstance].title = @"首页";
+
         self.tabBarItem =  [self.tabBarItem initWithTitle:@"首页" image:[UIImage imageNamed:@"tabbar_01.png"] selectedImage:[UIImage imageNamed:@"tabbar_01.png"]];
 
     }
@@ -41,15 +43,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = GrayColor_APP;
     [self initContentview];
     [self initBanner];
     [self inithomeMenuButton];
     [self inithomeProductsButton];
     
+    
+
+    
+}
+
+
+-(void)ClickBt_pushregistVC1
+{
+    
+    
+    
+    [[SlideNavigationController sharedInstance] toggleRightMenu];
+    
 }
 -(void)initContentview
 {
-    self.BottomScrollview = [UIScrollView ScrollViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) contentSize:CGSizeMake(WIGHT, 640) tag:1];
+    self.BottomScrollview = [UIScrollView ScrollViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) contentSize:CGSizeMake(WIGHT, 600) tag:1];
     self.BottomScrollview.delegate = self;
     [self.view addSubview:self.BottomScrollview];
 }
@@ -83,7 +99,7 @@
 -(void)inithomeMenuButton
 {
    
-    UIView *Menu_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 160, WIGHT, 210) :[UIColor whiteColor]];
+    UIView *Menu_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 150, WIGHT, 220) :RGBAcolor(245, 245, 245,1)];
 //    [Menu_Buttomview addSubview:[UIView lineViewWithx:0 y:0 wight:WIGHT :[UIColor grayColor]]];
 
     
@@ -95,11 +111,25 @@
     UIButton *button5 =[UIButton ButtonWithFrame:CGRectMake(160, 10+60*2+10*2, 70, 60) Normal:[UIImage imageNamed:@"menu_6.png"] Select:[UIImage imageNamed:@"menu_6.png"] Title:nil];
     UIButton *button6 =[UIButton ButtonWithFrame:CGRectMake(240, 10+60*2+10*2, 70, 60) Normal:[UIImage imageNamed:@"menu_7.png"] Select:[UIImage imageNamed:@"menu_7.png"] Title:nil];
     
+    UILabel *label = [UILabel RightLabelWithFrame:CGRectMake(button.frame.size.width-60, button.frame.size.height-25, 50, 30) text:@"蔬菜" color:RGBAcolor(70, 150, 0, 1) font:16];
+    UILabel *label1 = [UILabel RightLabelWithFrame:CGRectMake(button1.frame.size.width-60, button1.frame.size.height-25, 60, 30) text:@"肉/禽类" color:RGBAcolor(180, 40, 60, 1) font:12];
+    UILabel *label2 = [UILabel RightLabelWithFrame:CGRectMake(button2.frame.size.width-70, button2.frame.size.height-25, 70, 30) text:@"鱼/水产品" color:RGBAcolor(40, 180, 2200, 1) font:12];
+    UILabel *label3 = [UILabel RightLabelWithFrame:CGRectMake(button3.frame.size.width-70, button3.frame.size.height-25, 70, 30) text:@"蛋/豆制品" color:RGBAcolor(170, 80, 40, 1) font:12];
+    UILabel *label4 = [UILabel RightLabelWithFrame:CGRectMake(button4.frame.size.width-60, button4.frame.size.height-25, 60, 30) text:@"熟食" color:RGBAcolor(150, 30, 0, 1) font:12];
+    UILabel *label5 = [UILabel RightLabelWithFrame:CGRectMake(button5.frame.size.width-90, button5.frame.size.height-25, 90, 30) text:@"米/油/调味品" color:RGBAcolor(80, 30, 0, 1) font:12];
+    UILabel *label6 = [UILabel RightLabelWithFrame:CGRectMake(button6.frame.size.width-60, button6.frame.size.height-25, 60, 30) text:@"其他" color:RGBAcolor(255, 255, 255, 1) font:12];
+
+    NSArray *list = @[label,label1,label2,label3,label4,label5,label6];
+
     
     NSArray *buttonlist =@[button,button1,button2,button3,button4,button5,button6];
+    int i=0;
     for (UIButton *btn in buttonlist) {
+        [btn addSubview:list[i]];
+
         [btn addTarget:self action:@selector(pushthis) forControlEvents:UIControlEventTouchUpInside];
         [Menu_Buttomview addSubview:btn];
+        i++;
     }
 
     [self.BottomScrollview addSubview:Menu_Buttomview];;
@@ -108,7 +138,7 @@
 // 360 + 10 , y =370开始
 -(void)inithomeProductsButton
 {
-    UIView *Product_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 380, WIGHT, 200) :[UIColor whiteColor]];
+    UIView *Product_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 370, WIGHT, 200) :[UIColor whiteColor]];
     [Product_Buttomview addSubview:[UIView lineViewWithx:0 y:0 wight:WIGHT :RGBAcolor(210, 210, 210, 1)]];
 
     [Product_Buttomview addSubview:[UIImageView imageViewWithFrame:CGRectMake(10, 0, 80, 30) :@"menu_7.png" ]];
@@ -117,13 +147,23 @@
     for (int i=0; i<2; i++) {
         for (int j=0; j<3; j++) {
             NSArray *imagename_list = (i==0?@[@"product_1.png",@"product_2.png",@"product_3.png"]:@[@"product_4.png",@"product_5.png",@"product_6.png"]);
-            [NSString stringWithFormat:@"product_%d.png",i*j+j];
-            UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10+j*(WIGHT-10*2)/3, 40+i*80, (WIGHT-25*2)/3, 80) Normal:[UIImage imageNamed:imagename_list[j]] Select:[UIImage imageNamed:imagename_list[j]] Title:nil];
+             // [NSString stringWithFormat:@"product_%d.png",i*j+j];
+            //imagename_list[j]
+            UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10+j*(WIGHT-10*2)/3, 40+i*80, (WIGHT-25*2)/3, 80) Normal:[UIImage imageNamed:@"product_2.png"] Select:[UIImage imageNamed:@"product_2.png"] Title:nil];
             [Product_Buttomview addSubview:button];
 
         }
     }
     [self.BottomScrollview addSubview:Product_Buttomview];
+    
+    UIView *line =[UIView lineViewWithx:20+90 y:40 height:160 :GrayColor_APP];
+    UIView *line2 =[UIView lineViewWithx:30+90*2 y:40 height:160 :GrayColor_APP];
+    UIView *line3 =[UIView lineViewWithx:10 y:120 wight:300 :GrayColor_APP];
+
+    [Product_Buttomview addSubview:line];
+    [Product_Buttomview addSubview:line2];
+    [Product_Buttomview addSubview:line3];
+
 
     
 }
@@ -140,6 +180,53 @@
     [self.navigationController pushViewController:VC animated:YES];
     
 }
+
+
+-(void)testSlideNavigationController
+{
+    
+ 
+    
+    TFloginViewController *leftMenu =[[TFloginViewController alloc]init];
+    
+    
+    [SlideNavigationController sharedInstance].rightMenu = leftMenu;
+    [SlideNavigationController sharedInstance].leftMenu = leftMenu;
+    
+    UIButton *registButton=[UIButton ButtonWithFrame:CGRectMake(WIGHT-60, 0, 50, 35) Normal:nil Select:nil Title:@"注册"];
+    [registButton addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:registButton];
+
+
+    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidClose object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSString *menu = note.userInfo[@"menu"];
+        NSLog(@"Closed %@", menu);
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidOpen object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSString *menu = note.userInfo[@"menu"];
+        NSLog(@"Opened %@", menu);
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidReveal object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSString *menu = note.userInfo[@"menu"];
+        NSLog(@"Revealed %@", menu);
+    }];
+    
+    
+}
+
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+    return YES;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

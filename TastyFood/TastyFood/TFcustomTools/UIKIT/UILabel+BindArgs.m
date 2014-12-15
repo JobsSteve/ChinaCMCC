@@ -17,4 +17,13 @@
     label.font = [UIFont systemFontOfSize:textfont];
     return label;
 }
++(instancetype)RightLabelWithFrame:(CGRect)frame text:(NSString*)textString color:(UIColor*)textColor font:(float)textfont
+{
+    UILabel *label = [[UILabel alloc]initWithFrame:frame];
+    label.textColor = textColor;
+    label.text = textString;
+    label.font = [UIFont systemFontOfSize:textfont];
+    label.textAlignment = NSTextAlignmentRight;
+    return label;
+}
 @end

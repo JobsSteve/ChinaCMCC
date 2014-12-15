@@ -8,6 +8,9 @@
 
 #import "TFpersonViewController.h"
 #import "TFloginViewController.h"
+#import "TFeditPswViewController.h"
+#import "TFeditAddressViewController.h"
+#import "TFmyOrderViewController.h"
 @interface TFpersonViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView *tableview;
@@ -43,6 +46,8 @@
         
     }
 }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -102,7 +107,8 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         cell.selectionStyle= UITableViewCellSelectionStyleNone;
         cell.textLabel.textColor = [UIColor blackColor];
-
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
     }
     cell.imageView.image = [UIImage imageNamed:@"tabbar_04.png"];
     if (indexPath.section==0) {
@@ -118,6 +124,28 @@
     return cell;
     
     
+}
+-(void)ClickBt_submitorderVC:(UIButton*)btn
+{
+    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *VC ;
+    if (indexPath.section==1&&indexPath.row==0) {
+        VC = [[TFeditAddressViewController alloc]init];
+        
+    }
+    if (indexPath.section==1&&indexPath.row==1) {
+        VC = [[TFmyOrderViewController alloc]init];
+        
+    }
+    if (indexPath.section==1&&indexPath.row==2) {
+       VC = [[TFeditPswViewController alloc]init];
+
+    }
+    [self.navigationController pushViewController:VC animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {

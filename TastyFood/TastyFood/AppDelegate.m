@@ -11,6 +11,8 @@
 #import "TFloginViewController.h"
 #import "TFregistViewController.h"
 #import "TFMainTabbarController.h"
+#import "welcomeViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -29,16 +31,17 @@
     SetDefaults(Defaults_isRememberPsw, @NO);
 
     
-    
-    
-    
-    
-    
-    
-    
-    
+
+    TFloginViewController *rightVC = [[TFloginViewController alloc]init];
+ 
     TFMainTabbarController *TabbarVC = [[TFMainTabbarController alloc]init];
+//    SlideNavigationController *firstNav = [[SlideNavigationController alloc]initWithRootViewController:TabbarVC];
+//    firstNav.rightMenu = rightVC;
+    
+
     self.window.rootViewController =  TabbarVC;
+    
+    
     
     
     //设置导航风格
@@ -52,6 +55,7 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
 -(void)setNavgationStyle
 {
     NSShadow *shadow = [[NSShadow alloc] init];

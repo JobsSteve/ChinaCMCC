@@ -36,6 +36,7 @@
     if (title) {
         [bt setTitle:title forState:UIControlStateNormal];
         [bt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        bt.titleLabel.font = [UIFont systemFontOfSize:15];
     }
     if (normal) {
         [bt setBackgroundImage:normal forState:UIControlStateNormal];
