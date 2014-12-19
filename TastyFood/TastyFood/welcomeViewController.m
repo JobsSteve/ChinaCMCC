@@ -20,6 +20,10 @@
     UIButton *button = [UIButton ButtonWithFrame:CGRectMake(100, 100, 50, 50) Normal:nil Select:nil Title:@"asflkha"];
     [button addTarget:self action:@selector(sfkljask) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 -(void)sfkljask

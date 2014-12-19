@@ -84,9 +84,12 @@
         cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
     }
     NSArray *list = @[@"姓名:",@"电话:",@"城市:",@"区域:",@"详细地址:"];
+    NSArray *list2 = @[@"Leo",@"15201724098",@"上海",@"浦东新区",@"顺河路219"];
+
     cell.textLabel.text = list[indexPath.row];
     
-    UITextField *field = [UITextField textFieldWithFrame:CGRectMake(0, 0, 160, 40) fieldTag:indexPath.row fieldFont:14 textColor:[UIColor grayColor] fieldtext:@"15201078031"];
+    
+    UITextField *field = [UITextField textFieldWithFrame:CGRectMake(0, 0, 160, 40) fieldTag:indexPath.row fieldFont:14 textColor:[UIColor grayColor] fieldtext:[list2 objectAtIndex:indexPath.row]];
     field.textAlignment = NSTextAlignmentRight;
     field.borderStyle = UITextBorderStyleNone;
     field.clearButtonMode = UITextFieldViewModeWhileEditing;

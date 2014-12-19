@@ -26,7 +26,7 @@
     //数量加减编辑
     [Cellview  addSubview:[[TboxKit alloc]initWithFrame:CGRectMake(170, 65, 80, 25)]];
     
-    UIButton *jionShopchart = [UIButton ButtonWithFrame:CGRectMake(260, 30, 30, 30) Normal:[UIImage imageNamed:@"icnbox_ok.png"] Select:[UIImage imageNamed:@"icnbox_ok.png"] Title:nil];
+    UIButton *jionShopchart = [UIButton ButtonWithFrame:CGRectMake(WIGHT-60, 30, 30, 30) Normal:[UIImage imageNamed:@"shapchart.png"] Select:[UIImage imageNamed:@"shapchart.png"] Title:nil];
     jionShopchart.tag = 201;
     [Cellview addSubview:jionShopchart];
     
@@ -59,7 +59,7 @@
     
     
     
-    UIButton *deleteShopButton = [UIButton ButtonWithFrame:CGRectMake(280, 25, 30, 30) Normal:[UIImage imageNamed:@"icnbox_ok.png"] Select:[UIImage imageNamed:@"icnbox_ok.png"] Title:@"2193"];
+    UIButton *deleteShopButton = [UIButton ButtonWithFrame:CGRectMake(270, 25, 30, 30) Normal:[UIImage imageNamed:@"delete.png"] Select:[UIImage imageNamed:@"delete.png"] Title:@""];
     deleteShopButton.tag = 201;
     [Cellview addSubview:deleteShopButton];
     

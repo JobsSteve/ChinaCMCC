@@ -12,6 +12,13 @@
 #import "TFregistViewController.h"
 #import "TFMainTabbarController.h"
 #import "welcomeViewController.h"
+#import "CustomtabbarController.h"
+#import "WWSideslipViewController.h"
+
+#import "MSSlidingPanelController.h"
+#import "TFmyPathViewController.h"
+
+#import <JSONKit.h>
 
 @interface AppDelegate ()
 
@@ -25,8 +32,14 @@
     
     //  4s:320*480
     
-    
-    
+    NSLog(@"--:%f",self.window.frame.size.height);
+    NSLog(@"--:%f",self.window.frame.size.width);
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGSize size = rect.size;
+    CGFloat width = size.width;
+    CGFloat height = size.height;
+    NSLog(@"--:%f",width);
+
     //默认不记住密码
     SetDefaults(Defaults_isRememberPsw, @NO);
 
@@ -34,22 +47,42 @@
 
     TFloginViewController *rightVC = [[TFloginViewController alloc]init];
  
-    TFMainTabbarController *TabbarVC = [[TFMainTabbarController alloc]init];
-//    SlideNavigationController *firstNav = [[SlideNavigationController alloc]initWithRootViewController:TabbarVC];
-//    firstNav.rightMenu = rightVC;
+    TFmyPathViewController *leftVC =[[TFmyPathViewController alloc]init];
+
+    CustomtabbarController *VC = [[CustomtabbarController alloc]init];
+
+    
+    
+    /*
+    
+    WWSideslipViewController * slide = [[WWSideslipViewController alloc]initWithLeftView:rightVC andMainView:VC andRightView:rightVC andBackgroundImage:[UIImage imageNamed:@"bg.png"]];
+    
+    
+    //    self.view.window.rootViewController = slide;
+    //滑动速度系数
+    [slide setSpeedf:0.5];
+    
+    //点击视图是是否恢复位置
+    slide.sideslipTapGes.enabled = YES;
+    */
+//    self.window.rootViewController =  VC;
     
 
-    self.window.rootViewController =  TabbarVC;
     
+    MSSlidingPanelController    *slidingPanelController = [[MSSlidingPanelController alloc] initWithCenterViewController:VC leftPanelController:leftVC andRightPanelController:nil];
+    [slidingPanelController setLeftPanelStatusBarColor:[UIColor clearColor]];
+    [slidingPanelController setRightPanelStatusBarColor:[UIColor clearColor]];
+    [slidingPanelController setDelegate:VC];
     
-    
+
     
     //设置导航风格
     [[UINavigationBar appearance] setBarTintColor:RGBAcolor(50, 212, 220, 1)];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
     
 
-    
+    [[self window] setRootViewController:slidingPanelController];
+
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

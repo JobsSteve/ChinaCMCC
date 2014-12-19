@@ -84,10 +84,15 @@
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
     }
+
+    
+    
     NSArray *list = @[@"用户名/手机号:",@"原始密码:",@"修改密码:",@"确认密码:"];
+    NSArray *list2 = @[@"15201724098",@"123456",@"654321",@"654321"];
+
     cell.textLabel.text = list[indexPath.row];
 
-    UITextField *field = [UITextField textFieldWithFrame:CGRectMake(0, 0, 160, 40) fieldTag:indexPath.row fieldFont:14 textColor:[UIColor grayColor] fieldtext:@"15201078031"];
+    UITextField *field = [UITextField textFieldWithFrame:CGRectMake(0, 0, 160, 40) fieldTag:indexPath.row fieldFont:14 textColor:[UIColor grayColor] fieldtext:list2[indexPath.row]];
     field.textAlignment = NSTextAlignmentRight;
     field.borderStyle = UITextBorderStyleNone;
     field.clearButtonMode = UITextFieldViewModeWhileEditing;

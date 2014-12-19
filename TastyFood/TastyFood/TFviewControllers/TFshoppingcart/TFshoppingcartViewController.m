@@ -7,7 +7,7 @@
 //
 
 #import "TFshoppingcartViewController.h"
-
+#import "ChartSelectbuttonView.h"
 @interface TFshoppingcartViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 {
     UITableView *tableview;
@@ -104,12 +104,17 @@
         label.layer.cornerRadius = 3;
         [footView addSubview:label];
         
+        
+        ChartSelectbuttonView *view = [[ChartSelectbuttonView alloc]initWithFrame:CGRectMake(0, 35, WIGHT, 35)];
+        
+        [footView addSubview:view];
+        
         NSArray *list = @[@"不赏赐",@"赏两块",@"赏三块"];
         for (int i=0; i<3; i++) {
             UIButton *button = [UIButton ButtonWithFrame:CGRectMake(15+i*100, 35, 90, 35) Normal:nil Select:nil Title:list[i]];
             button.layer.cornerRadius = 3;
             button.backgroundColor = GreenColor_APP;
-            [footView addSubview:button];
+//            [footView addSubview:button];
         }
         
         return footView;

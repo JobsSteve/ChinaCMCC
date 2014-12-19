@@ -82,24 +82,24 @@
 +(instancetype)ButtonWithFrame:(CGRect)frame topNormalimage:(UIImage*)NormalImage topSlectimage:(UIImage *)SlectImage Title:(NSString *)title titleColor:(UIColor*)titlecolor
 {
     UIButton *bt=[UIButton buttonWithType:UIButtonTypeCustom];
-    [bt setFrame:frame];
+                 [bt setFrame:frame];
     
-    
-        [bt setTitle:title forState:UIControlStateNormal];
+
         [bt setTitleColor:titlecolor forState:UIControlStateNormal];
         bt.titleLabel.font = [UIFont systemFontOfSize:13];
-        [bt setTitleEdgeInsets:UIEdgeInsetsMake(30, -40, 0, 0)];
         bt.titleLabel.textAlignment =  NSTextAlignmentCenter;
-    
-    
+        [bt setTitle:title forState:UIControlStateNormal];
+        [bt setTitleEdgeInsets:UIEdgeInsetsMake(30, -30, 0, 0)];
+
     if (NormalImage) {
         [bt setImage:NormalImage forState:UIControlStateNormal];
-        [bt setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 15, 0)];
+        [bt setImageEdgeInsets:UIEdgeInsetsMake(-10, WIGHT/4/2-20, 20, 0)];
+        
 
     }
     if (SlectImage) {
         [bt setBackgroundImage:SlectImage forState:UIControlStateNormal];
-        [bt setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 20, 0)];
+        [bt setImageEdgeInsets:UIEdgeInsetsMake(-10, WIGHT/4/2, 20, 0)];
 
     }
     

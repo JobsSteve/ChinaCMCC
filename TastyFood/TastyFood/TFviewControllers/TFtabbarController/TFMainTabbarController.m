@@ -14,45 +14,59 @@
 #import "TFloginViewController.h"
 #import "TFshoppingcartViewController.h"
 #import "TFpersonViewController.h"
+#import "MSSlidingPanelController.h"
+#import "MSViewControllerSlidingPanel.h"
 
-
-@interface TFMainTabbarController ()
+@interface TFMainTabbarController ()<MenuTabbarViewDelegate>
+{
+    MenuTabbarView *Menutabbar;
+    
+}
+@property(nonatomic,retain)MenuTabbarView *Menutabbar;
 
 @end
 
 @implementation TFMainTabbarController
+@synthesize Menutabbar;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        CGRect frame = CGRectMake(WIGHT-WIGHT/4, -20, 80, 70);
-        UIView *v = [[UIView alloc] initWithFrame:frame];
-        v.backgroundColor = [UIColor redColor];
-//        [self.tabBar insertSubview:v atIndex:0];
-        self.tabBar.tintColor = [UIColor grayColor];
+        CGRect frame = CGRectMake(WIGHT-WIGHT/4, -23, 80, 70);
+        UIImageView *imageview = [[UIImageView alloc]initWithFrame:frame];
+        imageview.image = [UIImage imageNamed:@"shapchart.png"];
+        [self.tabBar insertSubview:imageview atIndex:5];
+        self.tabBar.tintColor = GreenColor_APP ;
+
+//
+//        self.tabBar.backgroundImage = [UIImage imageNamed:@"Toolbarbac1k.png"];
+
+        
+//        [self.tabBar setClipsToBounds:YES];
+//        self.tabBar.frame =CGRectMake(0, self.view.bounds.size.height-79, WIGHT, 79);
+        
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6)
+        {
+            [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"Toolbarbac1k.png"]];
+        }
         
         
+//        self.tabBar.alpha =0;
+
 
     }
     return self;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
+    
     [self iniAllTabBarVC];
     
-    UIButton *registButton=[UIButton ButtonWithFrame:CGRectMake(WIGHT-60, 0, 50, 35) Normal:nil Select:nil Title:@"信息"];
-    [registButton addTarget:self action:@selector(ClickBt_pushregistVC) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:registButton];
-    
-//    
-//            SlideNavigationController *firstNav = [[SlideNavigationController alloc]initWithRootViewController:self];
-    
-}
-
--(void)ClickBt_pushregistVC
-{
-    [[SlideNavigationController sharedInstance] toggleRightMenu];
-
 }
 
 -(void)iniAllTabBarVC
@@ -89,49 +103,49 @@
         NSArray *viewControls = @[firstNav,secondNav,thirdNav,fourNav];
         [self setViewControllers:viewControls animated:YES];
     
-    [self jshdf];
 }
 
 
--(void)jshdf
-{
-    
-    
-    
-//    TFfoodMarketViewController *leftMenu =[[TFfoodMarketViewController alloc]init];
-    
-    
-   
-//    [SlideNavigationController sharedInstance].rightMenu = leftMenu;
-//    [SlideNavigationController sharedInstance].leftMenu = leftMenu;
-    
-    // Creating a custom bar button for right menu
-//    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-//    [button setImage:[UIImage imageNamed:@"gear"] forState:UIControlStateNormal];
-//    [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-//    [SlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidClose object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSString *menu = note.userInfo[@"menu"];
-        NSLog(@"Closed %@", menu);
-    }];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidOpen object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSString *menu = note.userInfo[@"menu"];
-        NSLog(@"Opened %@", menu);
-    }];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidReveal object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSString *menu = note.userInfo[@"menu"];
-        NSLog(@"Revealed %@", menu);
-    }];
-    
-
-}
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
 }
+
+#pragma mark MSSlidingPanelControllerDelegate protocol
+/** @name MSSlidingPanelControllerDelegate protocol */
+
+/**
+ *  Tells the delegate that the specified side begins to bring out.
+ *
+ *  @param panelController The panel controller.
+ *  @param side            The side.
+ */
+- (void)slidingPanelController:(MSSlidingPanelController *)panelController beginsToBringOutSide:(MSSPSideDisplayed)side
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+/**
+ *  Tells the delegate that the specified side has been closed.
+ *
+ *  @param panelController The panel controller.
+ *  @param side            The side.
+ */
+- (void)slidingPanelController:(MSSlidingPanelController *)panelController hasClosedSide:(MSSPSideDisplayed)side
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
+}
+
+/**
+ *  Tells the delegate that the specified side has been opened.
+ *
+ *  @param panelController The panel controller.
+ *  @param side            The side.
+ */
+- (void)slidingPanelController:(MSSlidingPanelController *)panelController hasOpenedSide:(MSSPSideDisplayed)side
+{
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

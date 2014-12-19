@@ -50,7 +50,7 @@
     
     
     UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"蔬菜",@"水产",@"肉类",@"干货",@"其他"]];
-    segment.frame = CGRectMake(10, 5, 300, 30);
+    segment.frame = CGRectMake(10, 5, WIGHT-20, 30);
     segment.tintColor = GreenColor_APP;
     segment.backgroundColor = [UIColor whiteColor];
     
@@ -133,9 +133,8 @@
     
     
     
-    
     UIButton *move = [[UIButton alloc] initWithFrame:frame];
-    [move setBackgroundColor:[UIColor redColor]];
+    [move setImage:[UIImage imageNamed:@"shapchart.png"] forState:UIControlStateNormal];
     [move setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     move.contentMode = UIViewContentModeScaleToFill;
     [[UIApplication sharedApplication].keyWindow addSubview:move];
@@ -145,7 +144,7 @@
                                 frame.size.width, frame.size.height);
     } completion:^(BOOL finished) {
         [move removeFromSuperview];
-        
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
     }];
     
 }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuTabbarView.h"
 
 @interface TFMainTabbarController : UITabBarController
 

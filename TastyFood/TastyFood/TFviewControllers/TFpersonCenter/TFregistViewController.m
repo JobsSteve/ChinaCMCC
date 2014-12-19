@@ -40,6 +40,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initView_ForLogin];
     // Do any additional setup after loading the view.
 }
