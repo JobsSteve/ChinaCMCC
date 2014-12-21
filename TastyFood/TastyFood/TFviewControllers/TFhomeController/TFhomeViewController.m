@@ -9,7 +9,7 @@
 #import "TFhomeViewController.h"
 #import "TFloginViewController.h"
 #import "TFhtmlViewController.h"
-@interface TFhomeViewController ()<ImagePlayerViewDelegate,UIScrollViewDelegate>
+@interface TFhomeViewController ()<ImagePlayerViewDelegate,UIScrollViewDelegate,MSSlidingPanelControllerDelegate>
 {
     UIScrollView *BottomScrollview;
     ImagePlayerView *imagePlayerView;

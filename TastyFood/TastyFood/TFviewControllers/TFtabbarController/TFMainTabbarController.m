@@ -39,20 +39,13 @@
         [self.tabBar insertSubview:imageview atIndex:5];
         self.tabBar.tintColor = GreenColor_APP ;
 
-//
-//        self.tabBar.backgroundImage = [UIImage imageNamed:@"Toolbarbac1k.png"];
-
-        
-//        [self.tabBar setClipsToBounds:YES];
-//        self.tabBar.frame =CGRectMake(0, self.view.bounds.size.height-79, WIGHT, 79);
-        
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6)
         {
             [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"Toolbarbac1k.png"]];
         }
         
         
-//        self.tabBar.alpha =0;
+        
 
 
     }
@@ -110,41 +103,6 @@
 {
 }
 
-#pragma mark MSSlidingPanelControllerDelegate protocol
-/** @name MSSlidingPanelControllerDelegate protocol */
-
-/**
- *  Tells the delegate that the specified side begins to bring out.
- *
- *  @param panelController The panel controller.
- *  @param side            The side.
- */
-- (void)slidingPanelController:(MSSlidingPanelController *)panelController beginsToBringOutSide:(MSSPSideDisplayed)side
-{
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-}
-
-/**
- *  Tells the delegate that the specified side has been closed.
- *
- *  @param panelController The panel controller.
- *  @param side            The side.
- */
-- (void)slidingPanelController:(MSSlidingPanelController *)panelController hasClosedSide:(MSSPSideDisplayed)side
-{
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
-}
-
-/**
- *  Tells the delegate that the specified side has been opened.
- *
- *  @param panelController The panel controller.
- *  @param side            The side.
- */
-- (void)slidingPanelController:(MSSlidingPanelController *)panelController hasOpenedSide:(MSSPSideDisplayed)side
-{
-}
 
 
 - (void)didReceiveMemoryWarning {

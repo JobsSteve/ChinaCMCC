@@ -61,10 +61,11 @@
         badgeView = [[JSBadgeView alloc] initWithParentView:iamg1e alignment:JSBadgeViewAlignmentCenterRight];
         badgeView.badgeText = [NSString stringWithFormat:@"%d", 9];
         badgeView.badgePositionAdjustment = CGPointMake(-15, -23);
-//        badgeView.badgeShadowColor = [UIColor whiteColor];
+        badgeView.badgeShadowColor = [UIColor whiteColor];
 //        badgeView.badgeStrokeWidth = 2;
-//        
-        badgeView.badgeStrokeColor = YellowColor_APP;
+//
+        badgeView.badgeBackgroundColor = YellowColor_APP;
+//        badgeView.badgeStrokeColor = YellowColor_APP;
 //        badgeView.badgeStrokeWidth = 15;
         
         

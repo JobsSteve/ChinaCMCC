@@ -31,6 +31,8 @@
 
 #import "CellViews.h"
 
+#import "DatePickerView.h"
+
 /* 颜色宏定义 */
 
 #define RGBAcolor(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
@@ -43,7 +45,17 @@
 #define GrayColor_APP  RGBAcolor(230, 230, 230, 1)
 
 
+
+
+ #define window_APP [UIApplication sharedApplication].windows objectAtIndex:0]
+
+
+
 /* 屏幕尺寸宏定义 */
+
+
+
+
 #define WIGHT   [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT  [[UIScreen mainScreen] bounds].size.height
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)

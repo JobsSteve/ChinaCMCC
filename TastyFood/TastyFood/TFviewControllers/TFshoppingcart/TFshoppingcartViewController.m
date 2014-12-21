@@ -8,16 +8,28 @@
 
 #import "TFshoppingcartViewController.h"
 #import "ChartSelectbuttonView.h"
-@interface TFshoppingcartViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+@interface TFshoppingcartViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,DatePickerViewDelegate>
 {
     UITableView *tableview;
+    DatePickerView *datePickerView;
+    
+    
+    NSString *sendTime_value;
+
 }
 @property(nonatomic,strong)UITableView *tableview;
+@property(nonatomic,strong)DatePickerView *datePickerView;
+
+@property(nonatomic,strong)NSString *sendTime_value;
+
 
 @end
 
 @implementation TFshoppingcartViewController
 @synthesize tableview;
+@synthesize datePickerView;
+@synthesize sendTime_value;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,13 +46,27 @@
 
 
     [self initnavigationItem];
+    [self initTableview];
+    
+    [self initdatepicker];
+}
+-(void)initTableview
+{
     
     self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) tag:2];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     [self.view addSubview:self.tableview];
+    
 }
 
+-(void)initdatepicker
+{
+    self.datePickerView = [[DatePickerView alloc]initWithFrame:CGRectMake(0,200, WIGHT, 190)];
+    [self.datePickerView initShowpickerview:@[@"明天",@"后天"]  : @[@"10:100",@"11:00",@"12:100",@"13:00",@"14:100",@"15:00"]];
+    self.datePickerView.delegate = self;
+    
+}
 -(void)initnavigationItem
 {
     UIButton *registButton=[UIButton ButtonWithFrame:CGRectMake(WIGHT-90, 0, 80, 35) Normal:nil Select:nil Title:@"提交订单"];
@@ -147,21 +173,12 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         if (indexPath.row==1) {
-            
-            UIButton *datebutton = [UIButton ButtonWithFrame:CGRectMake(60, 0, 40, 40) Normal:nil Select:nil Title:@"上午"];
-            [datebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            datebutton.titleLabel.font = [UIFont systemFontOfSize:13];
-            [datebutton addTarget:self action:@selector(datebuttonAction:) forControlEvents:UIControlEventTouchUpInside];
-            
-            UIButton *timebutton = [UIButton ButtonWithFrame:CGRectMake(240, 0, 60, 40) Normal:nil Select:nil Title:@"10:00"];
-            [timebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            timebutton.titleLabel.font = [UIFont systemFontOfSize:13];
+            cell.textLabel.text =  @"配送时间";
 
-            [datebutton addTarget:self action:@selector(timebuttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            if (self.sendTime_value&&[self.sendTime_value length]>0) {
+                cell.detailTextLabel.text =self.sendTime_value;
+            }
 
-            
-            [cell.contentView addSubview:datebutton];
-            [cell.contentView addSubview:timebutton];
             
         }
         if (indexPath.row==2) {
@@ -194,17 +211,33 @@
     
     
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0) {
+        if (indexPath.row==1) {
+            
+            
+            [self.datePickerView ShowPickView];
+        }
+    }
+}
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
 }
--(void)datebuttonAction:(UIButton*)button
+//-(void)datebuttonAction:(UIButton*)button
+//{
+//    
+//}
+//-(void)timebuttonAction:(UIButton*)button
+//{
+//    
+//}
+#pragma mark -- picker delegate
+-(void)didselectPickerView:(NSString*)string
 {
-    
-}
--(void)timebuttonAction:(UIButton*)button
-{
-    
+    self.sendTime_value = string;
+    [self.tableview reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

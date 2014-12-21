@@ -45,36 +45,19 @@
 
     
 
-    TFloginViewController *rightVC = [[TFloginViewController alloc]init];
  
     TFmyPathViewController *leftVC =[[TFmyPathViewController alloc]init];
-
     CustomtabbarController *VC = [[CustomtabbarController alloc]init];
 
     
-    
-    /*
-    
-    WWSideslipViewController * slide = [[WWSideslipViewController alloc]initWithLeftView:rightVC andMainView:VC andRightView:rightVC andBackgroundImage:[UIImage imageNamed:@"bg.png"]];
-    
-    
-    //    self.view.window.rootViewController = slide;
-    //滑动速度系数
-    [slide setSpeedf:0.5];
-    
-    //点击视图是是否恢复位置
-    slide.sideslipTapGes.enabled = YES;
-    */
-//    self.window.rootViewController =  VC;
-    
+   
 
     
     MSSlidingPanelController    *slidingPanelController = [[MSSlidingPanelController alloc] initWithCenterViewController:VC leftPanelController:leftVC andRightPanelController:nil];
     [slidingPanelController setLeftPanelStatusBarColor:[UIColor clearColor]];
     [slidingPanelController setRightPanelStatusBarColor:[UIColor clearColor]];
     [slidingPanelController setDelegate:VC];
-    
-
+    [slidingPanelController setLeftPanelMaximumWidth:WIGHT-40 withCompletion:NULL];
     
     //设置导航风格
     [[UINavigationBar appearance] setBarTintColor:RGBAcolor(50, 212, 220, 1)];

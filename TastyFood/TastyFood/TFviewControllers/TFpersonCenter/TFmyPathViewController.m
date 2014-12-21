@@ -7,16 +7,181 @@
 //
 
 #import "TFmyPathViewController.h"
+#import "TFregionViewController.h"
+@interface TFmyPathViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *tableview;
+    NSInteger selectIndexrow;
+}
+@property(nonatomic,strong)UITableView *tableview;
+@property(nonatomic,assign)NSInteger selectIndexrow;
 
-@interface TFmyPathViewController ()
+
 
 @end
 
 @implementation TFmyPathViewController
+@synthesize tableview;
+@synthesize selectIndexrow;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = GreenColor_APP;
+    
+   [self.view addSubview: [UIImageView imageViewWithFrame:self.view.bounds :@"Pathbackimage.png"]];
+    
+    self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT-40, self.view.frame.size.height-49) tag:4];
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    self.tableview.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableview.separatorColor = [UIColor whiteColor];
+    self.tableview.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.tableview];
+    
+    UIView *bottomView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 64) :[UIColor clearColor]];
+    
+    UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 64) :[UIColor clearColor]];
+    
+    self.tableview.tableHeaderView = headerView;
+
+    self.tableview.tableFooterView = bottomView;
+    
+}
+#pragma mark ---------TableViewDataSource And TableViewDelegate
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section==0) {
+        return 2;
+    }
+    return 4;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section==0) {
+        return 70;
+    }
+    return 10;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section==0) {
+        return 100;
+    }
+    return 10;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 45;
+}
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section==0) {
+        UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 70) :[UIColor clearColor]];
+        
+        UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, WIGHT-40-40, 35) Normal:nil Select:nil Title:@"挑菜去"];
+        picButton.layer.cornerRadius = 4;
+        picButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        picButton.layer.borderWidth = 1;
+        picButton.clipsToBounds = YES;
+        [headerView addSubview:picButton];
+        
+        
+        return headerView;
+
+    }
+    UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 10) :[UIColor clearColor]];
+
+    return headerView;
+}
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section==0) {
+        UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 100) :[UIColor clearColor]];
+        
+        UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, 70, 70) Normal:[UIImage imageNamed:@"header.png"] Select:[UIImage imageNamed:@"header.png"] Title:nil];
+        picButton.layer.cornerRadius = 70/2;
+        picButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        picButton.layer.borderWidth = 3;
+        picButton.clipsToBounds = YES;
+        [headerView addSubview:picButton];
+        
+        UILabel *namelabel = [UILabel LabelWithFrame:CGRectMake(100, 25, 180, 20) text:@"小明" color:[UIColor whiteColor] font:17];
+        namelabel.font = [UIFont boldSystemFontOfSize:17];
+        [headerView addSubview:namelabel];
+        
+        
+        return headerView;
+    }
+    UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 10) :[UIColor clearColor]];
+
+    return headerView;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    static NSString *CellIdentifier = @"CelebrityCheckTableCell";
+    [tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell==nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.selectionStyle= UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.font = [UIFont systemFontOfSize:16];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    NSArray *list = @[@"城市:",@"区域:"];
+    NSArray *detaillist = @[@"上海",@"徐汇区"];
+
+    if (indexPath.section==0) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.imageView.image = [UIImage imageNamed:@"tabbar_01.png"];
+        cell.textLabel.text = list[indexPath.row];
+        cell.detailTextLabel.text = detaillist[indexPath.row];
+        cell.detailTextLabel.textColor = [UIColor whiteColor];
+    }
+    NSArray *list1 = @[@"浦东新区",@"嘉定区",@"徐汇区",@"闸北区"];
+
+    if (indexPath.section==1) {
+        cell.textLabel.text = list1[indexPath.row];
+
+        if (indexPath.row==self.selectIndexrow) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        
+    }
+    return cell;
+    
+    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0) {
+        
+    }
+    if (indexPath.section==1) {
+        self.selectIndexrow = indexPath.row;
+    }
+    
+    [self.tableview reloadData];
+    
+//    [[self slidingPanelController] closePanel];
+  
 }
 
 - (void)didReceiveMemoryWarning {
