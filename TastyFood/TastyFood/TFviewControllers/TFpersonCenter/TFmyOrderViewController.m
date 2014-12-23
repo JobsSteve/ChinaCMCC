@@ -44,22 +44,38 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return 3;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 1;
+    return 3;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 10;
+    return 40;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 150;
+    return 80;
 }
-
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"订单编号:20140701001";
+}
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView * headview = [UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 80) :GrayColor_APP];
+    
+    
+    UILabel *product_sn = [UILabel LabelWithFrame:CGRectMake(20, 10, 150, 20) text:@"订单编号:20140701001" color:YellowColor_APP font:14];
+    
+    UILabel *product_price = [UILabel LabelWithFrame:CGRectMake(220, 10, 80, 20) text:@"总计¥100.00 " color:[UIColor blackColor] font:14];
+    [headview addSubview:product_sn];
+    [headview addSubview:product_price];
+    
+    return headview;
+}
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -76,6 +92,7 @@
     }
    
     
+    [cell.contentView addSubview:[CellViews CellViewWithmyOrderlist:nil]];
     return cell;
     
     

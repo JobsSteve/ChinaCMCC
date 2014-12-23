@@ -20,6 +20,8 @@
 
 +(UIView *)CellViewWithShopchartlistpart:(NSDictionary*)detailInfo;
 
++(UIView *)CellViewWithmyOrderlist:(NSDictionary*)detailInfo;
+
 @end
 
 
