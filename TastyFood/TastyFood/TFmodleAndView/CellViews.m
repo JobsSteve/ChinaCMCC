@@ -23,10 +23,16 @@
     //商品价格
     UILabel *product_price = [UILabel LabelWithFrame:CGRectMake(100, 65, 60, 20) text:@"¥100.00" color:YellowColor_APP font:14];
     
+    
+    
     //数量加减编辑
     [Cellview  addSubview:[[TboxKit alloc]initWithFrame:CGRectMake(170, 65, 80, 25)]];
     
+    
+    
     UIButton *jionShopchart = [UIButton ButtonWithFrame:CGRectMake(WIGHT-60, 30, 30, 30) Normal:[UIImage imageNamed:@"shapchart.png"] Select:[UIImage imageNamed:@"shapchart.png"] Title:nil];
+   
+    
     jionShopchart.tag = 201;
     [Cellview addSubview:jionShopchart];
     
@@ -60,7 +66,7 @@
     
     
     UIButton *deleteShopButton = [UIButton ButtonWithFrame:CGRectMake(270, 25, 30, 30) Normal:[UIImage imageNamed:@"delete.png"] Select:[UIImage imageNamed:@"delete.png"] Title:@""];
-    deleteShopButton.tag = 201;
+    deleteShopButton.tag = 203;
     [Cellview addSubview:deleteShopButton];
     
     

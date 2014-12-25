@@ -22,9 +22,9 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Toolbarback.png"]];
         self.selectIndex      = 0;
-        self.titlesList       = @[@"首页",@"美家菜场",@" 我",@""];
-        self.iconsList_normal = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@""];
-        self.iconsList_selected = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@""];
+        self.titlesList       = @[@"首页",@"平价菜场",@"高端食材",@"我",@""];
+        self.iconsList_normal = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_03.png",@""];
+        self.iconsList_selected = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_03.png",@""];
         
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changebadgeNum) name:@"checkshopchartBadge" object:nil];
     }
@@ -39,12 +39,12 @@
 
     @autoreleasepool {
         
-    for (int i=0; i<4; i++) {
+    for (int i=0; i<5; i++) {
 
-        self.MenuButton = [UIButton ButtonWithFrame:CGRectMake(WIGHT/4*i, 2, WIGHT/4, 49) topNormalimage:[UIImage imageNamed:self.iconsList_normal[i]] topSlectimage:nil Title:self.titlesList[i] titleColor:[UIColor grayColor]];
+        self.MenuButton = [UIButton ButtonWithFrame:CGRectMake(WIGHT/5*i, 2, WIGHT/5, 49) topNormalimage:[UIImage imageNamed:self.iconsList_normal[i]] topSlectimage:nil Title:self.titlesList[i] titleColor:[UIColor grayColor]];
 
         if (selectIndex==i) {
-            self.MenuButton =[UIButton ButtonWithFrame:CGRectMake(WIGHT/4*i, 2, WIGHT/4, 49) topNormalimage:[UIImage imageNamed:self.iconsList_selected[selectIndex]] topSlectimage:nil Title:self.titlesList[selectIndex] titleColor:RGBAcolor(30, 140, 200, 1)];
+            self.MenuButton =[UIButton ButtonWithFrame:CGRectMake(WIGHT/5*i, 2, WIGHT/5, 49) topNormalimage:[UIImage imageNamed:self.iconsList_selected[selectIndex]] topSlectimage:nil Title:self.titlesList[selectIndex] titleColor:RGBAcolor(30, 140, 200, 1)];
         }
         
         [self.MenuButton addTarget:self action:@selector(menuAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -52,30 +52,32 @@
         [self addSubview:self.MenuButton];
     }
 
+        float x_temp = -10;
         
         
-        UIImageView *iamg1e = [UIImageView imageViewWithFrame:CGRectMake(WIGHT-WIGHT/4-12, -32, WIGHT/4, 79) :@"tabbarchart.png"];
+        UIImageView *iamg1e = [UIImageView imageViewWithFrame:CGRectMake(WIGHT-WIGHT/5-8, -32, WIGHT/5, 79-10) :@"tabbarchart.png"];
         [self addSubview:iamg1e];
         
         
+        
+        
         badgeView = [[JSBadgeView alloc] initWithParentView:iamg1e alignment:JSBadgeViewAlignmentCenterRight];
-        badgeView.badgeText = [NSString stringWithFormat:@"%d", 9];
+       
         badgeView.badgePositionAdjustment = CGPointMake(-15, -23);
         badgeView.badgeShadowColor = [UIColor whiteColor];
-//        badgeView.badgeStrokeWidth = 2;
-//
         badgeView.badgeBackgroundColor = YellowColor_APP;
-//        badgeView.badgeStrokeColor = YellowColor_APP;
-//        badgeView.badgeStrokeWidth = 15;
-        
-        
+
+        int num = [GetDefaults(@"chopchartNum") intValue];
+        if (num>0) {
+            badgeView.badgeText = [NSString stringWithFormat:@"%d", num];
+        }
     }
 
 }
 -(void)changebadgeNum
 {
-    badgeView.badgeText = [NSString stringWithFormat:@"%d", 11];
-
+    int num = [GetDefaults(@"chopchartNum") intValue];
+    badgeView.badgeText = [NSString stringWithFormat:@"%d", num];
 }
 -(void)reloadMenuView
 {

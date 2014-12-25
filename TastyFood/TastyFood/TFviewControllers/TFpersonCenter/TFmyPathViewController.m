@@ -12,23 +12,39 @@
 {
     UITableView *tableview;
     NSInteger selectIndexrow;
+    NSDictionary *dataSource;
+    NSArray *selectedScource;
+    NSString *country_string;
+    NSString *city_string;
+    NSInteger selectIndex;//0:城市 1：区域
 }
 @property(nonatomic,strong)UITableView *tableview;
 @property(nonatomic,assign)NSInteger selectIndexrow;
 
+@property(nonatomic,strong)NSDictionary *dataSource;
+@property(nonatomic,strong)NSArray *selectedScource;
 
+@property(nonatomic,strong)NSString *country_string;
+@property(nonatomic,strong)NSString *city_string;
 
+@property(nonatomic,assign)NSInteger selectIndex;
 @end
 
 @implementation TFmyPathViewController
 @synthesize tableview;
 @synthesize selectIndexrow;
-
+@synthesize dataSource;
+@synthesize selectedScource;
+@synthesize country_string,city_string;
+@synthesize selectIndex;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
+        self.dataSource = @{@"北京":@[@"朝阳区",@"通州区",@"海淀区",@"丰台区"],@"上海":@[@"浦东新区",@"嘉定区",@"徐汇区",@"闸北区"]};
+        
+        self.selectIndexrow = -1;
     }
     return self;
 }
@@ -36,7 +52,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = GreenColor_APP;
     
-   [self.view addSubview: [UIImageView imageViewWithFrame:self.view.bounds :@"Pathbackimage.png"]];
+//   [self.view addSubview: [UIImageView imageViewWithFrame:self.view.bounds :@"Pathbackimage.png"]];
     
     self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT-40, self.view.frame.size.height-49) tag:4];
     self.tableview.delegate = self;
@@ -65,7 +81,7 @@
     if (section==0) {
         return 2;
     }
-    return 4;
+    return self.selectedScource.count;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -92,6 +108,7 @@
         UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 70) :[UIColor clearColor]];
         
         UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, WIGHT-40-40, 35) Normal:nil Select:nil Title:@"挑菜去"];
+        [picButton addTarget:self action:@selector(pathDismiss:) forControlEvents:UIControlEventTouchUpInside];
         picButton.layer.cornerRadius = 4;
         picButton.layer.borderColor = [UIColor whiteColor].CGColor;
         picButton.layer.borderWidth = 1;
@@ -152,14 +169,24 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.imageView.image = [UIImage imageNamed:@"tabbar_01.png"];
         cell.textLabel.text = list[indexPath.row];
-        cell.detailTextLabel.text = detaillist[indexPath.row];
         cell.detailTextLabel.textColor = [UIColor whiteColor];
+
+//        cell.detailTextLabel.text = detaillist[indexPath.row];
+        if (self.country_string&&indexPath.row==0) {
+          cell.detailTextLabel.text = self.country_string;
+        }
+        if (self.city_string&&indexPath.row==1) {
+            cell.detailTextLabel.text = self.city_string;
+        }
     }
     NSArray *list1 = @[@"浦东新区",@"嘉定区",@"徐汇区",@"闸北区"];
 
     if (indexPath.section==1) {
-        cell.textLabel.text = list1[indexPath.row];
+        if (selectedScource) {
+            cell.textLabel.text = self.selectedScource[indexPath.row];
 
+        }
+//        cell.textLabel.text = list1[indexPath.row];
         if (indexPath.row==self.selectIndexrow) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
@@ -172,18 +199,40 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
-        
+        if (indexPath.row==0) {
+            self.selectedScource = [self.dataSource allKeys];
+        }else if (indexPath.row==1)
+        {
+            if (self.country_string==nil||self.country_string.length==0) {
+                return;
+            }
+            self.selectedScource = [self.dataSource objectForKey:self.country_string];
+
+        }
+        self.selectIndex = indexPath.row;
+
     }
     if (indexPath.section==1) {
         self.selectIndexrow = indexPath.row;
+        if (self.selectIndex == 0) {
+            self.country_string = [[self.dataSource allKeys] objectAtIndex:indexPath.row];
+        }else if (self.selectIndex==1)
+        {
+            self.city_string = [self.selectedScource  objectAtIndex:indexPath.row];
+
+        }
+
     }
     
     [self.tableview reloadData];
     
-//    [[self slidingPanelController] closePanel];
   
 }
+-(void)pathDismiss:(UIButton*)btn
+{
+    [[self slidingPanelController] closePanel];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

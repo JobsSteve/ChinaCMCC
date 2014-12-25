@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFPopupView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ASIHTTPRequest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-YLTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>25515DE5D02211408F22DE2B</key>
+		<key>0F7FAB4A123F5E94B77EC314</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3EABD603B99465AF2BD2C26A</key>
+		<key>1FA8781F617210C731AA82DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE3155C6F2D84D4F128BD86E</key>
+		<key>243B2B4ADBCFAB50DCF83367</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ECE913232E17FE3B3CB139A0</key>
+		<key>411431F9D3ABA4DA6588E30C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>496966F262F6A283932EFC87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB91EAB5EDCC97A6B8EDA829</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D94FA42BBBC675AFB52B3B65</key>
 		<dict>
 			<key>primary</key>
 			<true/>

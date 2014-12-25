@@ -43,6 +43,9 @@
     //默认不记住密码
     SetDefaults(Defaults_isRememberPsw, @NO);
 
+    if (GetDefaults(@"chopchartNum")==nil) {
+        SetDefaults(@"chopchartNum", [NSNumber numberWithInt:0]);
+    }
     
 
  
@@ -106,6 +109,9 @@
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
+
+
+
 
 #pragma mark - Core Data stack
 

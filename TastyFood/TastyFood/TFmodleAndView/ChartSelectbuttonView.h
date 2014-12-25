@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @protocol  ChartSelectbuttonViewDelegate<NSObject>
 
--(void)didselectChartSelectbuttonView:(int)indexButton;
+-(void)didselectChartSelectbuttonView:(NSInteger)indexButton;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import "TFeditAddressViewController.h"
 
-@interface TFeditAddressViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface TFeditAddressViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 {
     UITableView *tableview;
 }
@@ -93,7 +93,11 @@
     field.textAlignment = NSTextAlignmentRight;
     field.borderStyle = UITextBorderStyleNone;
     field.clearButtonMode = UITextFieldViewModeWhileEditing;
+    if (field.tag==1) {
+        field.keyboardType= UIKeyboardTypeNumberPad;
+    }
     cell.accessoryView =field;
+    
     
     return cell;
     
@@ -101,6 +105,15 @@
 }
 -(void)ClickBt_submit
 {
+    
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
     
 }
 - (void)didReceiveMemoryWarning {

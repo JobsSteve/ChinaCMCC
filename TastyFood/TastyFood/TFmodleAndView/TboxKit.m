@@ -35,9 +35,18 @@
     UIButton *AddButton = [UIButton ButtonWithFrame:CGRectMake(0, 0, 25, 25) Normal:nil Select:nil Title:@"+"];
     [AddButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [AddButton addTarget:self action:@selector(addNumAction:) forControlEvents:UIControlEventTouchUpInside];
+    AddButton.layer.borderColor = GreenColor_APP.CGColor;
+    AddButton.layer.borderWidth =0.5;
+    AddButton.layer.cornerRadius = 5;
+
+    
+    
     UIButton *RedButton = [UIButton ButtonWithFrame:CGRectMake(55, 0, 25, 25) Normal:nil Select:nil Title:@"－"];
     [RedButton addTarget:self action:@selector(redNumAction:) forControlEvents:UIControlEventTouchUpInside];
     [RedButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    RedButton.layer.borderColor = GreenColor_APP.CGColor;
+    RedButton.layer.borderWidth =0.5;
+    RedButton.layer.cornerRadius = 5;
 
     self.shopNumLabel = [UILabel LabelWithFrame:CGRectMake(25, 0, 30, 25) text:@"1" color:[UIColor grayColor] font:14];
     self.shopNumLabel.textAlignment = NSTextAlignmentCenter;

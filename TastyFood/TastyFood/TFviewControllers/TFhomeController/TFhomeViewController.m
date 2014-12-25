@@ -9,6 +9,7 @@
 #import "TFhomeViewController.h"
 #import "TFloginViewController.h"
 #import "TFhtmlViewController.h"
+#import "TFsingleCategoryViewController.h"
 @interface TFhomeViewController ()<ImagePlayerViewDelegate,UIScrollViewDelegate,MSSlidingPanelControllerDelegate>
 {
     UIScrollView *BottomScrollview;
@@ -132,11 +133,16 @@
 
     
     NSArray *buttonlist =@[button,button1,button2,button3,button4,button5,button6];
+    NSArray *labellist =@[label,label1,label2,label3,label4,label5,label6];
+
     int i=0;
     for (UIButton *btn in buttonlist) {
         [btn addSubview:list[i]];
-
-        [btn addTarget:self action:@selector(pushthis) forControlEvents:UIControlEventTouchUpInside];
+        
+        UILabel *label_temp =(UILabel*) [labellist objectAtIndex:i];
+        
+        [btn bindData:@"category_name" Value:label_temp.text];
+        [btn addTarget:self action:@selector(pushthis:) forControlEvents:UIControlEventTouchUpInside];
         [Menu_Buttomview addSubview:btn];
         i++;
     }
@@ -184,16 +190,19 @@
 
 
 
--(void)pushthis
+-(void)pushthis:(UIButton*)btn
 {
-    TFloginViewController *VC = [[TFloginViewController alloc]init];
+    TFsingleCategoryViewController *VC = [[TFsingleCategoryViewController alloc]init];
+    VC.category_Title = [btn getData:@"category_name"];
+    
+//    TFloginViewController *VC = [[TFloginViewController alloc]init];
     [self.navigationController pushViewController:VC animated:YES];
     
 }
 
 -(void)initnavigationItem
 {
-    UIButton *registButton=[UIButton ButtonWithFrame:CGRectMake(0, 0, 40, 35) Normal:nil Select:nil Title:@"我"];
+    UIButton *registButton=[UIButton ButtonWithFrame:CGRectMake(0, 0, 35, 35) Normal:[UIImage imageNamed:@"location.png"] Select:[UIImage imageNamed:@"location.png"] Title:nil];
     [registButton addTarget:[self slidingPanelController] action:@selector(openLeftPanel) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:registButton];
     

@@ -53,7 +53,7 @@
     segment.frame = CGRectMake(10, 5, WIGHT-20, 30);
     segment.tintColor = GreenColor_APP;
     segment.backgroundColor = [UIColor whiteColor];
-    
+    segment.selectedSegmentIndex = 0;
     [segmentbackgroundview addSubview:segment];
     [self.view addSubview:segmentbackgroundview];
     
@@ -98,6 +98,9 @@
 
 //加入购物车 步骤1
 -(void)jionchartAction:(UIButton *)shopCarBtt{
+    
+    
+    
     //得到产品信息
     
     UITableViewCell *cell = (UITableViewCell *)[shopCarBtt superview];
@@ -118,8 +121,6 @@
 
 
     [self addAnimatedWithFrame:CGRectMake(260,cellRect.origin.y+cellRectss.origin.y+20, 30, 30)];
-    
-    return;
     
     
 }
@@ -144,6 +145,9 @@
                                 frame.size.width, frame.size.height);
     } completion:^(BOOL finished) {
         [move removeFromSuperview];
+        
+        int num = [GetDefaults(@"chopchartNum") intValue];
+        SetDefaults(@"chopchartNum", [NSNumber numberWithInt:num+1]);
         [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
     }];
     

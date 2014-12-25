@@ -8,19 +8,22 @@
 
 #import "TFshoppingcartViewController.h"
 #import "ChartSelectbuttonView.h"
-@interface TFshoppingcartViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,DatePickerViewDelegate>
+#import "TFeditAddressViewController.h"
+@interface TFshoppingcartViewController ()<UITextViewDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,DatePickerViewDelegate>
 {
     UITableView *tableview;
     DatePickerView *datePickerView;
-    
-    
+    UITextView *textview;
     NSString *sendTime_value;
 
+    AFPopupView *successPopview;
 }
 @property(nonatomic,strong)UITableView *tableview;
 @property(nonatomic,strong)DatePickerView *datePickerView;
+@property(nonatomic,strong)UITextView *textview;
 
 @property(nonatomic,strong)NSString *sendTime_value;
+@property(nonatomic,strong)AFPopupView *successPopview;
 
 
 @end
@@ -29,6 +32,8 @@
 @synthesize tableview;
 @synthesize datePickerView;
 @synthesize sendTime_value;
+@synthesize textview;
+@synthesize successPopview;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,19 +46,38 @@
     }
     return self;
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableview reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
 
     [self initnavigationItem];
+    [self initsubview];
     [self initTableview];
     
     [self initdatepicker];
+    [self initpopview];
+}
+//初始化弹出视图
+-(void)initpopview{
+    UIImageView *imageview = [UIImageView imageViewWithFrame:CGRectMake(0, 0, WIGHT, HEIGHT) :@"ordersuccess.png"];
+    self.successPopview =  [AFPopupView popupWithView:imageview];
+
+}
+-(void)initsubview{
+    
+    self.textview = [UITextView textViewWithFrame:CGRectMake(90, 5, 200, 60) viewTag:1 viewFont:13 textColor:[UIColor grayColor]];
+    self.textview.returnKeyType = UIReturnKeyDone;
+    self.textview.delegate = self;
 }
 -(void)initTableview
 {
     
-    self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) tag:2];
+    self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49-20) tag:2];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     [self.view addSubview:self.tableview];
@@ -63,7 +87,7 @@
 -(void)initdatepicker
 {
     self.datePickerView = [[DatePickerView alloc]initWithFrame:CGRectMake(0,200, WIGHT, 190)];
-    [self.datePickerView initShowpickerview:@[@"明天",@"后天"]  : @[@"10:100",@"11:00",@"12:100",@"13:00",@"14:100",@"15:00"]];
+    [self.datePickerView initShowpickerview:@[@"明天",@"后天"]  : @[@"10:00",@"11:00",@"12:00",@"13:00",@"14:100",@"15:00"]];
     self.datePickerView.delegate = self;
     
 }
@@ -74,9 +98,22 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:registButton];
     
 }
+//提交订单
 -(void)ClickBt_submitorderVC:(UIButton*)btn
 {
-    
+
+
+    [self.successPopview show];
+
+    [self performSelector:@selector(dismisspopview) withObject:nil afterDelay:1];
+    SetDefaults(@"chopchartNum", [NSNumber numberWithInt:0]);
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
+
+}
+//提示页面消失
+-(void)dismisspopview
+{
+    [self.successPopview hide];
 }
 #pragma mark ---------TableViewDataSource And TableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -89,7 +126,7 @@
     if (section==0) {
         return 4;
     }
-    return 10;
+    return  [GetDefaults(@"chopchartNum") intValue];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -140,7 +177,6 @@
             UIButton *button = [UIButton ButtonWithFrame:CGRectMake(15+i*100, 35, 90, 35) Normal:nil Select:nil Title:list[i]];
             button.layer.cornerRadius = 3;
             button.backgroundColor = GreenColor_APP;
-//            [footView addSubview:button];
         }
         
         return footView;
@@ -174,23 +210,17 @@
         }
         if (indexPath.row==1) {
             cell.textLabel.text =  @"配送时间";
-
             if (self.sendTime_value&&[self.sendTime_value length]>0) {
                 cell.detailTextLabel.text =self.sendTime_value;
             }
-
-            
         }
         if (indexPath.row==2) {
             cell.textLabel.text =  @"服务地址";
             cell.detailTextLabel.text = @"镇江花园路103号501";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
         }
         if (indexPath.row==3) {
             cell.textLabel.text =  @"备注";
-            
-            UITextView *textview = [UITextView textViewWithFrame:CGRectMake(90, 5, 200, 60) viewTag:1 viewFont:13 textColor:[UIColor grayColor]];
             [cell.contentView addSubview:textview];
         }
 
@@ -201,7 +231,11 @@
         
         UITextField *pronumfield = (UITextField*)[cell.contentView viewWithTag:1];
         pronumfield.delegate =  self;
+        pronumfield.returnKeyType= UIReturnKeyDone;
+        pronumfield.keyboardType = UIKeyboardTypeNumberPad;
         
+        UIButton *btn =(UIButton*)[cell.contentView viewWithTag:203];
+        [btn addTarget:self action:@selector(deleteshopAction:) forControlEvents:UIControlEventTouchUpInside];
         
  
     }
@@ -215,24 +249,41 @@
 {
     if (indexPath.section==0) {
         if (indexPath.row==1) {
-            
-            
-            [self.datePickerView ShowPickView];
+          [self.datePickerView ShowPickView];
+        }
+        if (indexPath.row==0||indexPath.row==2) {
+            TFeditAddressViewController *VC = [[TFeditAddressViewController alloc]init];
+            [self.navigationController pushViewController:VC animated:YES];
         }
     }
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
+    [self.view endEditing:YES];
+
 }
-//-(void)datebuttonAction:(UIButton*)button
-//{
-//    
-//}
-//-(void)timebuttonAction:(UIButton*)button
-//{
-//    
-//}
+-(void)deleteshopAction:(UIButton*)button
+{
+    int num =  [GetDefaults(@"chopchartNum") intValue]-1;
+    SetDefaults(@"chopchartNum", [NSNumber numberWithInt:num]);
+    [self.tableview reloadData];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
+
+}
+#pragma mark - Touch事件
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.textview resignFirstResponder];
+}
+#pragma mark - UITextFieldDelegate
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    [self.textview resignFirstResponder];
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+   return  [self.textview resignFirstResponder];
+
+}
 #pragma mark -- picker delegate
 -(void)didselectPickerView:(NSString*)string
 {

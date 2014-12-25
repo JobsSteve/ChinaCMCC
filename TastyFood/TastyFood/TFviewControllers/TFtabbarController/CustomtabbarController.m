@@ -15,7 +15,7 @@
 #import "TFshoppingcartViewController.h"
 #import "TFpersonViewController.h"
 #import "TFregionViewController.h"
-
+#import "TFsuperfoodViewController.h"
 @interface CustomtabbarController ()<MenuTabbarViewDelegate,UITabBarControllerDelegate>
 {
     MenuTabbarView *Menutabbar;
@@ -26,6 +26,7 @@
 @end
 
 @implementation CustomtabbarController
+@synthesize Menutabbar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,8 +47,6 @@
     self.Menutabbar = [[MenuTabbarView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-49, WIGHT, 49)];
     [self.view addSubview:self.Menutabbar];
     self.Menutabbar.delegate =self;
-//    self.Menutabbar.badgeView.badgeText = [NSString stringWithFormat:@"%d", 19];
-
     self.selectedIndex= 0;
 
     
@@ -59,10 +58,7 @@
     self.selectedIndex = index;
 }
 
--(void)iniAllTabBarVC
-{
-    
-    
+-(void)iniAllTabBarVC{
     
     
     TFhomeViewController *home_VC = [[TFhomeViewController alloc]init];
@@ -72,25 +68,32 @@
     TFfoodMarketViewController *foodMarket_VC = [[TFfoodMarketViewController alloc]init];
     UINavigationController *secondNav = [[UINavigationController alloc]initWithRootViewController:foodMarket_VC];
     
+    TFsuperfoodViewController *superfoodMarket_VC = [[TFsuperfoodViewController alloc]init];
+    UINavigationController *thirdNav = [[UINavigationController alloc]initWithRootViewController:superfoodMarket_VC];
+    
     
     TFpersonViewController *person_VC = [[TFpersonViewController alloc]init];
-    UINavigationController *thirdNav = [[UINavigationController alloc]initWithRootViewController:person_VC];
+    UINavigationController *fourNav = [[UINavigationController alloc]initWithRootViewController:person_VC];
+    
     
     
     TFshoppingcartViewController *shoppingcart_VC = [[TFshoppingcartViewController alloc]init];
-    UINavigationController *fourNav = [[UINavigationController alloc]initWithRootViewController:shoppingcart_VC];
+    UINavigationController *fiveNav = [[UINavigationController alloc]initWithRootViewController:shoppingcart_VC];
     
     firstNav.navigationBar.translucent = NO;
     secondNav.navigationBar.translucent = NO;
     thirdNav.navigationBar.translucent = NO;
     fourNav.navigationBar.translucent = NO;
+    fiveNav.navigationBar.translucent = NO;
     
     firstNav.navigationBar.tintColor = [UIColor whiteColor];
     secondNav.navigationBar.tintColor = [UIColor whiteColor];
     thirdNav.navigationBar.tintColor = [UIColor whiteColor];
     fourNav.navigationBar.tintColor = [UIColor whiteColor];
+    fiveNav.navigationBar.tintColor = [UIColor whiteColor];
+
     
-    NSArray *viewControls = @[firstNav,secondNav,thirdNav,fourNav];
+    NSArray *viewControls = @[firstNav,secondNav,thirdNav,fourNav,fiveNav];
     [self setViewControllers:viewControls animated:YES];
     
     

@@ -69,6 +69,7 @@
 		C7798E491A36F8D0005EC0D4 /* icnbox_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = C7798E471A36F8D0005EC0D4 /* icnbox_ok.png */; };
 		C7798E4C1A36FEC6005EC0D4 /* TFregistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7798E4B1A36FEC6005EC0D4 /* TFregistViewController.m */; };
 		C7816DF11A42D6060019AD7F /* ChartSelectbuttonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7816DF01A42D6060019AD7F /* ChartSelectbuttonView.m */; };
+		C78386C51A4BBE9C00C5731E /* ordersuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = C78386C41A4BBE9C00C5731E /* ordersuccess.png */; };
 		C788D5BE1A36C76F009BA362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C788D5BD1A36C76F009BA362 /* main.m */; };
 		C788D5C11A36C76F009BA362 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C788D5C01A36C76F009BA362 /* AppDelegate.m */; };
 		C788D5C41A36C76F009BA362 /* TastyFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C788D5C21A36C76F009BA362 /* TastyFood.xcdatamodeld */; };
@@ -77,7 +78,10 @@
 		C788D5DB1A36C770009BA362 /* TastyFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C788D5DA1A36C770009BA362 /* TastyFoodTests.m */; };
 		C788D5E91A36CB41009BA362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C788D5E81A36CB41009BA362 /* Foundation.framework */; };
 		C788D5F01A36CB8C009BA362 /* TFloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C788D5EF1A36CB8C009BA362 /* TFloginViewController.m */; };
+		C79E1D0D1A4BF7C300DDE339 /* TFsuperfoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79E1D0C1A4BF7C300DDE339 /* TFsuperfoodViewController.m */; };
 		C79EB88D1A406855000F6120 /* TFhtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79EB88C1A406855000F6120 /* TFhtmlViewController.m */; };
+		C7A4A2401A4AD7F700DC8FF1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A4A23F1A4AD7F700DC8FF1 /* location.png */; };
+		C7A4A2431A4B04F500DC8FF1 /* TFsingleCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A4A2421A4B04F500DC8FF1 /* TFsingleCategoryViewController.m */; };
 		C7C2D11F1A447D5F00A493DB /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C2D11E1A447D5F00A493DB /* header.png */; };
 		C7C2D1211A447FCB00A493DB /* Pathbackimage.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C2D1201A447FCB00A493DB /* Pathbackimage.png */; };
 		C7DBA16F1A3D84A10087596E /* TboxKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA16E1A3D84A10087596E /* TboxKit.m */; };
@@ -214,6 +218,7 @@
 		C7798E4B1A36FEC6005EC0D4 /* TFregistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFregistViewController.m; sourceTree = "<group>"; };
 		C7816DEF1A42D6060019AD7F /* ChartSelectbuttonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartSelectbuttonView.h; sourceTree = "<group>"; };
 		C7816DF01A42D6060019AD7F /* ChartSelectbuttonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartSelectbuttonView.m; sourceTree = "<group>"; };
+		C78386C41A4BBE9C00C5731E /* ordersuccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ordersuccess.png; sourceTree = "<group>"; };
 		C788D5B81A36C76F009BA362 /* TastyFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788D5BC1A36C76F009BA362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C788D5BD1A36C76F009BA362 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -228,8 +233,13 @@
 		C788D5E81A36CB41009BA362 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C788D5EE1A36CB8C009BA362 /* TFloginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFloginViewController.h; sourceTree = "<group>"; };
 		C788D5EF1A36CB8C009BA362 /* TFloginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFloginViewController.m; sourceTree = "<group>"; };
+		C79E1D0B1A4BF7C300DDE339 /* TFsuperfoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFsuperfoodViewController.h; sourceTree = "<group>"; };
+		C79E1D0C1A4BF7C300DDE339 /* TFsuperfoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFsuperfoodViewController.m; sourceTree = "<group>"; };
 		C79EB88B1A406855000F6120 /* TFhtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFhtmlViewController.h; sourceTree = "<group>"; };
 		C79EB88C1A406855000F6120 /* TFhtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFhtmlViewController.m; sourceTree = "<group>"; };
+		C7A4A23F1A4AD7F700DC8FF1 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		C7A4A2411A4B04F500DC8FF1 /* TFsingleCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFsingleCategoryViewController.h; sourceTree = "<group>"; };
+		C7A4A2421A4B04F500DC8FF1 /* TFsingleCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFsingleCategoryViewController.m; sourceTree = "<group>"; };
 		C7C2D11E1A447D5F00A493DB /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		C7C2D1201A447FCB00A493DB /* Pathbackimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pathbackimage.png; sourceTree = "<group>"; };
 		C7DBA16D1A3D84A10087596E /* TboxKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TboxKit.h; sourceTree = "<group>"; };
@@ -404,6 +414,8 @@
 			children = (
 				C76FE45D1A38023C00C973BF /* TFfoodMarketViewController.h */,
 				C76FE45E1A38023C00C973BF /* TFfoodMarketViewController.m */,
+				C7A4A2411A4B04F500DC8FF1 /* TFsingleCategoryViewController.h */,
+				C7A4A2421A4B04F500DC8FF1 /* TFsingleCategoryViewController.m */,
 			);
 			path = TFfoodController;
 			sourceTree = "<group>";
@@ -586,10 +598,12 @@
 				C76FE4661A38092700C973BF /* LaunchImage */,
 				C7798E421A36F709005EC0D4 /* password@2x.png */,
 				C7C2D11E1A447D5F00A493DB /* header.png */,
+				C7A4A23F1A4AD7F700DC8FF1 /* location.png */,
 				C7C2D1201A447FCB00A493DB /* Pathbackimage.png */,
 				C7798E441A36F7D6005EC0D4 /* username@2x.png */,
 				C7798E461A36F8D0005EC0D4 /* icnbox_no.png */,
 				C7798E471A36F8D0005EC0D4 /* icnbox_ok.png */,
+				C78386C41A4BBE9C00C5731E /* ordersuccess.png */,
 			);
 			path = TFresource;
 			sourceTree = "<group>";
@@ -611,6 +625,7 @@
 		C788D5EC1A36CB8C009BA362 /* TFviewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C79E1D0A1A4BF79200DDE339 /* TFsuperfoodController */,
 				C76FE4551A3801CC00C973BF /* TFfoodController */,
 				C76FE4541A3801C500C973BF /* TFshoppingcart */,
 				C76FE4561A3801D100C973BF /* TFhomeController */,
@@ -642,6 +657,15 @@
 				C7324DA71A46E23800C9EB75 /* TFregionViewController.m */,
 			);
 			path = TFpersonCenter;
+			sourceTree = "<group>";
+		};
+		C79E1D0A1A4BF79200DDE339 /* TFsuperfoodController */ = {
+			isa = PBXGroup;
+			children = (
+				C79E1D0B1A4BF7C300DDE339 /* TFsuperfoodViewController.h */,
+				C79E1D0C1A4BF7C300DDE339 /* TFsuperfoodViewController.m */,
+			);
+			path = TFsuperfoodController;
 			sourceTree = "<group>";
 		};
 		C79EB88A1A40682F000F6120 /* TFotherController */ = {
@@ -858,11 +882,13 @@
 				C7798E451A36F7D6005EC0D4 /* username@2x.png in Resources */,
 				C7E4B2C31A388ED5000699B4 /* menu_7.png in Resources */,
 				C776501B1A41E22A00B5AFA9 /* delete.png in Resources */,
+				C78386C51A4BBE9C00C5731E /* ordersuccess.png in Resources */,
 				C76FE47C1A38092700C973BF /* LaunchImage-800-667h@2x.png in Resources */,
 				C760C1D91A3B3BEA00040DF2 /* product_4.png in Resources */,
 				C7E4B2C11A388ED5000699B4 /* menu_5.png in Resources */,
 				C7798E491A36F8D0005EC0D4 /* icnbox_ok.png in Resources */,
 				C7C2D1211A447FCB00A493DB /* Pathbackimage.png in Resources */,
+				C7A4A2401A4AD7F700DC8FF1 /* location.png in Resources */,
 				C7E4B2BF1A388ED5000699B4 /* menu_3.png in Resources */,
 				C760C1DB1A3B3BEA00040DF2 /* product_6.png in Resources */,
 				C76FE4761A38092700C973BF /* Default-Landscape~ipad.png in Resources */,
@@ -946,6 +972,7 @@
 				C7DBA1841A3DAF320087596E /* TFeditAddressViewController.m in Sources */,
 				C760C1DE1A3B408200040DF2 /* UIImageView+BindArgs.m in Sources */,
 				C76CBBE71A43172600B57BBC /* MSSlidingPanelController.m in Sources */,
+				C79E1D0D1A4BF7C300DDE339 /* TFsuperfoodViewController.m in Sources */,
 				C7E4B2861A384665000699B4 /* EGOImageButton.m in Sources */,
 				C7E4B2881A384665000699B4 /* EGOImageLoader.m in Sources */,
 				C7E4B2AB1A3849DD000699B4 /* SDWebImageCompat.m in Sources */,
@@ -953,6 +980,7 @@
 				C7E4B2B31A3849DD000699B4 /* UIImage+MultiFormat.m in Sources */,
 				C76CBBE81A43172600B57BBC /* MSViewControllerSlidingPanel.m in Sources */,
 				C7E4B2B21A3849DD000699B4 /* UIImage+GIF.m in Sources */,
+				C7A4A2431A4B04F500DC8FF1 /* TFsingleCategoryViewController.m in Sources */,
 				C7DBA16F1A3D84A10087596E /* TboxKit.m in Sources */,
 				C7E4B2AD1A3849DD000699B4 /* SDWebImageDownloader.m in Sources */,
 				C76FE4591A3801F600C973BF /* TFhomeViewController.m in Sources */,
@@ -1041,6 +1069,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1082,6 +1111,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

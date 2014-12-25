@@ -89,7 +89,15 @@
         bt.titleLabel.font = [UIFont systemFontOfSize:13];
         bt.titleLabel.textAlignment =  NSTextAlignmentCenter;
         [bt setTitle:title forState:UIControlStateNormal];
-        [bt setTitleEdgeInsets:UIEdgeInsetsMake(30, -30, 0, 0)];
+
+    float  x_temp = -20;
+    if (isiPhone6_Wight) {
+        x_temp = -15;
+    }else if (isiPhone6P_Wight){
+        x_temp = -10;
+    }
+    
+        [bt setTitleEdgeInsets:UIEdgeInsetsMake(15, x_temp, 0, 0)];
 
     if (NormalImage) {
         [bt setImage:NormalImage forState:UIControlStateNormal];
