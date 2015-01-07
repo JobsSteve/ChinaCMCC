@@ -10,6 +10,7 @@
 #import "TFloginViewController.h"
 #import "TFhtmlViewController.h"
 #import "TFsingleCategoryViewController.h"
+#import "TFfoodMarketViewController.h"
 @interface TFhomeViewController ()<ImagePlayerViewDelegate,UIScrollViewDelegate,MSSlidingPanelControllerDelegate>
 {
     UIScrollView *BottomScrollview;
@@ -49,7 +50,7 @@
     [self initContentview];
     [self initBanner];
     [self inithomeMenuButton];
-    [self inithomeProductsButton];
+    [self initbottomMenuButton];
     
     
   
@@ -60,7 +61,7 @@
 
 -(void)initContentview
 {
-    self.BottomScrollview = [UIScrollView ScrollViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) contentSize:CGSizeMake(WIGHT, 600) tag:1];
+    self.BottomScrollview = [UIScrollView ScrollViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) contentSize:CGSizeMake(WIGHT, 1020) tag:1];
     self.BottomScrollview.delegate = self;
     [self.view addSubview:self.BottomScrollview];
 }
@@ -96,104 +97,114 @@
     [self.navigationController pushViewController:VC animated:YES];
     
 }
-//banner＝150 ＋间距10   y = 160 开始  height＝200
 -(void)inithomeMenuButton
 {
-   
-    UIView *Menu_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 150, WIGHT, 220) :RGBAcolor(245, 245, 245,1)];
-//    [Menu_Buttomview addSubview:[UIView lineViewWithx:0 y:0 wight:WIGHT :[UIColor grayColor]]];
-
     
-    UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10, 10, WIGHT/2-20, 200) Normal:[UIImage imageNamed:@"menu_1.png"] Select:[UIImage imageNamed:@"menu_1.png"] Title:nil];
-    UIButton *button1 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2, 10, WIGHT/4-10, 60) Normal:[UIImage imageNamed:@"menu_2.png"] Select:[UIImage imageNamed:@"menu_2.png"] Title:nil];
-    UIButton *button2 =[UIButton ButtonWithFrame:CGRectMake(WIGHT*3/4, 10, WIGHT/4-10, 60) Normal:[UIImage imageNamed:@"menu_3.png"] Select:[UIImage imageNamed:@"menu_3.png"] Title:nil];
-    UIButton *button3 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2, 10+60+10, WIGHT/4-10, 60) Normal:[UIImage imageNamed:@"menu_4.png"] Select:[UIImage imageNamed:@"menu_4.png"] Title:nil];
-    UIButton *button4 =[UIButton ButtonWithFrame:CGRectMake(WIGHT*3/4, 10+60+10, WIGHT/4-10, 60) Normal:[UIImage imageNamed:@"menu_5.png"] Select:[UIImage imageNamed:@"menu_5.png"] Title:nil];
-    UIButton *button5 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2, 10+60*2+10*2, WIGHT/4-10, 60) Normal:[UIImage imageNamed:@"menu_6.png"] Select:[UIImage imageNamed:@"menu_6.png"] Title:nil];
-    UIButton *button6 =[UIButton ButtonWithFrame:CGRectMake(WIGHT*3/4, 10+60*2+10*2, WIGHT/4-10, 60) Normal:[UIImage imageNamed:@"menu_7.png"] Select:[UIImage imageNamed:@"menu_7.png"] Title:nil];
+    UIView *Menu_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 150, WIGHT, 450) :RGBAcolor(245, 245, 245,1)];
+    UIButton *b_ti = [UIButton ButtonWithFrame:CGRectMake(10, 5, WIGHT-20, 35) Normal:nil Select:nil Title:@"平价菜场"];
+    b_ti.backgroundColor= RGBAcolor(40, 180, 180, 1);
+    [Menu_Buttomview addSubview:b_ti];
     
-    /*
-    UILabel *label = [UILabel RightLabelWithFrame:CGRectMake(button.frame.size.width-60, button.frame.size.height-25, 50, 30) text:@"蔬菜" color:RGBAcolor(70, 150, 0, 1) font:16];
-    UILabel *label1 = [UILabel RightLabelWithFrame:CGRectMake(button1.frame.size.width-60, button1.frame.size.height-25, 60, 30) text:@"肉/禽类" color:RGBAcolor(180, 40, 60, 1) font:12];
-    UILabel *label2 = [UILabel RightLabelWithFrame:CGRectMake(button2.frame.size.width-70, button2.frame.size.height-25, 70, 30) text:@"鱼/水产品" color:RGBAcolor(40, 180, 2200, 1) font:12];
-    UILabel *label3 = [UILabel RightLabelWithFrame:CGRectMake(button3.frame.size.width-70, button3.frame.size.height-25, 70, 30) text:@"蛋/豆制品" color:RGBAcolor(170, 80, 40, 1) font:12];
-    UILabel *label4 = [UILabel RightLabelWithFrame:CGRectMake(button4.frame.size.width-60, button4.frame.size.height-25, 60, 30) text:@"熟食" color:RGBAcolor(150, 30, 0, 1) font:12];
-    UILabel *label5 = [UILabel RightLabelWithFrame:CGRectMake(button5.frame.size.width-90, button5.frame.size.height-25, 90, 30) text:@"米/油/调味品" color:RGBAcolor(80, 30, 0, 1) font:12];
-    UILabel *label6 = [UILabel RightLabelWithFrame:CGRectMake(button6.frame.size.width-60, button6.frame.size.height-25, 60, 30) text:@"其他" color:RGBAcolor(255, 255, 255, 1) font:12];
-
-     */
-    UILabel *label = [UILabel RightLabelWithFrame:CGRectMake(button.frame.size.width-60, button.frame.size.height-25, 50, 30) text:@"蔬菜" color:RGBAcolor(70, 150, 0, 1) font:16];
-    UILabel *label1 = [UILabel RightLabelWithFrame:CGRectMake(button1.frame.size.width-60, button1.frame.size.height-25, 60, 30) text:@"肉/禽类" color:[UIColor whiteColor] font:12];
-    UILabel *label2 = [UILabel RightLabelWithFrame:CGRectMake(button2.frame.size.width-70, button2.frame.size.height-25, 70, 30) text:@"鱼/水产品" color:RGBAcolor(40, 180, 2200, 1) font:12];
-    UILabel *label3 = [UILabel RightLabelWithFrame:CGRectMake(button3.frame.size.width-70, button3.frame.size.height-25, 70, 30) text:@"蛋/豆制品" color:RGBAcolor(40, 180, 2200, 1) font:12];
-    UILabel *label4 = [UILabel RightLabelWithFrame:CGRectMake(button4.frame.size.width-60, button4.frame.size.height-25, 60, 30) text:@"熟食" color:[UIColor blackColor] font:12];
-    UILabel *label5 = [UILabel RightLabelWithFrame:CGRectMake(button5.frame.size.width-90, button5.frame.size.height-25, 90, 30) text:@"米/油/调味品" color:RGBAcolor(80, 30, 0, 1) font:12];
-    UILabel *label6 = [UILabel RightLabelWithFrame:CGRectMake(button6.frame.size.width-60, button6.frame.size.height-25, 60, 30) text:@"其他" color:RGBAcolor(255, 255, 255, 1) font:12];
+    
+    UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10, 10+40, WIGHT/2, 180) Normal:[UIImage imageNamed:@"index_veg.png"] Select:[UIImage imageNamed:@"index_veg.png"] Title:nil];
+    
+    UIButton *button1 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 10+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_meat.png"] Select:[UIImage imageNamed:@"index_meat.png"] Title:nil];
+    UIButton *button2 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 90+20+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_shrimp.png"] Select:[UIImage imageNamed:@"index_shrimp.png"] Title:nil];
+    
+    
+    UIButton *button3 =[UIButton ButtonWithFrame:CGRectMake(10, 210+40, WIGHT/2, 80) Normal:[UIImage imageNamed:@"index_egg.png"] Select:[UIImage imageNamed:@"index_egg.png"] Title:nil];
+    UIButton *button4 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 210+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_cooked.png"] Select:[UIImage imageNamed:@"index_cooked.png"] Title:nil];
+    
+    
+    UIButton *button5 =[UIButton ButtonWithFrame:CGRectMake(10, 310+40, WIGHT/2, 80) Normal:[UIImage imageNamed:@"index_rice.png"] Select:[UIImage imageNamed:@"index_rice.png"] Title:nil];
+    UIButton *button6 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 310+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_more.png"] Select:[UIImage imageNamed:@"index_more.png"] Title:nil];
+    
+    
+    
+    
+    
+    UILabel *label = [UILabel leftLabelWithFrame:CGRectMake(10, 230, 50, 20) text:@"蔬菜" color:[UIColor blackColor] font:12];
+    UILabel *label1 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 130, 80, 20) text:@"肉/禽类" color:[UIColor blackColor] font:12];
+    UILabel *label2 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 230, 100, 20) text:@"鱼/水产品" color:[UIColor blackColor] font:12];
+    UILabel *label3 = [UILabel leftLabelWithFrame:CGRectMake(10, 330, 100, 20) text:@"蛋/豆制品" color:[UIColor blackColor] font:12];
+    UILabel *label4 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 330, 80, 20) text:@"熟食" color:[UIColor blackColor] font:12];
+    UILabel *label5 = [UILabel leftLabelWithFrame:CGRectMake(10, 430, 130, 20) text:@"米/油/调味品" color:[UIColor blackColor] font:12];
+    UILabel *label6 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 430, 80, 20) text:@"其他" color:[UIColor blackColor] font:12];
     NSArray *list = @[label,label1,label2,label3,label4,label5,label6];
-
+    
     
     NSArray *buttonlist =@[button,button1,button2,button3,button4,button5,button6];
     NSArray *labellist =@[label,label1,label2,label3,label4,label5,label6];
-
+    
     int i=0;
     for (UIButton *btn in buttonlist) {
-        [btn addSubview:list[i]];
-        
         UILabel *label_temp =(UILabel*) [labellist objectAtIndex:i];
-        
         [btn bindData:@"category_name" Value:label_temp.text];
         [btn addTarget:self action:@selector(pushthis:) forControlEvents:UIControlEventTouchUpInside];
         [Menu_Buttomview addSubview:btn];
+        [Menu_Buttomview addSubview:list[i]];
         i++;
     }
-
+    
     [self.BottomScrollview addSubview:Menu_Buttomview];;
-
+    
 }
-// 360 + 10 , y =370开始
--(void)inithomeProductsButton
+
+-(void)initbottomMenuButton
 {
-    UIView *Product_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 370, WIGHT, 200) :[UIColor whiteColor]];
-    [Product_Buttomview addSubview:[UIView lineViewWithx:0 y:0 wight:WIGHT :RGBAcolor(210, 210, 210, 1)]];
-
-    [Product_Buttomview addSubview:[UIImageView imageViewWithFrame:CGRectMake(10, 0, 80, 30) :@"hometitle_image.png" ]];
+    
+    UIView *Menu_Buttomview2 = [UIView ViewWithFrame:CGRectMake(0, 620, WIGHT, 400) :RGBAcolor(245, 245, 245,1)];
+    UIButton *b_ti = [UIButton ButtonWithFrame:CGRectMake(10, 5, WIGHT-20, 35) Normal:nil Select:nil Title:@"高端食材"];
+    b_ti.backgroundColor= RGBAcolor(40, 180, 180, 1);
+    [Menu_Buttomview2 addSubview:b_ti];
+    
+    
+    UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10, 10+40, WIGHT/2, 180) Normal:[UIImage imageNamed:@"index_fruits.png"] Select:[UIImage imageNamed:@"index_fruits.png"] Title:nil];
+    
+    UIButton *button1 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 10+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_Organic.png"] Select:[UIImage imageNamed:@"index_Organic.png"] Title:nil];
+    UIButton *button2 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 90+20+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_import.png"] Select:[UIImage imageNamed:@"index_import.png"] Title:nil];
+    
+    
+    UIButton *button3 =[UIButton ButtonWithFrame:CGRectMake(10, 210+40, WIGHT/2, 80) Normal:[UIImage imageNamed:@"index_seafood.png"] Select:[UIImage imageNamed:@"index_seafood.png"] Title:nil];
+    UIButton *button4 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 210+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_drink.png"] Select:[UIImage imageNamed:@"index_drink.png"] Title:nil];
     
     
     
-    for (int i=0; i<2; i++) {
-        for (int j=0; j<3; j++) {
-            NSArray *imagename_list = (i==0?@[@"product_1.png",@"product_2.png",@"product_3.png"]:@[@"product_4.png",@"product_5.png",@"product_6.png"]);
-             // [NSString stringWithFormat:@"product_%d.png",i*j+j];
-            //imagename_list[j]
-            UIButton *button =[UIButton ButtonWithFrame:CGRectMake(10+j*(WIGHT-10*2)/3, 40+i*80, (WIGHT-25*2)/3, 80) Normal:[UIImage imageNamed:@"product_2.png"] Select:[UIImage imageNamed:@"product_2.png"] Title:nil];
-            [Product_Buttomview addSubview:button];
-
-        }
+    
+    UILabel *label = [UILabel leftLabelWithFrame:CGRectMake(10, 230, 50, 20) text:@"全球水果" color:[UIColor blackColor] font:12];
+    UILabel *label1 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 130, 80, 20) text:@"有机食品" color:[UIColor blackColor] font:12];
+    UILabel *label2 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 230, 100, 20) text:@"进口美食" color:[UIColor blackColor] font:12];
+    UILabel *label3 = [UILabel leftLabelWithFrame:CGRectMake(10, 330, 100, 20) text:@"精选海鲜" color:[UIColor blackColor] font:12];
+    UILabel *label4 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 330, 80, 20) text:@"中外名酒" color:[UIColor blackColor] font:12];
+    NSArray *list = @[label,label1,label2,label3,label4];
+    
+    
+    NSArray *buttonlist =@[button,button1,button2,button3,button4];
+    NSArray *labellist =@[label,label1,label2,label3,label4];
+    
+    int i=0;
+    for (UIButton *btn in buttonlist) {
+        UILabel *label_temp =(UILabel*) [labellist objectAtIndex:i];
+        [btn bindData:@"category_name" Value:label_temp.text];
+        [btn addTarget:self action:@selector(pushthis:) forControlEvents:UIControlEventTouchUpInside];
+        [Menu_Buttomview2 addSubview:btn];
+        [Menu_Buttomview2 addSubview:list[i]];
+        i++;
     }
-    [self.BottomScrollview addSubview:Product_Buttomview];
     
-    UIView *line =[UIView lineViewWithx:WIGHT/3 y:40 height:160 :GrayColor_APP];
-    UIView *line2 =[UIView lineViewWithx:WIGHT*2/3 y:40 height:160 :GrayColor_APP];
-    UIView *line3 =[UIView lineViewWithx:10 y:120 wight:300 :GrayColor_APP];
-
-    [Product_Buttomview addSubview:line];
-    [Product_Buttomview addSubview:line2];
-    [Product_Buttomview addSubview:line3];
-
-
+    [self.BottomScrollview addSubview:Menu_Buttomview2];;
     
 }
-
-
-
 
 
 
 
 -(void)pushthis:(UIButton*)btn
 {
-    TFsingleCategoryViewController *VC = [[TFsingleCategoryViewController alloc]init];
-    VC.category_Title = [btn getData:@"category_name"];
+    TFsingleCategoryViewController *VC1 = [[TFsingleCategoryViewController alloc]init];
+  
+    TFfoodMarketViewController *VC = [[TFfoodMarketViewController alloc]init];
+//    VC.category_Title = [btn getData:@"category_name"];
     
 //    TFloginViewController *VC = [[TFloginViewController alloc]init];
     [self.navigationController pushViewController:VC animated:YES];

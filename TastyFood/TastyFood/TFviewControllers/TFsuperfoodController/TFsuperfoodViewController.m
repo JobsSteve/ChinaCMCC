@@ -7,8 +7,8 @@
 //
 
 #import "TFsuperfoodViewController.h"
-
-@interface TFsuperfoodViewController ()
+#import "superMenu.h"
+@interface TFsuperfoodViewController ()<superMenuViewDelegate>
 
 @end
 
@@ -23,7 +23,21 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    UIImageView *imageView = [UIImageView imageViewWithFrame:self.view.bounds :@"superbackground.png"];
+    [self.view addSubview:imageView];
+    
+    
+    superMenu *superMenuview = [[superMenu alloc]initWithFrame:CGRectMake(0, 40, WIGHT, 200)];
+    superMenuview.delegate=self;
+    [self.view addSubview:superMenuview];
+    
     // Do any additional setup after loading the view.
+}
+-(void)didselectChartSelectbuttonView:(NSInteger)indexButton
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

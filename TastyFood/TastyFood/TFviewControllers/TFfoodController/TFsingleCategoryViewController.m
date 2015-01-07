@@ -7,7 +7,7 @@
 //
 
 #import "TFsingleCategoryViewController.h"
-
+#import "ShopImage.h"
 @interface TFsingleCategoryViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView *tableview;
@@ -97,56 +97,38 @@
     
     
     //得到产品信息
-    
     UITableViewCell *cell = (UITableViewCell *)[shopCarBtt superview];
-    
     CGRect cellRectss = [self.view convertRect:cell.frame fromView:self.tableview];
-    
-    NSLog(@"%lf",cellRectss.origin.y);
-    
     CGRect cellRect = [self.tableview rectForRowAtIndexPath:[shopCarBtt getData:@"sa"]];
-    
-    
-    NSLog(@"%lf",cellRect.origin.y);
-    
-    NSLog(@"%lf",cellRect.origin.y+cellRectss.origin.y);
-    
-    
     UIButton *shopCarBt= [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    
     [self addAnimatedWithFrame:CGRectMake(260,cellRect.origin.y+cellRectss.origin.y+20, 30, 30)];
     
     
 }
-#pragma mark - 添加到购物车的动画效果
-// huangyibiao
+
 - (void)addAnimatedWithFrame:(CGRect)frame {
     
     
     // 该部分动画 以self.view为参考系进行
     frame = [[UIApplication sharedApplication].keyWindow  convertRect:frame fromView:self.view];
+    CGPoint endpoint = CGPointMake(frame.origin.x+40, self.view.window.bounds.size.height-49);
+    CGPoint startpoint = CGPointMake(40, frame.origin.y+20);
     
     
     
-    UIButton *move = [[UIButton alloc] initWithFrame:frame];
-    [move setImage:[UIImage imageNamed:@"shapchart.png"] forState:UIControlStateNormal];
-    [move setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    move.contentMode = UIViewContentModeScaleToFill;
-    [[UIApplication sharedApplication].keyWindow addSubview:move];
-    // 加入购物车动画效果
-    [UIView animateWithDuration:1.2 animations:^{
-        move.frame = CGRectMake(frame.origin.x, self.view.window.bounds.size.height-49,
-                                frame.size.width, frame.size.height);
-    } completion:^(BOOL finished) {
-        [move removeFromSuperview];
-        
-        int num = [GetDefaults(@"chopchartNum") intValue];
-        SetDefaults(@"chopchartNum", [NSNumber numberWithInt:num+1]);
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
-    }];
+    
+    ShopImage *image1 =[[ShopImage alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [self.view.window addSubview:image1];
+    [image1 addAnimatedWithFrame:startpoint :endpoint];
+    
+    
+    int num = [GetDefaults(@"chopchartNum") intValue];
+    SetDefaults(@"chopchartNum", [NSNumber numberWithInt:num+1]);
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
     
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
