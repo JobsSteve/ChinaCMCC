@@ -30,6 +30,7 @@
 #import "CellViews.h"
 
 #import "DatePickerView.h"
+#import "TSLocateView.h"
 #import <AFPopupView/AFPopupView.h>
 
 

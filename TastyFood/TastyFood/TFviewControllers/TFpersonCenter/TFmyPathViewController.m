@@ -8,7 +8,7 @@
 
 #import "TFmyPathViewController.h"
 #import "TFregionViewController.h"
-@interface TFmyPathViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface TFmyPathViewController ()<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
 {
     UITableView *tableview;
     NSInteger selectIndexrow;
@@ -75,28 +75,19 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section==0) {
-        return 2;
-    }
-    return self.selectedScource.count;
+        return 1;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section==0) {
         return 70;
-    }
-    return 10;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section==0) {
         return 100;
-    }
-    return 10;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -104,47 +95,36 @@
 }
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    if (section==0) {
-        UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 70) :[UIColor clearColor]];
-        
-        UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, WIGHT-40-40, 35) Normal:nil Select:nil Title:@"挑菜去"];
-        [picButton addTarget:self action:@selector(pathDismiss:) forControlEvents:UIControlEventTouchUpInside];
-        picButton.layer.cornerRadius = 4;
-        picButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        picButton.layer.borderWidth = 1;
-        picButton.clipsToBounds = YES;
-        [headerView addSubview:picButton];
-        
-        
-        return headerView;
+    UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 70) :[UIColor clearColor]];
+    
+    UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, WIGHT-40-40, 35) Normal:nil Select:nil Title:@"挑菜去"];
+    [picButton addTarget:self action:@selector(pathDismiss:) forControlEvents:UIControlEventTouchUpInside];
+    picButton.layer.cornerRadius = 4;
+    picButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    picButton.layer.borderWidth = 1;
+    picButton.clipsToBounds = YES;
+    [headerView addSubview:picButton];
 
-    }
-    UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 10) :[UIColor clearColor]];
-
+   
     return headerView;
 }
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (section==0) {
-        UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 100) :[UIColor clearColor]];
-        
-        UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, 70, 70) Normal:[UIImage imageNamed:@"header.png"] Select:[UIImage imageNamed:@"header.png"] Title:nil];
-        picButton.layer.cornerRadius = 70/2;
-        picButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        picButton.layer.borderWidth = 3;
-        picButton.clipsToBounds = YES;
-        [headerView addSubview:picButton];
-        
-        UILabel *namelabel = [UILabel LabelWithFrame:CGRectMake(100, 25, 180, 20) text:@"小明" color:[UIColor whiteColor] font:17];
-        namelabel.font = [UIFont boldSystemFontOfSize:17];
-        [headerView addSubview:namelabel];
-        
-        
-        return headerView;
-    }
-    UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 10) :[UIColor clearColor]];
-
+    UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 100) :[UIColor clearColor]];
+    
+    UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, 70, 70) Normal:[UIImage imageNamed:@"header.png"] Select:[UIImage imageNamed:@"header.png"] Title:nil];
+    picButton.layer.cornerRadius = 70/2;
+    picButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    picButton.layer.borderWidth = 3;
+    picButton.clipsToBounds = YES;
+    [headerView addSubview:picButton];
+    
+    UILabel *namelabel = [UILabel LabelWithFrame:CGRectMake(100, 25, 180, 20) text:@"小明" color:[UIColor whiteColor] font:17];
+    namelabel.font = [UIFont boldSystemFontOfSize:17];
+    [headerView addSubview:namelabel];
+    
     return headerView;
+
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -161,72 +141,43 @@
         cell.textLabel.font = [UIFont systemFontOfSize:16];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
         cell.backgroundColor = [UIColor clearColor];
-    }
-    NSArray *list = @[@"城市:",@"区域:"];
-    NSArray *detaillist = @[@"上海",@"徐汇区"];
-
-    if (indexPath.section==0) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.imageView.image = [UIImage imageNamed:@"tabbar_01.png"];
-        cell.textLabel.text = list[indexPath.row];
         cell.detailTextLabel.textColor = [UIColor whiteColor];
-
-//        cell.detailTextLabel.text = detaillist[indexPath.row];
-        if (self.country_string&&indexPath.row==0) {
-          cell.detailTextLabel.text = self.country_string;
-        }
-        if (self.city_string&&indexPath.row==1) {
-            cell.detailTextLabel.text = self.city_string;
-        }
     }
-    NSArray *list1 = @[@"浦东新区",@"嘉定区",@"徐汇区",@"闸北区"];
 
-    if (indexPath.section==1) {
-        if (selectedScource) {
-            cell.textLabel.text = self.selectedScource[indexPath.row];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.imageView.image = [UIImage imageNamed:@"location.png"];
+        cell.textLabel.text = @"选择城市:";
 
-        }
-//        cell.textLabel.text = list1[indexPath.row];
-        if (indexPath.row==self.selectIndexrow) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }
-        
+    if (self.country_string.length>0) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",self.country_string,self.city_string];
     }
+    
+   
     return cell;
     
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section==0) {
-        if (indexPath.row==0) {
-            self.selectedScource = [self.dataSource allKeys];
-        }else if (indexPath.row==1)
-        {
-            if (self.country_string==nil||self.country_string.length==0) {
-                return;
-            }
-            self.selectedScource = [self.dataSource objectForKey:self.country_string];
-
-        }
-        self.selectIndex = indexPath.row;
-
-    }
-    if (indexPath.section==1) {
-        self.selectIndexrow = indexPath.row;
-        if (self.selectIndex == 0) {
-            self.country_string = [[self.dataSource allKeys] objectAtIndex:indexPath.row];
-        }else if (self.selectIndex==1)
-        {
-            self.city_string = [self.selectedScource  objectAtIndex:indexPath.row];
-
-        }
-
-    }
+    TSLocateView *locateView = [[TSLocateView alloc] initWithTitle:@"定位城市" delegate:self];
+    [locateView showInView:self.view.window];
     
-    [self.tableview reloadData];
-    
-  
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    TSLocateView *locateView = (TSLocateView *)actionSheet;
+    TSLocation *location = locateView.locate;
+    NSLog(@"country:%@ city:%@ lat:%f lon:%f",location.state, location.city, location.latitude, location.longitude);
+    //You can uses location to your application.
+    if(buttonIndex == 0) {
+        NSLog(@"Cancel");
+    }else {
+        NSLog(@"Select");
+        self.country_string = location.state;
+        self.city_string = location.city;
+        [self.tableview reloadData];
+        
+    }
 }
 -(void)pathDismiss:(UIButton*)btn
 {

@@ -127,6 +127,18 @@
 		C7E4B2C11A388ED5000699B4 /* menu_5.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E4B2BA1A388ED5000699B4 /* menu_5.png */; };
 		C7E4B2C21A388ED5000699B4 /* menu_6.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E4B2BB1A388ED5000699B4 /* menu_6.png */; };
 		C7E4B2C31A388ED5000699B4 /* menu_7.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E4B2BC1A388ED5000699B4 /* menu_7.png */; };
+		C7EAEF121A5ECA2800BB9E13 /* bg_023@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF051A5ECA2800BB9E13 /* bg_023@2x.png */; };
+		C7EAEF131A5ECA2800BB9E13 /* btn_020.disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF061A5ECA2800BB9E13 /* btn_020.disable@2x.png */; };
+		C7EAEF141A5ECA2800BB9E13 /* btn_020.press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF071A5ECA2800BB9E13 /* btn_020.press@2x.png */; };
+		C7EAEF151A5ECA2800BB9E13 /* btn_020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF081A5ECA2800BB9E13 /* btn_020@2x.png */; };
+		C7EAEF161A5ECA2800BB9E13 /* btn_021.disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF091A5ECA2800BB9E13 /* btn_021.disable@2x.png */; };
+		C7EAEF171A5ECA2800BB9E13 /* btn_021.press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF0A1A5ECA2800BB9E13 /* btn_021.press@2x.png */; };
+		C7EAEF181A5ECA2800BB9E13 /* btn_021@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF0B1A5ECA2800BB9E13 /* btn_021@2x.png */; };
+		C7EAEF191A5ECA2800BB9E13 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF0C1A5ECA2800BB9E13 /* ProvincesAndCities.plist */; };
+		C7EAEF1A1A5ECA2800BB9E13 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EAEF0E1A5ECA2800BB9E13 /* TSLocateView.m */; };
+		C7EAEF1B1A5ECA2800BB9E13 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF0F1A5ECA2800BB9E13 /* TSLocateView.xib */; };
+		C7EAEF1C1A5ECA2800BB9E13 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EAEF111A5ECA2800BB9E13 /* TSLocation.m */; };
+		C7EAEF1F1A5ECB6600BB9E13 /* TFcityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EAEF1E1A5ECB6600BB9E13 /* TFcityViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +337,21 @@
 		C7E4B2BA1A388ED5000699B4 /* menu_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_5.png; sourceTree = "<group>"; };
 		C7E4B2BB1A388ED5000699B4 /* menu_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_6.png; sourceTree = "<group>"; };
 		C7E4B2BC1A388ED5000699B4 /* menu_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_7.png; sourceTree = "<group>"; };
+		C7EAEF051A5ECA2800BB9E13 /* bg_023@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_023@2x.png"; sourceTree = "<group>"; };
+		C7EAEF061A5ECA2800BB9E13 /* btn_020.disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_020.disable@2x.png"; sourceTree = "<group>"; };
+		C7EAEF071A5ECA2800BB9E13 /* btn_020.press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_020.press@2x.png"; sourceTree = "<group>"; };
+		C7EAEF081A5ECA2800BB9E13 /* btn_020@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_020@2x.png"; sourceTree = "<group>"; };
+		C7EAEF091A5ECA2800BB9E13 /* btn_021.disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_021.disable@2x.png"; sourceTree = "<group>"; };
+		C7EAEF0A1A5ECA2800BB9E13 /* btn_021.press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_021.press@2x.png"; sourceTree = "<group>"; };
+		C7EAEF0B1A5ECA2800BB9E13 /* btn_021@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_021@2x.png"; sourceTree = "<group>"; };
+		C7EAEF0C1A5ECA2800BB9E13 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProvincesAndCities.plist; sourceTree = "<group>"; };
+		C7EAEF0D1A5ECA2800BB9E13 /* TSLocateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocateView.h; sourceTree = "<group>"; };
+		C7EAEF0E1A5ECA2800BB9E13 /* TSLocateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocateView.m; sourceTree = "<group>"; };
+		C7EAEF0F1A5ECA2800BB9E13 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
+		C7EAEF101A5ECA2800BB9E13 /* TSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocation.h; sourceTree = "<group>"; };
+		C7EAEF111A5ECA2800BB9E13 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
+		C7EAEF1D1A5ECB6600BB9E13 /* TFcityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFcityViewController.h; sourceTree = "<group>"; };
+		C7EAEF1E1A5ECB6600BB9E13 /* TFcityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFcityViewController.m; sourceTree = "<group>"; };
 		D7C04C2A580B83DDA5C2D5DC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E731F1645B1D8790DB04C6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -663,6 +690,7 @@
 			children = (
 				C715EA271A5D85F9008294D1 /* ASIHttpMangment.h */,
 				C715EA281A5D85F9008294D1 /* ASIHttpMangment.m */,
+				C7EAEF031A5ECA2800BB9E13 /* TFCityPickerview */,
 				C76CBBE21A43172600B57BBC /* MSSlidingPanelController */,
 				C77650161A41DCCC00B5AFA9 /* JSBadgeView */,
 				C76CBBDE1A43146D00B57BBC /* WWSideslipViewControllerClass */,
@@ -705,6 +733,8 @@
 				C7DBA1861A3DB13D0087596E /* TFmyOrderViewController.m */,
 				C76CBBE91A431E3500B57BBC /* TFmyPathViewController.h */,
 				C76CBBEA1A431E3500B57BBC /* TFmyPathViewController.m */,
+				C7EAEF1D1A5ECB6600BB9E13 /* TFcityViewController.h */,
+				C7EAEF1E1A5ECB6600BB9E13 /* TFcityViewController.m */,
 				C7324DA61A46E23800C9EB75 /* TFregionViewController.h */,
 				C7324DA71A46E23800C9EB75 /* TFregionViewController.m */,
 			);
@@ -833,6 +863,34 @@
 			path = homemenu_icons;
 			sourceTree = "<group>";
 		};
+		C7EAEF031A5ECA2800BB9E13 /* TFCityPickerview */ = {
+			isa = PBXGroup;
+			children = (
+				C7EAEF041A5ECA2800BB9E13 /* img */,
+				C7EAEF0C1A5ECA2800BB9E13 /* ProvincesAndCities.plist */,
+				C7EAEF0D1A5ECA2800BB9E13 /* TSLocateView.h */,
+				C7EAEF0E1A5ECA2800BB9E13 /* TSLocateView.m */,
+				C7EAEF0F1A5ECA2800BB9E13 /* TSLocateView.xib */,
+				C7EAEF101A5ECA2800BB9E13 /* TSLocation.h */,
+				C7EAEF111A5ECA2800BB9E13 /* TSLocation.m */,
+			);
+			path = TFCityPickerview;
+			sourceTree = "<group>";
+		};
+		C7EAEF041A5ECA2800BB9E13 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				C7EAEF051A5ECA2800BB9E13 /* bg_023@2x.png */,
+				C7EAEF061A5ECA2800BB9E13 /* btn_020.disable@2x.png */,
+				C7EAEF071A5ECA2800BB9E13 /* btn_020.press@2x.png */,
+				C7EAEF081A5ECA2800BB9E13 /* btn_020@2x.png */,
+				C7EAEF091A5ECA2800BB9E13 /* btn_021.disable@2x.png */,
+				C7EAEF0A1A5ECA2800BB9E13 /* btn_021.press@2x.png */,
+				C7EAEF0B1A5ECA2800BB9E13 /* btn_021@2x.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -915,13 +973,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7EAEF151A5ECA2800BB9E13 /* btn_020@2x.png in Resources */,
 				C76FE47D1A38092700C973BF /* LaunchImage-800-Landscape-736h@3x.png in Resources */,
 				C715EA231A5D7851008294D1 /* superbackground.png in Resources */,
 				C7E4B2BD1A388ED5000699B4 /* menu_1.png in Resources */,
 				C77650101A41D5DE00B5AFA9 /* tabbar_02@2x.png in Resources */,
 				C77650111A41D5DE00B5AFA9 /* tabbar_03.png in Resources */,
+				C7EAEF121A5ECA2800BB9E13 /* bg_023@2x.png in Resources */,
 				C77650121A41D5DE00B5AFA9 /* tabbar_03@2x.png in Resources */,
 				C757CC221A5AE8D40096689F /* index_fruits.png in Resources */,
+				C7EAEF181A5ECA2800BB9E13 /* btn_021@2x.png in Resources */,
 				C77650141A41D5DE00B5AFA9 /* tabbarchart@2x.png in Resources */,
 				C757CC231A5AE8D40096689F /* index_import.png in Resources */,
 				C7C2D11F1A447D5F00A493DB /* header.png in Resources */,
@@ -929,6 +990,7 @@
 				C7798E481A36F8D0005EC0D4 /* icnbox_no.png in Resources */,
 				C77650151A41D5DE00B5AFA9 /* Toolbarback.png in Resources */,
 				C7E4B2BE1A388ED5000699B4 /* menu_2.png in Resources */,
+				C7EAEF141A5ECA2800BB9E13 /* btn_020.press@2x.png in Resources */,
 				C757CC241A5AE8D40096689F /* index_Organic.png in Resources */,
 				C76CBBD11A42FC1200B57BBC /* hometitle_image.png in Resources */,
 				C788D5CF1A36C76F009BA362 /* LaunchScreen.xib in Resources */,
@@ -946,9 +1008,12 @@
 				C7C2D1211A447FCB00A493DB /* Pathbackimage.png in Resources */,
 				C7A4A2401A4AD7F700DC8FF1 /* location.png in Resources */,
 				C7E4B2BF1A388ED5000699B4 /* menu_3.png in Resources */,
+				C7EAEF171A5ECA2800BB9E13 /* btn_021.press@2x.png in Resources */,
 				C757CC251A5AE8D40096689F /* index_seafood.png in Resources */,
+				C7EAEF191A5ECA2800BB9E13 /* ProvincesAndCities.plist in Resources */,
 				C76FE4761A38092700C973BF /* Default-Landscape~ipad.png in Resources */,
 				C757CC311A5AEB2A0096689F /* index_more.png in Resources */,
+				C7EAEF1B1A5ECA2800BB9E13 /* TSLocateView.xib in Resources */,
 				C76FE4771A38092700C973BF /* Default-Portrait@2x~ipad.png in Resources */,
 				C788D5CC1A36C76F009BA362 /* Images.xcassets in Resources */,
 				C77650131A41D5DE00B5AFA9 /* tabbarchart.png in Resources */,
@@ -959,11 +1024,13 @@
 				C776500E1A41D5DE00B5AFA9 /* tabbar_01@2x.png in Resources */,
 				C76FE4741A38092700C973BF /* Default-568h@2x.png in Resources */,
 				C7798E431A36F709005EC0D4 /* password@2x.png in Resources */,
+				C7EAEF161A5ECA2800BB9E13 /* btn_021.disable@2x.png in Resources */,
 				C76FE47B1A38092700C973BF /* LaunchImage-700-568h@2x.png in Resources */,
 				C7E4B2C21A388ED5000699B4 /* menu_6.png in Resources */,
 				C757CC331A5AEB2A0096689F /* index_shrimp.png in Resources */,
 				C757CC2F1A5AEB2A0096689F /* index_egg.png in Resources */,
 				C776500F1A41D5DE00B5AFA9 /* tabbar_02.png in Resources */,
+				C7EAEF131A5ECA2800BB9E13 /* btn_020.disable@2x.png in Resources */,
 				C757CC2E1A5AEB2A0096689F /* index_cooked.png in Resources */,
 				C757CC341A5AEB2A0096689F /* index_veg.png in Resources */,
 				C76FE4731A38092700C973BF /* Contents.json in Resources */,
@@ -1022,6 +1089,7 @@
 				C7E4B2AC1A3849DD000699B4 /* SDWebImageDecoder.m in Sources */,
 				C7798E3B1A36EA30005EC0D4 /* NSURLRequest+NSURLRequestWithIgnoreSSL.m in Sources */,
 				C760C1FF1A3B59E000040DF2 /* CellViews.m in Sources */,
+				C7EAEF1F1A5ECB6600BB9E13 /* TFcityViewController.m in Sources */,
 				C7798E3D1A36EA30005EC0D4 /* UIButton+BindArgs.m in Sources */,
 				C7798E3F1A36EA30005EC0D4 /* UIView+BindArgs.m in Sources */,
 				C757CC1A1A5ACED80096689F /* ShopImage.m in Sources */,
@@ -1046,6 +1114,7 @@
 				C76FE4591A3801F600C973BF /* TFhomeViewController.m in Sources */,
 				C7E4B2B11A3849DD000699B4 /* UIButton+WebCache.m in Sources */,
 				C7798E3E1A36EA30005EC0D4 /* UIImageView+WebCache.m in Sources */,
+				C7EAEF1A1A5ECA2800BB9E13 /* TSLocateView.m in Sources */,
 				C76FE45F1A38023C00C973BF /* TFfoodMarketViewController.m in Sources */,
 				C7DBA1781A3D92570087596E /* UITextField+BindArgs.m in Sources */,
 				C7DBA1751A3D8DFD0087596E /* UITextView+BindArgs.m in Sources */,
@@ -1069,6 +1138,7 @@
 				C7324DAE1A46F19800C9EB75 /* DatePickerView.m in Sources */,
 				C7DBA1A41A3DE6470087596E /* welcomeViewController.m in Sources */,
 				C788D5C41A36C76F009BA362 /* TastyFood.xcdatamodeld in Sources */,
+				C7EAEF1C1A5ECA2800BB9E13 /* TSLocation.m in Sources */,
 				C788D5C11A36C76F009BA362 /* AppDelegate.m in Sources */,
 				C79EB88D1A406855000F6120 /* TFhtmlViewController.m in Sources */,
 				C788D5BE1A36C76F009BA362 /* main.m in Sources */,
