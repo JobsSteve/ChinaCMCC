@@ -17,6 +17,8 @@
     NSString *country_string;
     NSString *city_string;
     NSInteger selectIndex;//0:城市 1：区域
+    
+    BOOL isSelected;
 }
 @property(nonatomic,strong)UITableView *tableview;
 @property(nonatomic,assign)NSInteger selectIndexrow;
@@ -28,6 +30,8 @@
 @property(nonatomic,strong)NSString *city_string;
 
 @property(nonatomic,assign)NSInteger selectIndex;
+@property(nonatomic,assign)BOOL isSelected;
+
 @end
 
 @implementation TFmyPathViewController
@@ -37,6 +41,8 @@
 @synthesize selectedScource;
 @synthesize country_string,city_string;
 @synthesize selectIndex;
+@synthesize isSelected;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,6 +51,7 @@
         self.dataSource = @{@"北京":@[@"朝阳区",@"通州区",@"海淀区",@"丰台区"],@"上海":@[@"浦东新区",@"嘉定区",@"徐汇区",@"闸北区"]};
         
         self.selectIndexrow = -1;
+        self.isSelected = NO;
     }
     return self;
 }
@@ -160,7 +167,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TSLocateView *locateView = [[TSLocateView alloc] initWithTitle:@"定位城市" delegate:self];
+    if (self.isSelected) {
+        return;
+    }
     [locateView showInView:self.view.window];
+    self.isSelected = YES;
+  
     
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -178,6 +190,8 @@
         [self.tableview reloadData];
         
     }
+    self.isSelected = NO;
+
 }
 -(void)pathDismiss:(UIButton*)btn
 {
@@ -187,6 +201,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
 }
 
 /*

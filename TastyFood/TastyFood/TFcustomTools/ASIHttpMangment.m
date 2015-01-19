@@ -16,36 +16,32 @@
 /************************
  
  登陆 login
- 
- 参数:username password
- 
- 
+
  ************************/
 +(void)LoginWithRequestURL:(NSString *)URLString
-                              pragram:(NSMutableDictionary *)pragram
+                              pragram:(NSDictionary *)pragram
                               success:(void (^)( NSDictionary* resultObject))success
                                  fail:(void (^)( NSDictionary *errdic))fail
 {
     
-    __block ASIFormDataRequest *Requestmanager = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:URLString]];
-//    [Requestmanager setStringEncoding:NSUTF8StringEncoding];
+   __weak __block ASIFormDataRequest *Requestmanager = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:URLString]];
+    
+    if (pragram !=nil) {
+        [pragram enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+            [Requestmanager addPostValue:obj forKey:key];
+        }];
+    }
     [Requestmanager setCompletionBlock:^{
         int Statuscode= [Requestmanager responseStatusCode];
-        NSLog(@"---Request Statuscode = %d",Statuscode);
-        NSDictionary *dic1 = @{@"code":[NSNumber numberWithInt:Statuscode]};
+        NSData *data =[Requestmanager responseData];
+        NSDictionary *dicinfo = [data objectFromJSONData];
+        NSDictionary *dic1 = @{@"code":[NSNumber numberWithInt:Statuscode],@"responsedata":dicinfo};
+        NSLog(@"返回数据:%@",dic1);
         success(dic1);
     }];
     [Requestmanager setFailedBlock:^{
-        
-        int Statuscode= [Requestmanager responseStatusCode];
-        NSLog(@"%@",Requestmanager.responseStatusMessage);
-        NSLog(@"%d",Statuscode);
-        NSLog(@"%@",Requestmanager.responseString);
-        NSDictionary *dic1 = @{@"code":[NSNumber numberWithInt:Requestmanager.responseStatusCode ],@"reason":(Requestmanager.responseString==nil?@"request error":Requestmanager.responseString)};
-        fail(dic1);
-
+      
     }];
-    
     [Requestmanager setBytesReceivedBlock:^(unsigned long long size, unsigned long long total) {
         
     }];

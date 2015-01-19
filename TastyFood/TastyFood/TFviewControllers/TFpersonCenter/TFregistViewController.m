@@ -183,6 +183,20 @@
     SetDefaults(Defaults_LoginPsw, pwd);
     SetDefaults(Defaults_Loginbool, [NSNumber numberWithBool:YES]);
     
+    NSDictionary * postdic = @{@"username":username,@"password":pwd};
+
+    
+    [SVProgressHUD showWithStatus:@"注册提交中..."];
+    
+    
+    [ASIHttpMangment LoginWithRequestURL:@"http://www.kuaidi100.com/query" pragram:@{@"type":@"012",@"postid":@"1231"} success:^(NSDictionary *resultObject) {
+        [SVProgressHUD dismiss];
+        
+        NSLog(@"注册成功");
+    } fail:^(NSDictionary *errdic) {
+        NSLog(@"注册失败");
+        [SVProgressHUD dismiss];
+    }];
     
     
 }

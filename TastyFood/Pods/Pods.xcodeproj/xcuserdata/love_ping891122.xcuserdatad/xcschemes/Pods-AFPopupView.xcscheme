@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F7FAB4A123F5E94B77EC314"
+               BlueprintIdentifier = "AF8060D7451D31A090890BA1"
                BuildableName = "libPods-AFPopupView.a"
                BlueprintName = "Pods-AFPopupView"
                ReferencedContainer = "container:Pods.xcodeproj">

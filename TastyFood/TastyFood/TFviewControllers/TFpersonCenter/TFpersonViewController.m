@@ -70,10 +70,16 @@
    
     
 }
+//注销登陆
 -(void)ClickBt_Logout:(UIButton*)button
 {
+    //1.删除个人信息
+    
+    TFloginViewController *VC = [[TFloginViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
     
 }
+
 #pragma mark ---------TableViewDataSource And TableViewDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

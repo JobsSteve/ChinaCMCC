@@ -34,6 +34,15 @@
 		C760C1E11A3B45AC00040DF2 /* UITableView+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C1E01A3B45AC00040DF2 /* UITableView+BindArgs.m */; };
 		C760C1FF1A3B59E000040DF2 /* CellViews.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C1FE1A3B59E000040DF2 /* CellViews.m */; };
 		C760C2081A3B5BE200040DF2 /* UILabel+BindArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = C760C2071A3B5BE200040DF2 /* UILabel+BindArgs.m */; };
+		C762AED81A6B92B50086CECE /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C762AEC81A6B92B50086CECE /* MJRefresh.bundle */; };
+		C762AED91A6B92B50086CECE /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AECB1A6B92B50086CECE /* MJRefreshBaseView.m */; };
+		C762AEDA1A6B92B50086CECE /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AECD1A6B92B50086CECE /* MJRefreshConst.m */; };
+		C762AEDB1A6B92B50086CECE /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AECF1A6B92B50086CECE /* MJRefreshFooterView.m */; };
+		C762AEDC1A6B92B50086CECE /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AED11A6B92B50086CECE /* MJRefreshHeaderView.m */; };
+		C762AEDD1A6B92B50086CECE /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AED31A6B92B50086CECE /* UIScrollView+Extension.m */; };
+		C762AEDE1A6B92B50086CECE /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AED51A6B92B50086CECE /* UIScrollView+MJRefresh.m */; };
+		C762AEDF1A6B92B50086CECE /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AED71A6B92B50086CECE /* UIView+Extension.m */; };
+		C762AEE71A6B9F650086CECE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C762AEE61A6B9F650086CECE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C76CBBD11A42FC1200B57BBC /* hometitle_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C76CBBD01A42FC1200B57BBC /* hometitle_image.png */; };
 		C76CBBE11A43146D00B57BBC /* WWSideslipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76CBBE01A43146D00B57BBC /* WWSideslipViewController.m */; };
 		C76CBBE71A43172600B57BBC /* MSSlidingPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76CBBE41A43172600B57BBC /* MSSlidingPanelController.m */; };
@@ -190,6 +199,24 @@
 		C760C1FE1A3B59E000040DF2 /* CellViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellViews.m; sourceTree = "<group>"; };
 		C760C2061A3B5BE200040DF2 /* UILabel+BindArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BindArgs.h"; sourceTree = "<group>"; };
 		C760C2071A3B5BE200040DF2 /* UILabel+BindArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BindArgs.m"; sourceTree = "<group>"; };
+		C762AEC81A6B92B50086CECE /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		C762AEC91A6B92B50086CECE /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		C762AECA1A6B92B50086CECE /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		C762AECB1A6B92B50086CECE /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		C762AECC1A6B92B50086CECE /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		C762AECD1A6B92B50086CECE /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		C762AECE1A6B92B50086CECE /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		C762AECF1A6B92B50086CECE /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		C762AED01A6B92B50086CECE /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		C762AED11A6B92B50086CECE /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		C762AED21A6B92B50086CECE /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
+		C762AED31A6B92B50086CECE /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
+		C762AED41A6B92B50086CECE /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		C762AED51A6B92B50086CECE /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		C762AED61A6B92B50086CECE /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		C762AED71A6B92B50086CECE /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		C762AEE51A6B9F650086CECE /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		C762AEE61A6B9F650086CECE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		C76CBBD01A42FC1200B57BBC /* hometitle_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hometitle_image.png; sourceTree = "<group>"; };
 		C76CBBDF1A43146D00B57BBC /* WWSideslipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWSideslipViewController.h; sourceTree = "<group>"; };
 		C76CBBE01A43146D00B57BBC /* WWSideslipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWSideslipViewController.m; sourceTree = "<group>"; };
@@ -442,6 +469,38 @@
 			path = TFmodleAndView;
 			sourceTree = "<group>";
 		};
+		C762AEC71A6B92B50086CECE /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				C762AEC81A6B92B50086CECE /* MJRefresh.bundle */,
+				C762AEC91A6B92B50086CECE /* MJRefresh.h */,
+				C762AECA1A6B92B50086CECE /* MJRefreshBaseView.h */,
+				C762AECB1A6B92B50086CECE /* MJRefreshBaseView.m */,
+				C762AECC1A6B92B50086CECE /* MJRefreshConst.h */,
+				C762AECD1A6B92B50086CECE /* MJRefreshConst.m */,
+				C762AECE1A6B92B50086CECE /* MJRefreshFooterView.h */,
+				C762AECF1A6B92B50086CECE /* MJRefreshFooterView.m */,
+				C762AED01A6B92B50086CECE /* MJRefreshHeaderView.h */,
+				C762AED11A6B92B50086CECE /* MJRefreshHeaderView.m */,
+				C762AED21A6B92B50086CECE /* UIScrollView+Extension.h */,
+				C762AED31A6B92B50086CECE /* UIScrollView+Extension.m */,
+				C762AED41A6B92B50086CECE /* UIScrollView+MJRefresh.h */,
+				C762AED51A6B92B50086CECE /* UIScrollView+MJRefresh.m */,
+				C762AED61A6B92B50086CECE /* UIView+Extension.h */,
+				C762AED71A6B92B50086CECE /* UIView+Extension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		C762AEE41A6B9F650086CECE /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				C762AEE51A6B9F650086CECE /* JSONKit.h */,
+				C762AEE61A6B9F650086CECE /* JSONKit.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		C76CBBDE1A43146D00B57BBC /* WWSideslipViewControllerClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +747,8 @@
 		C788D5EB1A36CB87009BA362 /* TFcustomTools */ = {
 			isa = PBXGroup;
 			children = (
+				C762AEE41A6B9F650086CECE /* JSON */,
+				C762AEC71A6B92B50086CECE /* MJRefresh */,
 				C715EA271A5D85F9008294D1 /* ASIHttpMangment.h */,
 				C715EA281A5D85F9008294D1 /* ASIHttpMangment.m */,
 				C7EAEF031A5ECA2800BB9E13 /* TFCityPickerview */,
@@ -1035,6 +1096,7 @@
 				C757CC341A5AEB2A0096689F /* index_veg.png in Resources */,
 				C76FE4731A38092700C973BF /* Contents.json in Resources */,
 				C76FE47A1A38092700C973BF /* Default@2x.png in Resources */,
+				C762AED81A6B92B50086CECE /* MJRefresh.bundle in Resources */,
 				C76FE4781A38092700C973BF /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1092,7 +1154,9 @@
 				C7EAEF1F1A5ECB6600BB9E13 /* TFcityViewController.m in Sources */,
 				C7798E3D1A36EA30005EC0D4 /* UIButton+BindArgs.m in Sources */,
 				C7798E3F1A36EA30005EC0D4 /* UIView+BindArgs.m in Sources */,
+				C762AED91A6B92B50086CECE /* MJRefreshBaseView.m in Sources */,
 				C757CC1A1A5ACED80096689F /* ShopImage.m in Sources */,
+				C762AEDB1A6B92B50086CECE /* MJRefreshFooterView.m in Sources */,
 				C7E4B2B41A3849DD000699B4 /* UIImageView+WebCache.m in Sources */,
 				C77650191A41DCCC00B5AFA9 /* JSBadgeView.m in Sources */,
 				C7E4B2891A384665000699B4 /* EGOImageView.m in Sources */,
@@ -1116,17 +1180,20 @@
 				C7798E3E1A36EA30005EC0D4 /* UIImageView+WebCache.m in Sources */,
 				C7EAEF1A1A5ECA2800BB9E13 /* TSLocateView.m in Sources */,
 				C76FE45F1A38023C00C973BF /* TFfoodMarketViewController.m in Sources */,
+				C762AEDE1A6B92B50086CECE /* UIScrollView+MJRefresh.m in Sources */,
 				C7DBA1781A3D92570087596E /* UITextField+BindArgs.m in Sources */,
 				C7DBA1751A3D8DFD0087596E /* UITextView+BindArgs.m in Sources */,
 				C7798E3C1A36EA30005EC0D4 /* UIAlertView+BindArgs.m in Sources */,
 				C760C1CE1A3B327300040DF2 /* UIScrollView+BindArgs.m in Sources */,
 				C76CBBEB1A431E3500B57BBC /* TFmyPathViewController.m in Sources */,
+				C762AEE71A6B9F650086CECE /* JSONKit.m in Sources */,
 				C77382F21A3837CA00ABDA7D /* ImagePlayerView.m in Sources */,
 				C715EA261A5D7924008294D1 /* superMenu.m in Sources */,
 				C76CBBE11A43146D00B57BBC /* WWSideslipViewController.m in Sources */,
 				C7DBA1871A3DB13D0087596E /* TFmyOrderViewController.m in Sources */,
 				C76FE4651A38046D00C973BF /* TFpersonViewController.m in Sources */,
 				C788D5F01A36CB8C009BA362 /* TFloginViewController.m in Sources */,
+				C762AEDD1A6B92B50086CECE /* UIScrollView+Extension.m in Sources */,
 				C7E4B2AE1A3849DD000699B4 /* SDWebImageDownloaderOperation.m in Sources */,
 				C7798E4C1A36FEC6005EC0D4 /* TFregistViewController.m in Sources */,
 				C7E4B2871A384665000699B4 /* EGOImageLoadConnection.m in Sources */,
@@ -1135,12 +1202,15 @@
 				C715EA291A5D85F9008294D1 /* ASIHttpMangment.m in Sources */,
 				C7324DA81A46E23800C9EB75 /* TFregionViewController.m in Sources */,
 				C7324DAB1A46E65D00C9EB75 /* CustomtabbarController.m in Sources */,
+				C762AEDF1A6B92B50086CECE /* UIView+Extension.m in Sources */,
 				C7324DAE1A46F19800C9EB75 /* DatePickerView.m in Sources */,
 				C7DBA1A41A3DE6470087596E /* welcomeViewController.m in Sources */,
 				C788D5C41A36C76F009BA362 /* TastyFood.xcdatamodeld in Sources */,
 				C7EAEF1C1A5ECA2800BB9E13 /* TSLocation.m in Sources */,
 				C788D5C11A36C76F009BA362 /* AppDelegate.m in Sources */,
+				C762AEDC1A6B92B50086CECE /* MJRefreshHeaderView.m in Sources */,
 				C79EB88D1A406855000F6120 /* TFhtmlViewController.m in Sources */,
+				C762AEDA1A6B92B50086CECE /* MJRefreshConst.m in Sources */,
 				C788D5BE1A36C76F009BA362 /* main.m in Sources */,
 				C76FE4621A3803A000C973BF /* TFMainTabbarController.m in Sources */,
 				C760C2081A3B5BE200040DF2 /* UILabel+BindArgs.m in Sources */,
@@ -1266,6 +1336,7 @@
 			baseConfigurationReference = 685964FEB75CF3C63505A171 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TastyFood/PrefixHeader.pch";
 				INFOPLIST_FILE = TastyFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1278,6 +1349,7 @@
 			baseConfigurationReference = F4E731F1645B1D8790DB04C6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TastyFood/PrefixHeader.pch";
 				INFOPLIST_FILE = TastyFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

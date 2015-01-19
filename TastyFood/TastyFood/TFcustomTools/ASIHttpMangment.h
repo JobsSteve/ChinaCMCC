@@ -16,7 +16,7 @@
 
 @interface ASIHttpMangment : NSObject<ASIHTTPRequestDelegate>
 +(void)LoginWithRequestURL:(NSString *)URLString
-                   pragram:(NSMutableDictionary *)pragram
+                   pragram:(NSDictionary *)pragram
                    success:(void (^)( NSDictionary* resultObject))success
                       fail:(void (^)( NSDictionary *errdic))fail;
 

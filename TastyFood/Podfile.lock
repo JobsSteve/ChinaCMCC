@@ -13,24 +13,24 @@ PODS:
     - Reachability
   - ASIHTTPRequest/S3 (1.8.2):
     - ASIHTTPRequest/Core
-  - JSONKit-NoWarning (1.2)
   - Reachability (3.2)
   - SVProgressHUD (1.1.2)
+  - XHRefreshControl (3.7)
   - YLTextView (0.2)
 
 DEPENDENCIES:
   - AFPopupView (~> 1.0)
   - ASIHTTPRequest (~> 1.8.2)
-  - JSONKit-NoWarning (~> 1.2)
   - SVProgressHUD (~> 1.1.2)
+  - XHRefreshControl (~> 3.7)
   - YLTextView (~> 0.2)
 
 SPEC CHECKSUMS:
   AFPopupView: a637995cd7975bc2dca692cb5c3dc5c9eefc555b
   ASIHTTPRequest: 2c8335b49410c0e2ad42829c438e74d454b77590
-  JSONKit-NoWarning: fc8d6dd8ec65e303867d1bd274632fc60a4a8ab9
   Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
   SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
+  XHRefreshControl: 91cf9c3ba99fb1e5372c2c00abc5b82a9d266267
   YLTextView: 7cb77d6973afdea66ab5bf370a590c3b411e8728
 
 COCOAPODS: 0.35.0

@@ -133,6 +133,7 @@
 }
 
 - (IBAction)locate:(id)sender {
+    
     CATransition *animation = [CATransition  animation];
     animation.delegate = self;
     animation.duration = kDuration;

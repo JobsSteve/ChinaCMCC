@@ -8,7 +8,12 @@
 
 #import "TFfoodMarketViewController.h"
 #import "ShopImage.h"
-@interface TFfoodMarketViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "XHRefreshControl.h"
+
+NSString *const MJTableViewCellIdentifier = @"Cell";
+
+
+@interface TFfoodMarketViewController ()<UITableViewDataSource,UITableViewDelegate,XHRefreshControlDelegate>
 {
     UITableView *tableview;
     NSArray *dataSource;
@@ -40,6 +45,14 @@
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     [self.view addSubview:self.tableview];
+    
+    
+    [self.tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
+    
+    // 2.集成刷新控件
+    [self setupRefresh];
+
+    
     
     // Do any additional setup after loading the view.
 }
@@ -93,21 +106,16 @@
     
     return cell;
     
-    
 }
 
 //加入购物车 步骤1
 -(void)jionchartAction:(UIButton *)shopCarBtt{
-    
-    
-    
     //得到产品信息
     UITableViewCell *cell = (UITableViewCell *)[shopCarBtt superview];
     CGRect cellRectss = [self.view convertRect:cell.frame fromView:self.tableview];
     CGRect cellRect = [self.tableview rectForRowAtIndexPath:[shopCarBtt getData:@"sa"]];
     UIButton *shopCarBt= [UIButton buttonWithType:UIButtonTypeCustom];
     [self addAnimatedWithFrame:CGRectMake(WIGHT-30,cellRect.origin.y+cellRectss.origin.y+20, 30, 30)];
-    
     
 }
 
@@ -117,22 +125,58 @@
     // 该部分动画 以self.view为参考系进行
     frame = [[UIApplication sharedApplication].keyWindow  convertRect:frame fromView:self.view];
     CGPoint endpoint = CGPointMake(frame.origin.x, self.view.window.bounds.size.height-49/2);
-    
     CGPoint startpoint = CGPointMake(40, frame.origin.y+20);
-
-    
-    
-    
     ShopImage *image1 =[[ShopImage alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     [self.view.window addSubview:image1];
     [image1 addAnimatedWithFrame:startpoint :endpoint];
-    
     
     int num = [GetDefaults(@"chopchartNum") intValue];
     SetDefaults(@"chopchartNum", [NSNumber numberWithInt:num+1]);
     [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
     
 }
+
+
+#pragma mark --------------集成刷新控件--------------------
+
+
+/**
+ *  集成刷新控件
+ */
+- (void)setupRefresh
+{
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableview addHeaderWithTarget:self action:@selector(headerRereshing)];
+    //    [_chatTableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+        [self.tableview  addFooterWithTarget:self action:@selector(footerRereshing)];
+}
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing{
+    
+      // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableview reloadData];
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableview headerEndRefreshing];
+    });
+}
+- (void)footerRereshing
+{
+    
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableview reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableview footerEndRefreshing];
+    });
+}
+
+
 
 
 

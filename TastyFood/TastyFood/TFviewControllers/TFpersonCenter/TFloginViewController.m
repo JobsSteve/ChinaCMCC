@@ -8,7 +8,7 @@
 
 #import "TFloginViewController.h"
 #import "TFregistViewController.h"
-@interface TFloginViewController ()<UITextFieldDelegate>
+@interface TFloginViewController ()<UITextFieldDelegate,ASIHTTPRequestDelegate>
 {
     UITextField *_usernameField;
     UITextField *_passwordField;
@@ -182,13 +182,46 @@
 -(void)request_Username:(NSString *)username Pwd:(NSString *)pwd
 {
     _isloading = NO;
-
     SetDefaults(Defaults_LoginName, username);
     SetDefaults(Defaults_LoginPsw, pwd);
     SetDefaults(Defaults_Loginbool, [NSNumber numberWithBool:YES]);
-   
+    
+    [SVProgressHUD showWithStatus:@"登陆中..."];
     
     
+    NSDictionary * postdic = @{@"username":username,@"password":pwd};
+    
+ 
+    
+    
+    [ASIHttpMangment LoginWithRequestURL:@"http://www.kuaidi100.com/query" pragram:@{@"type":@"012",@"postid":@"1231"} success:^(NSDictionary *resultObject) {
+        
+        [SVProgressHUD showSuccessWithStatus:@"success"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
+    
+
+        
+    } fail:^(NSDictionary *errdic) {
+        NSLog(@"login fail!");
+        [SVProgressHUD showSuccessWithStatus:@"fail"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
+    
+    }];
+    
+    
+}
+
++(void)dismiss:(NSString*)message delay:(CGFloat)time
+{
+    [SVProgressHUD showSuccessWithStatus:@"erwr"];
+    [UIView animateWithDuration:time animations:^{
+        [SVProgressHUD dismiss];
+        
+    }];
 }
 #pragma mark - Touch事件
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

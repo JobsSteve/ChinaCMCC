@@ -32,8 +32,9 @@
 #import "DatePickerView.h"
 #import "TSLocateView.h"
 #import <AFPopupView/AFPopupView.h>
-
-
+#import "ASIHttpMangment.h"
+#import "SVProgressHUD.h"
+#import "MJRefresh.h"
 /* 颜色宏定义 */
 
 #define RGBAcolor(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
@@ -102,6 +103,7 @@ iPhone5分辨率320x568，像素640x1136，@2x
 #define Defaults_LoginPsw      @"password"//密码
 #define Defaults_isRememberPsw @"isRememberPsw" //用户登录状态
 #define Defaults_Token         @"kDefaults_Token" //token
+#define Defaults_userInfo        @"kDefaults_userinformation" //用户信息
 
 
 #define GetLoginStatus [[NSUserDefaults standardUserDefaults] stringForKey:Defaults_Loginbool]

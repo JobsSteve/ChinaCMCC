@@ -18,7 +18,6 @@
 #import "MSSlidingPanelController.h"
 #import "TFmyPathViewController.h"
 
-#import <JSONKit.h>
 
 @interface AppDelegate ()
 
@@ -29,6 +28,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    SetDefaults(Defaults_userInfo, nil);
+    
+    
+    
     
     //  4s:320*480
     
@@ -42,7 +47,6 @@
 
     //默认不记住密码
     SetDefaults(Defaults_isRememberPsw, @NO);
-
     if (GetDefaults(@"chopchartNum")==nil) {
         SetDefaults(@"chopchartNum", [NSNumber numberWithInt:0]);
     }
