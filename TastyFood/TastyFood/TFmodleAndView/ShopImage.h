@@ -13,5 +13,7 @@
     UIImage *image;
     
 }
+@property(nonatomic,strong)UIImage *image;
+
 - (void)addAnimatedWithFrame:(CGPoint)startPoint :(CGPoint)endpoint;
 @end

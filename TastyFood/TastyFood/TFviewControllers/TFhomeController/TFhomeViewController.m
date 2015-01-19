@@ -218,12 +218,6 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:registButton];
     
 }
--(void)ClickBt_submitorderVC:(UIButton*)btn
-{
-    
-
-}
-
 
 
 

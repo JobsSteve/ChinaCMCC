@@ -15,12 +15,18 @@
 #define IBMIP @"www.jsahdjas.com"
 
 @interface ASIHttpMangment : NSObject<ASIHTTPRequestDelegate>
+/**登陆，注册，修改密码**/
 +(void)LoginWithRequestURL:(NSString *)URLString
                    pragram:(NSDictionary *)pragram
                    success:(void (^)( NSDictionary* resultObject))success
                       fail:(void (^)( NSDictionary *errdic))fail;
 
+/**商品数据列表*/
 
++(void)ShoplistWithRequestURL:(NSString *)URLString
+                   pragram:(NSDictionary *)pragram
+                   success:(void (^)( NSDictionary* resultObject))success
+                      fail:(void (^)( NSDictionary *errdic))fail;
 
 
 

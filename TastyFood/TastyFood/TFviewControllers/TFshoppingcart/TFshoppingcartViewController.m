@@ -105,7 +105,7 @@
 
     [self.successPopview show];
 
-    [self performSelector:@selector(dismisspopview) withObject:nil afterDelay:1];
+    [self performSelector:@selector(dismisspopview) withObject:nil afterDelay:2];
     SetDefaults(@"chopchartNum", [NSNumber numberWithInt:0]);
     [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
 

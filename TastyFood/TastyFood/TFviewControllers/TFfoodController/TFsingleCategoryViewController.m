@@ -113,11 +113,10 @@
     frame = [[UIApplication sharedApplication].keyWindow  convertRect:frame fromView:self.view];
     CGPoint endpoint = CGPointMake(frame.origin.x+40, self.view.window.bounds.size.height-49);
     CGPoint startpoint = CGPointMake(40, frame.origin.y+20);
-    
-    
-    
+        
     
     ShopImage *image1 =[[ShopImage alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    image1.image = [UIImage imageNamed:@""];
     [self.view.window addSubview:image1];
     [image1 addAnimatedWithFrame:startpoint :endpoint];
     

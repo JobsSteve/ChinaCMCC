@@ -85,7 +85,7 @@
         //登录密码
         _passwordField=[[UITextField alloc]initWithFrame:CGRectMake(30, 100, WIGHT-60, 35)];
         _passwordField.borderStyle = UITextBorderStyleRoundedRect;
-        _passwordField.placeholder=@"密码";
+        _passwordField.placeholder=@"请输入密码";
         _passwordField.tag=2;
         _passwordField.delegate=self;
         _passwordField.clearButtonMode=UITextFieldViewModeWhileEditing;
@@ -118,7 +118,7 @@
         //登录密码
         _comfirpasswordField=[[UITextField alloc]initWithFrame:CGRectMake(30, 150, WIGHT-60, 35)];
         _comfirpasswordField.borderStyle = UITextBorderStyleRoundedRect;
-        _comfirpasswordField.placeholder=@"密码";
+        _comfirpasswordField.placeholder=@"请确认密码";
         _comfirpasswordField.tag=2;
         _comfirpasswordField.delegate=self;
         _comfirpasswordField.clearButtonMode=UITextFieldViewModeWhileEditing;
@@ -166,9 +166,21 @@
     [_comfirpasswordField resignFirstResponder];
 
     if (_isloading)  return;
-    if (_usernameField.text.length==0||_passwordField.text.length==0||_comfirpasswordField.text.length==0||![_comfirpasswordField.text isEqualToString:_passwordField.text]) {
+    if (_usernameField.text.length==0||_passwordField.text.length==0||_comfirpasswordField.text.length==0) {
+        [SVProgressHUD showSuccessWithStatus:@"美家提醒你检查注册信息!"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
         return;
     }
+    if (![_comfirpasswordField.text isEqualToString:_passwordField.text]) {
+        [SVProgressHUD showSuccessWithStatus:@"美家提醒你两次密码不一致!"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
+        return;
+    }
+    
     _isloading=YES;
     
  
@@ -190,12 +202,16 @@
     
     
     [ASIHttpMangment LoginWithRequestURL:@"http://www.kuaidi100.com/query" pragram:@{@"type":@"012",@"postid":@"1231"} success:^(NSDictionary *resultObject) {
-        [SVProgressHUD dismiss];
-        
-        NSLog(@"注册成功");
+        [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
     } fail:^(NSDictionary *errdic) {
         NSLog(@"注册失败");
-        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"注册失败"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
     }];
     
     

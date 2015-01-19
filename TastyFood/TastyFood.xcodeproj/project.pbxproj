@@ -128,7 +128,7 @@
 		C7E4B2B11A3849DD000699B4 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B2A01A3849DD000699B4 /* UIButton+WebCache.m */; };
 		C7E4B2B21A3849DD000699B4 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B2A21A3849DD000699B4 /* UIImage+GIF.m */; };
 		C7E4B2B31A3849DD000699B4 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B2A41A3849DD000699B4 /* UIImage+MultiFormat.m */; };
-		C7E4B2B41A3849DD000699B4 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B2A61A3849DD000699B4 /* UIImageView+WebCache.m */; };
+		C7E4B2B41A3849DD000699B4 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4B2A61A3849DD000699B4 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C7E4B2BD1A388ED5000699B4 /* menu_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E4B2B61A388ED5000699B4 /* menu_1.png */; };
 		C7E4B2BE1A388ED5000699B4 /* menu_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E4B2B71A388ED5000699B4 /* menu_2.png */; };
 		C7E4B2BF1A388ED5000699B4 /* menu_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C7E4B2B81A388ED5000699B4 /* menu_3.png */; };

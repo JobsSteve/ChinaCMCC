@@ -6,7 +6,7 @@
 #import "CellViews.h"
 #import "UIImageView+WebCache.h"
 #import "TboxKit.h"
-@interface CellViews()
+@interface CellViews()<EGOImageViewDelegate>
 @end
 
 @implementation CellViews
@@ -15,13 +15,19 @@
 {
     UIView * Cellview = [UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 100) :[UIColor clearColor]];
 
-    //商品图片
+//商品图片
     UIImageView *Pic_imageview = [UIImageView imageViewWithFrame:CGRectMake(10, 10, 80, 80) :@"product_2.png"];
+   [Pic_imageview setImageWithURL:[NSURL URLWithString:detailInfo[@"shoppic"]] placeholderImage:[UIImage imageNamed:@"product_2.png"]];
+    
+    
+    
+    
+    
     //商品名字
-    UILabel *product_name = [UILabel LabelWithFrame:CGRectMake(100, 15, 200, 40) text:@"广东菜心(现实促销)" color:[UIColor blackColor] font:14];
+    UILabel *product_name = [UILabel LabelWithFrame:CGRectMake(100, 15, 200, 40) text:detailInfo[@"shopname"] color:[UIColor blackColor] font:14];
     product_name.numberOfLines = product_name.text.length>16?2:1;
     //商品价格
-    UILabel *product_price = [UILabel LabelWithFrame:CGRectMake(100, 65, 60, 20) text:@"¥100.00" color:YellowColor_APP font:14];
+    UILabel *product_price = [UILabel LabelWithFrame:CGRectMake(100, 65, 60, 20) text:detailInfo[@"shopprice"] color:YellowColor_APP font:14];
     
     
     

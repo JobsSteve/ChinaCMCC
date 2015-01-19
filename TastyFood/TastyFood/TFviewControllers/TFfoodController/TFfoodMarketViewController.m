@@ -16,15 +16,19 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 @interface TFfoodMarketViewController ()<UITableViewDataSource,UITableViewDelegate,XHRefreshControlDelegate>
 {
     UITableView *tableview;
-    NSArray *dataSource;
+    NSMutableArray *dataSource;
+    NSInteger Current_SegmentIndex;
 }
 @property(nonatomic,strong)UITableView *tableview;
-@property(nonatomic,strong)NSArray *dataSource;
+@property(nonatomic,strong)NSMutableArray *dataSource;
+@property(nonatomic,assign)NSInteger Current_SegmentIndex;
+
 
 @end
 
 @implementation TFfoodMarketViewController
 @synthesize dataSource;
+@synthesize Current_SegmentIndex;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +36,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     if (self) {
         self.title = @"美家菜场";
        self.tabBarItem =  [self.tabBarItem initWithTitle:@"美家菜场" image:[UIImage imageNamed:@"tabbar_02.png"] selectedImage:[UIImage imageNamed:@"tabbar_02.png"]];
-        self.dataSource = @[@"1212",@"4344",@"556",@"1212",@"4344",@"556",@"1212",@"4344",@"556"];
+        self.dataSource = [NSMutableArray arrayWithCapacity:1];
     }
     return self;
 }
@@ -62,21 +66,31 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     UIView *segmentbackgroundview = [UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 40) :GrayColor_APP];
     
     
-    UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"蔬菜",@"水产",@"肉类",@"干货",@"其他"]];
+    UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"蔬菜",@"肉类",@"水产",@"豆制品",@"熟食",@"调味品",@"其他"]];
     segment.frame = CGRectMake(10, 5, WIGHT-20, 30);
     segment.tintColor = GreenColor_APP;
     segment.backgroundColor = [UIColor whiteColor];
     segment.selectedSegmentIndex = 0;
+    [segment addTarget:self action:@selector(segmentAction:)forControlEvents:UIControlEventValueChanged];  //添加委托方法
+
     [segmentbackgroundview addSubview:segment];
     [self.view addSubview:segmentbackgroundview];
     
 }
 #pragma mark ---------TableViewDataSource And TableViewDelegate
+-(void)segmentAction:(UISegmentedControl*)segment
+{
+    self.Current_SegmentIndex = segment.selectedSegmentIndex;
+    [self.tableview headerBeginRefreshing];
+    
+    
+    
 
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
    
-    return 10;
+    return self.dataSource.count;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -98,11 +112,14 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
         
     }
     
-    [cell.contentView addSubview:[CellViews CellViewWithShoplist:nil]];
+    [cell.contentView addSubview:[CellViews CellViewWithShoplist:self.dataSource[indexPath.row]]];
    
     UIButton *jionButton = (UIButton*)[cell.contentView viewWithTag:201];
     [jionButton bindData:@"sa" Value:indexPath];
     [jionButton addTarget:self action:@selector(jionchartAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+
     
     return cell;
     
@@ -134,6 +151,26 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     SetDefaults(@"chopchartNum", [NSNumber numberWithInt:num+1]);
     [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
     
+}
+//下载商品数据
+-(void)loadshoplistdata
+{
+    
+    
+    [ASIHttpMangment ShoplistWithRequestURL:@"" pragram:@{@"category_ID":[NSNumber numberWithInt:1]} success:^(NSDictionary *resultObject) {
+        if (self.dataSource&&self.dataSource.count>0) {
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:[resultObject objectForKey:@"shoplist"]];
+            [self.tableview reloadData];
+        }
+        
+    } fail:^(NSDictionary *errdic) {
+        [SVProgressHUD showSuccessWithStatus:@"网络不稳定,请重试！"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
+        
+    }];
 }
 
 

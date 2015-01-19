@@ -9,7 +9,7 @@
 #import "ShopImage.h"
 
 @implementation ShopImage
-
+@synthesize image;
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
