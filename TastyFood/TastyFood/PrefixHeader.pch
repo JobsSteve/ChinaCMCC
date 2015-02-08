@@ -20,6 +20,7 @@
 #import "UILabel+BindArgs.h"
 #import "UITextView+BindArgs.h"
 #import "UITextField+BindArgs.h"
+#import <YLTextView/YLTextView.h>
 
 
 #import "ImagePlayerView.h"
@@ -36,14 +37,30 @@
 #import "ASIHttpMangment.h"
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
+#import "TimeDateClassTool.h"
+
+
+
+#define IP @"192.168.1.174:8080"
+#define loginpath @"/mbss/login/loginJson"
+
+
+
+
+#define loginurl  [NSString stringWithFormat:@"%@%@",IP,loginpath]
+
+
+
 /* 颜色宏定义 */
 
 #define RGBAcolor(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
 //主题黄色
 #define YellowColor_APP RGBAcolor(250, 140, 0, 1)
+
 //主题青绿色
 #define GreenColor_APP  RGBAcolor(70, 220, 220, 1)
+
 //背景灰色 （衬托白色）
 #define GrayColor_APP  RGBAcolor(230, 230, 230, 1)
 

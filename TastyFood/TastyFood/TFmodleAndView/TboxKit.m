@@ -39,7 +39,7 @@
     AddButton.layer.borderWidth =0.5;
     AddButton.layer.cornerRadius = 5;
 
-    
+
     
     UIButton *RedButton = [UIButton ButtonWithFrame:CGRectMake(55, 0, 25, 25) Normal:nil Select:nil Title:@"－"];
     [RedButton addTarget:self action:@selector(redNumAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -59,12 +59,18 @@
     
 }
 -(void)addNumAction:(UIButton*)button{
-    
-    
+
+
     if ([self.shopNumLabel.text integerValue]>10) {
         return;
     }
     self.shopNumLabel.text = [NSString stringWithFormat:@"%ld",[self.shopNumLabel.text integerValue]+1];
+    
+    NSInteger index = [[self getData:@"indexRow"]integerValue];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:GetDefaults(@"shopNumlist")];
+    NSNumber *tenp =[NSNumber numberWithInteger:[self.shopNumLabel.text integerValue]];
+    [array replaceObjectAtIndex:index withObject:tenp];
+    SetDefaults(@"shopNumlist", array);
     
 }
 -(void)redNumAction:(UIButton*)button{
@@ -74,5 +80,11 @@
     }
     self.shopNumLabel.text = [NSString stringWithFormat:@"%ld",[self.shopNumLabel.text integerValue]-1];
 
+    NSInteger index = [[self getData:@"indexRow"]integerValue];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:GetDefaults(@"shopNumlist")];
+    NSNumber *tenp =[NSNumber numberWithInteger:[self.shopNumLabel.text integerValue]];
+    [array replaceObjectAtIndex:index withObject:tenp];
+    SetDefaults(@"shopNumlist", array);
+    
 }
 @end

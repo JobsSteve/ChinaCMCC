@@ -103,6 +103,8 @@
 		C79EB88D1A406855000F6120 /* TFhtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79EB88C1A406855000F6120 /* TFhtmlViewController.m */; };
 		C7A4A2401A4AD7F700DC8FF1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A4A23F1A4AD7F700DC8FF1 /* location.png */; };
 		C7A4A2431A4B04F500DC8FF1 /* TFsingleCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A4A2421A4B04F500DC8FF1 /* TFsingleCategoryViewController.m */; };
+		C7ACEA5A1A8211B500FC5B20 /* TimeDateClassTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ACEA591A8211B500FC5B20 /* TimeDateClassTool.m */; };
+		C7BDB89B1A6F783A0043FD9C /* addshopchartbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C7BDB89A1A6F783A0043FD9C /* addshopchartbutton.png */; };
 		C7C2D11F1A447D5F00A493DB /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C2D11E1A447D5F00A493DB /* header.png */; };
 		C7C2D1211A447FCB00A493DB /* Pathbackimage.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C2D1201A447FCB00A493DB /* Pathbackimage.png */; };
 		C7DBA16F1A3D84A10087596E /* TboxKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DBA16E1A3D84A10087596E /* TboxKit.m */; };
@@ -148,6 +150,10 @@
 		C7EAEF1B1A5ECA2800BB9E13 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7EAEF0F1A5ECA2800BB9E13 /* TSLocateView.xib */; };
 		C7EAEF1C1A5ECA2800BB9E13 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EAEF111A5ECA2800BB9E13 /* TSLocation.m */; };
 		C7EAEF1F1A5ECB6600BB9E13 /* TFcityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EAEF1E1A5ECB6600BB9E13 /* TFcityViewController.m */; };
+		C7FB9FD41A86000E007E9E41 /* s1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7FB9FD11A86000E007E9E41 /* s1.jpg */; };
+		C7FB9FD51A86000E007E9E41 /* s2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7FB9FD21A86000E007E9E41 /* s2.jpg */; };
+		C7FB9FD61A86000E007E9E41 /* s3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7FB9FD31A86000E007E9E41 /* s3.jpg */; };
+		C7FB9FD81A860F69007E9E41 /* icon-success.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7FB9FD71A860F69007E9E41 /* icon-success.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,6 +312,9 @@
 		C7A4A23F1A4AD7F700DC8FF1 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		C7A4A2411A4B04F500DC8FF1 /* TFsingleCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFsingleCategoryViewController.h; sourceTree = "<group>"; };
 		C7A4A2421A4B04F500DC8FF1 /* TFsingleCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFsingleCategoryViewController.m; sourceTree = "<group>"; };
+		C7ACEA581A8211B500FC5B20 /* TimeDateClassTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDateClassTool.h; sourceTree = "<group>"; };
+		C7ACEA591A8211B500FC5B20 /* TimeDateClassTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDateClassTool.m; sourceTree = "<group>"; };
+		C7BDB89A1A6F783A0043FD9C /* addshopchartbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addshopchartbutton.png; sourceTree = "<group>"; };
 		C7C2D11E1A447D5F00A493DB /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		C7C2D1201A447FCB00A493DB /* Pathbackimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pathbackimage.png; sourceTree = "<group>"; };
 		C7DBA16D1A3D84A10087596E /* TboxKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TboxKit.h; sourceTree = "<group>"; };
@@ -379,6 +388,10 @@
 		C7EAEF111A5ECA2800BB9E13 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
 		C7EAEF1D1A5ECB6600BB9E13 /* TFcityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFcityViewController.h; sourceTree = "<group>"; };
 		C7EAEF1E1A5ECB6600BB9E13 /* TFcityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFcityViewController.m; sourceTree = "<group>"; };
+		C7FB9FD11A86000E007E9E41 /* s1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = s1.jpg; sourceTree = "<group>"; };
+		C7FB9FD21A86000E007E9E41 /* s2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = s2.jpg; sourceTree = "<group>"; };
+		C7FB9FD31A86000E007E9E41 /* s3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = s3.jpg; sourceTree = "<group>"; };
+		C7FB9FD71A860F69007E9E41 /* icon-success.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "icon-success.gif"; sourceTree = "<group>"; };
 		D7C04C2A580B83DDA5C2D5DC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E731F1645B1D8790DB04C6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -727,6 +740,7 @@
 		C788D5EA1A36CB62009BA362 /* TFresource */ = {
 			isa = PBXGroup;
 			children = (
+				C7FB9FD01A86000E007E9E41 /* SubmitSuccessImages */,
 				C757CC261A5AEB2A0096689F /* product1 */,
 				C757CC1B1A5AE8D40096689F /* product2 */,
 				C7E4B2B51A388ED5000699B4 /* homemenu_icons */,
@@ -735,11 +749,13 @@
 				C7798E421A36F709005EC0D4 /* password@2x.png */,
 				C7C2D11E1A447D5F00A493DB /* header.png */,
 				C7A4A23F1A4AD7F700DC8FF1 /* location.png */,
+				C7BDB89A1A6F783A0043FD9C /* addshopchartbutton.png */,
 				C7C2D1201A447FCB00A493DB /* Pathbackimage.png */,
 				C7798E441A36F7D6005EC0D4 /* username@2x.png */,
 				C7798E461A36F8D0005EC0D4 /* icnbox_no.png */,
 				C7798E471A36F8D0005EC0D4 /* icnbox_ok.png */,
 				C78386C41A4BBE9C00C5731E /* ordersuccess.png */,
+				C7FB9FD71A860F69007E9E41 /* icon-success.gif */,
 			);
 			path = TFresource;
 			sourceTree = "<group>";
@@ -747,6 +763,8 @@
 		C788D5EB1A36CB87009BA362 /* TFcustomTools */ = {
 			isa = PBXGroup;
 			children = (
+				C7ACEA581A8211B500FC5B20 /* TimeDateClassTool.h */,
+				C7ACEA591A8211B500FC5B20 /* TimeDateClassTool.m */,
 				C762AEE41A6B9F650086CECE /* JSON */,
 				C762AEC71A6B92B50086CECE /* MJRefresh */,
 				C715EA271A5D85F9008294D1 /* ASIHttpMangment.h */,
@@ -952,6 +970,16 @@
 			path = img;
 			sourceTree = "<group>";
 		};
+		C7FB9FD01A86000E007E9E41 /* SubmitSuccessImages */ = {
+			isa = PBXGroup;
+			children = (
+				C7FB9FD11A86000E007E9E41 /* s1.jpg */,
+				C7FB9FD21A86000E007E9E41 /* s2.jpg */,
+				C7FB9FD31A86000E007E9E41 /* s3.jpg */,
+			);
+			path = SubmitSuccessImages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1003,6 +1031,7 @@
 				TargetAttributes = {
 					C788D5B71A36C76F009BA362 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = N5J843UBU3;
 					};
 					C788D5D31A36C770009BA362 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -1061,14 +1090,18 @@
 				C757CC301A5AEB2A0096689F /* index_meat.png in Resources */,
 				C7E4B2C31A388ED5000699B4 /* menu_7.png in Resources */,
 				C776501B1A41E22A00B5AFA9 /* delete.png in Resources */,
+				C7FB9FD61A86000E007E9E41 /* s3.jpg in Resources */,
 				C757CC321A5AEB2A0096689F /* index_rice.png in Resources */,
 				C78386C51A4BBE9C00C5731E /* ordersuccess.png in Resources */,
 				C76FE47C1A38092700C973BF /* LaunchImage-800-667h@2x.png in Resources */,
+				C7FB9FD81A860F69007E9E41 /* icon-success.gif in Resources */,
 				C7E4B2C11A388ED5000699B4 /* menu_5.png in Resources */,
 				C7798E491A36F8D0005EC0D4 /* icnbox_ok.png in Resources */,
 				C7C2D1211A447FCB00A493DB /* Pathbackimage.png in Resources */,
+				C7FB9FD41A86000E007E9E41 /* s1.jpg in Resources */,
 				C7A4A2401A4AD7F700DC8FF1 /* location.png in Resources */,
 				C7E4B2BF1A388ED5000699B4 /* menu_3.png in Resources */,
+				C7FB9FD51A86000E007E9E41 /* s2.jpg in Resources */,
 				C7EAEF171A5ECA2800BB9E13 /* btn_021.press@2x.png in Resources */,
 				C757CC251A5AE8D40096689F /* index_seafood.png in Resources */,
 				C7EAEF191A5ECA2800BB9E13 /* ProvincesAndCities.plist in Resources */,
@@ -1097,6 +1130,7 @@
 				C76FE4731A38092700C973BF /* Contents.json in Resources */,
 				C76FE47A1A38092700C973BF /* Default@2x.png in Resources */,
 				C762AED81A6B92B50086CECE /* MJRefresh.bundle in Resources */,
+				C7BDB89B1A6F783A0043FD9C /* addshopchartbutton.png in Resources */,
 				C76FE4781A38092700C973BF /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1161,6 +1195,7 @@
 				C77650191A41DCCC00B5AFA9 /* JSBadgeView.m in Sources */,
 				C7E4B2891A384665000699B4 /* EGOImageView.m in Sources */,
 				C7E4B2A91A3849DD000699B4 /* NSData+GIF.m in Sources */,
+				C7ACEA5A1A8211B500FC5B20 /* TimeDateClassTool.m in Sources */,
 				C7DBA1841A3DAF320087596E /* TFeditAddressViewController.m in Sources */,
 				C760C1DE1A3B408200040DF2 /* UIImageView+BindArgs.m in Sources */,
 				C76CBBE71A43172600B57BBC /* MSSlidingPanelController.m in Sources */,
@@ -1270,7 +1305,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hongdi Ren (N5J843UBU3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hongdi Ren (N5J843UBU3)";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1288,9 +1324,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1312,7 +1349,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hongdi Ren (N5J843UBU3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hongdi Ren (N5J843UBU3)";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1324,8 +1362,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1336,9 +1375,11 @@
 			baseConfigurationReference = 685964FEB75CF3C63505A171 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TastyFood/PrefixHeader.pch";
 				INFOPLIST_FILE = TastyFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1349,9 +1390,11 @@
 			baseConfigurationReference = F4E731F1645B1D8790DB04C6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TastyFood/PrefixHeader.pch";
 				INFOPLIST_FILE = TastyFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1361,6 +1404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hongdi Ren (N5J843UBU3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1380,6 +1424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hongdi Ren (N5J843UBU3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

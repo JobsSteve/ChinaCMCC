@@ -19,4 +19,13 @@
     textview.textColor = tcolor;
     return textview;
 }
++(instancetype)placeholdtextViewWithFrame:(CGRect)frame viewTag:(NSInteger)tag viewFont:(CGFloat)font textColor:(UIColor*)tcolor
+{
+    YLTextView *textview = [[YLTextView alloc]initWithFrame:frame];
+    textview.backgroundColor = [UIColor clearColor];
+    textview.tag = tag;
+    textview.font = [UIFont systemFontOfSize:font];
+    textview.textColor = tcolor;
+    return textview;
+}
 @end

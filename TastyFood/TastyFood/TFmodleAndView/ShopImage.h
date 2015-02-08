@@ -10,10 +10,9 @@
 
 @interface ShopImage : UIView
 {
-    UIImage *image;
-    
+    UIImageView *image1;
 }
-@property(nonatomic,strong)UIImage *image;
+@property(nonatomic,strong)UIImageView *image1;
 
 - (void)addAnimatedWithFrame:(CGPoint)startPoint :(CGPoint)endpoint;
 @end

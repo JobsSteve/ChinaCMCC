@@ -15,6 +15,8 @@
 {
     UIScrollView *BottomScrollview;
     ImagePlayerView *imagePlayerView;
+    
+    NSArray *dataSourceArray;
     NSArray *imagelist;
 }
 
@@ -22,6 +24,7 @@
 
 @property(nonatomic,strong)ImagePlayerView *imagePlayerView;
 @property(nonatomic,strong)NSArray *imagelist;
+@property(nonatomic,strong)NSArray *dataSourceArray;
 
 @end
 
@@ -29,15 +32,17 @@
 @synthesize imagePlayerView;
 @synthesize imagelist;
 @synthesize BottomScrollview;
+@synthesize dataSourceArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.title = @"首页";
+        self.title = @"美家鲜生";
 
-        self.tabBarItem =  [self.tabBarItem initWithTitle:@"首页" image:[UIImage imageNamed:@"tabbar_01.png"] selectedImage:[UIImage imageNamed:@"tabbar_01.png"]];
+        self.tabBarItem =  [self.tabBarItem initWithTitle:@"美家鲜生" image:[UIImage imageNamed:@"tabbar_01.png"] selectedImage:[UIImage imageNamed:@"tabbar_01.png"]];
+        [self getbannerPic];
 
     }
     return self;
@@ -48,7 +53,7 @@
     self.view.backgroundColor = GrayColor_APP;
     [self initnavigationItem];
     [self initContentview];
-    [self initBanner];
+//    [self initBanner];
     [self inithomeMenuButton];
     [self initbottomMenuButton];
     
@@ -56,12 +61,15 @@
   
     
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+}
 
 
 -(void)initContentview
 {
-    self.BottomScrollview = [UIScrollView ScrollViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) contentSize:CGSizeMake(WIGHT, 1020) tag:1];
+    self.BottomScrollview = [UIScrollView ScrollViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) contentSize:CGSizeMake(WIGHT, 940) tag:1];
     self.BottomScrollview.delegate = self;
     [self.view addSubview:self.BottomScrollview];
 }
@@ -69,11 +77,14 @@
 //banner 高度150
 -(void)initBanner
 {
+    
+    NSString *string_r = @"http://www.6meijia.com";
+    NSMutableArray *temparray = [NSMutableArray arrayWithCapacity:1];
+    for (NSDictionary *dic in self.dataSourceArray) {
+    [temparray addObject: [NSURL URLWithString: [string_r stringByAppendingString:dic[@"imageurl"]]]];
+    }
     self.imagePlayerView = [[ImagePlayerView alloc]initWithFrame:CGRectMake(0, 0, WIGHT, 150)];
-    self.imagelist  = @[[NSURL URLWithString:@"http://www.ghzw.cn/wzsq/UploadFiles_9194/201109/20110915154150869.bmp"],
-                       [NSURL URLWithString:@"http://sudasuta.com/wp-content/uploads/2013/10/10143181686_375e063f2c_z.jpg"],
-                       [NSURL URLWithString:@"http://www.yancheng.gov.cn/ztzl/zgycddhsdgy/xwdt/201109/W020110902584601289616.jpg"],
-                       [NSURL URLWithString:@"http://fzone.oushinet.com/bbs/data/attachment/forum/201208/15/074140zsb6ko6hfhzrb40q.jpg"]];
+    self.imagelist  = (NSArray*)temparray;
     [self.imagePlayerView initWithCount:self.imagelist.count delegate:self];
     self.imagePlayerView.scrollInterval = 5.0f;
     self.imagePlayerView.hidePageControl = NO;
@@ -100,7 +111,7 @@
 -(void)inithomeMenuButton
 {
     
-    UIView *Menu_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 150, WIGHT, 450) :RGBAcolor(245, 245, 245,1)];
+    UIView *Menu_Buttomview = [UIView ViewWithFrame:CGRectMake(0, 150, WIGHT, 370) :RGBAcolor(245, 245, 245,1)];
     UIButton *b_ti = [UIButton ButtonWithFrame:CGRectMake(10, 5, WIGHT-20, 35) Normal:nil Select:nil Title:@"平价菜场"];
     b_ti.backgroundColor= RGBAcolor(40, 180, 180, 1);
     [Menu_Buttomview addSubview:b_ti];
@@ -113,13 +124,10 @@
     
     
     UIButton *button3 =[UIButton ButtonWithFrame:CGRectMake(10, 210+40, WIGHT/2, 80) Normal:[UIImage imageNamed:@"index_egg.png"] Select:[UIImage imageNamed:@"index_egg.png"] Title:nil];
-    UIButton *button4 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 210+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_cooked.png"] Select:[UIImage imageNamed:@"index_cooked.png"] Title:nil];
     
+   UIButton *button4 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 210+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_rice.png"] Select:[UIImage imageNamed:@"index_rice.png"] Title:nil];
     
-    UIButton *button5 =[UIButton ButtonWithFrame:CGRectMake(10, 310+40, WIGHT/2, 80) Normal:[UIImage imageNamed:@"index_rice.png"] Select:[UIImage imageNamed:@"index_rice.png"] Title:nil];
-    UIButton *button6 =[UIButton ButtonWithFrame:CGRectMake(WIGHT/2+20, 310+40, WIGHT/2-30, 80) Normal:[UIImage imageNamed:@"index_more.png"] Select:[UIImage imageNamed:@"index_more.png"] Title:nil];
-    
-    
+   
     
     
     
@@ -127,20 +135,22 @@
     UILabel *label1 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 130, 80, 20) text:@"肉/禽类" color:[UIColor blackColor] font:12];
     UILabel *label2 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 230, 100, 20) text:@"鱼/水产品" color:[UIColor blackColor] font:12];
     UILabel *label3 = [UILabel leftLabelWithFrame:CGRectMake(10, 330, 100, 20) text:@"蛋/豆制品" color:[UIColor blackColor] font:12];
-    UILabel *label4 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 330, 80, 20) text:@"熟食" color:[UIColor blackColor] font:12];
-    UILabel *label5 = [UILabel leftLabelWithFrame:CGRectMake(10, 430, 130, 20) text:@"米/油/调味品" color:[UIColor blackColor] font:12];
-    UILabel *label6 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 430, 80, 20) text:@"其他" color:[UIColor blackColor] font:12];
-    NSArray *list = @[label,label1,label2,label3,label4,label5,label6];
+    
+    UILabel *label4 = [UILabel leftLabelWithFrame:CGRectMake(WIGHT/2+20, 330, 80, 20) text:@"米/油/调味品" color:[UIColor blackColor] font:12];
+
     
     
-    NSArray *buttonlist =@[button,button1,button2,button3,button4,button5,button6];
-    NSArray *labellist =@[label,label1,label2,label3,label4,label5,label6];
+    NSArray *list = @[label,label1,label2,label3,label4];
+    
+    
+    NSArray *buttonlist =@[button,button1,button2,button3,button4];
+    NSArray *labellist =@[label,label1,label2,label3,label4];
     
     int i=0;
     for (UIButton *btn in buttonlist) {
         UILabel *label_temp =(UILabel*) [labellist objectAtIndex:i];
-        [btn bindData:@"category_name" Value:label_temp.text];
-        [btn addTarget:self action:@selector(pushthis:) forControlEvents:UIControlEventTouchUpInside];
+        [btn bindData:@"category_name" Value:[NSNumber numberWithInteger:i]];
+        [btn addTarget:self action:@selector(pushtocategory:) forControlEvents:UIControlEventTouchUpInside];
         [Menu_Buttomview addSubview:btn];
         [Menu_Buttomview addSubview:list[i]];
         i++;
@@ -153,7 +163,7 @@
 -(void)initbottomMenuButton
 {
     
-    UIView *Menu_Buttomview2 = [UIView ViewWithFrame:CGRectMake(0, 620, WIGHT, 400) :RGBAcolor(245, 245, 245,1)];
+    UIView *Menu_Buttomview2 = [UIView ViewWithFrame:CGRectMake(0, 540, WIGHT, 400) :RGBAcolor(245, 245, 245,1)];
     UIButton *b_ti = [UIButton ButtonWithFrame:CGRectMake(10, 5, WIGHT-20, 35) Normal:nil Select:nil Title:@"高端食材"];
     b_ti.backgroundColor= RGBAcolor(40, 180, 180, 1);
     [Menu_Buttomview2 addSubview:b_ti];
@@ -186,7 +196,7 @@
     for (UIButton *btn in buttonlist) {
         UILabel *label_temp =(UILabel*) [labellist objectAtIndex:i];
         [btn bindData:@"category_name" Value:label_temp.text];
-        [btn addTarget:self action:@selector(pushthis:) forControlEvents:UIControlEventTouchUpInside];
+        [btn addTarget:self action:@selector(pushtogaoduanvc:) forControlEvents:UIControlEventTouchUpInside];
         [Menu_Buttomview2 addSubview:btn];
         [Menu_Buttomview2 addSubview:list[i]];
         i++;
@@ -199,16 +209,15 @@
 
 
 
--(void)pushthis:(UIButton*)btn
+-(void)pushtocategory:(UIButton*)btn
 {
-    TFsingleCategoryViewController *VC1 = [[TFsingleCategoryViewController alloc]init];
-  
-    TFfoodMarketViewController *VC = [[TFfoodMarketViewController alloc]init];
-//    VC.category_Title = [btn getData:@"category_name"];
-    
-//    TFloginViewController *VC = [[TFloginViewController alloc]init];
-    [self.navigationController pushViewController:VC animated:YES];
-    
+    SetDefaults(@"currentSegment", [btn getData:@"category_name"]);
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"changetabbarindex1" object:nil];
+}
+
+-(void)pushtogaoduanvc:(UIButton*)btn
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"changetabbarindex2" object:nil];
 }
 
 -(void)initnavigationItem
@@ -218,6 +227,31 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:registButton];
     
 }
+-(void)getbannerPic
+{
+    [SVProgressHUD showWithStatus:@"..."];
+    [ASIHttpMangment getbannerinfoWithRequestURL: @"http://6meijia.com/getActivityMobile" pragram:nil success:^(NSDictionary *resultObject) {
+        NSLog(@"banner list:%@",[resultObject objectForKey:@"responsedata"]);
+        
+        
+        self.dataSourceArray =[resultObject objectForKey:@"responsedata"];
+        [SVProgressHUD showSuccessWithStatus:@"success"];
+        [self initBanner];
+        
+    } fail:^(NSDictionary *errdic) {
+        NSLog(@"login fail!");
+        [SVProgressHUD showSuccessWithStatus:@"fail"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
+        
+    }];
+    
+    
+
+}
+
+
 
 
 

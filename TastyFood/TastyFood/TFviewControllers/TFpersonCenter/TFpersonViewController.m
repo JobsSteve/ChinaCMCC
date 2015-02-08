@@ -26,8 +26,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"我";
-        self.tabBarItem =  [self.tabBarItem initWithTitle:@"我" image:[UIImage imageNamed:@"tabbar_03.png"] selectedImage:[UIImage imageNamed:@"tabbar_03.png"]];
+        self.title = @"个人";
+        self.tabBarItem =  [self.tabBarItem initWithTitle:@"个人" image:[UIImage imageNamed:@"tabbar_03.png"] selectedImage:[UIImage imageNamed:@"tabbar_03.png"]];
 
     }
     return self;
@@ -45,6 +45,7 @@
         [self.navigationController pushViewController:VC animated:YES];
         
     }
+    [self.tableview reloadData];
 }
 
 
@@ -90,7 +91,7 @@
     if (section==0) {
         return 1;
     }
-    return 3;
+    return 2;
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -118,11 +119,17 @@
     }
     cell.imageView.image = [UIImage imageNamed:@"tabbar_04.png"];
     if (indexPath.section==0) {
-        cell.textLabel.text = @"13717677776";
+        cell.textLabel.text = @"亲，您还未登录";
+        
+        if (GetDefaults(@"userinformation")) {
+         cell.textLabel.text =   [[GetDefaults(@"userinformation") objectForKey:@"account"] objectForKey:@"loginMobile"];
+        }
     }
     if (indexPath.section==1) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        NSArray *list = @[@"常用地址",@"历史订单",@"修改密码"];
+//        NSArray *list = @[@"常用地址",@"历史订单",@"修改密码"];
+        NSArray *list = @[@"历史订单",@"修改密码"];
+
         cell.textLabel.text = list[indexPath.row];
     }
   
@@ -134,19 +141,25 @@
 -(void)ClickBt_submitorderVC:(UIButton*)btn
 {
     
+    
+    
+    
+    
+    
+    
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *VC ;
+//    if (indexPath.section==1&&indexPath.row==0) {
+//        VC = [[TFeditAddressViewController alloc]init];
+//        
+//    }
     if (indexPath.section==1&&indexPath.row==0) {
-        VC = [[TFeditAddressViewController alloc]init];
-        
-    }
-    if (indexPath.section==1&&indexPath.row==1) {
         VC = [[TFmyOrderViewController alloc]init];
         
     }
-    if (indexPath.section==1&&indexPath.row==2) {
+    if (indexPath.section==1&&indexPath.row==1) {
        VC = [[TFeditPswViewController alloc]init];
 
     }

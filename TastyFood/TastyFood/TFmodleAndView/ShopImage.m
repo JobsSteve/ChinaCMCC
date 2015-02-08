@@ -9,14 +9,16 @@
 #import "ShopImage.h"
 
 @implementation ShopImage
-@synthesize image;
+@synthesize image1;
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         
-        
+        self.image1 =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+        [self addSubview:image1];
+    
     }
     return self;
 }
@@ -28,10 +30,10 @@
 
 
 - (void)addAnimatedWithFrame:(CGPoint)startPoint :(CGPoint)endpoint{
-    
-    UIImageView *image1 =[UIImageView imageViewWithFrame:CGRectMake(0, 0, 40, 40):@"menu_2.png"];
-    [self addSubview:image1];
-    
+//    
+//    UIImageView *image1 =[UIImageView imageViewWithFrame:CGRectMake(0, 0, 40, 40):@"menu_2.png"];
+//    [self addSubview:image1];
+//    
     UIBezierPath *path = [UIBezierPath bezierPath];
     //动画起点
     [path moveToPoint:startPoint];

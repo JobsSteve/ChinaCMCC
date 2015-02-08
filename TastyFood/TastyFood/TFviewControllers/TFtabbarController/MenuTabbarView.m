@@ -22,11 +22,13 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Toolbarback.png"]];
         self.selectIndex      = 0;
-        self.titlesList       = @[@"首页",@"平价菜场",@"高端食材",@"我",@""];
+        self.titlesList       = @[@"美家鲜生",@"平价菜场",@"高端食材",@"个人",@""];
         self.iconsList_normal = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_03.png",@""];
         self.iconsList_selected = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_03.png",@""];
         
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changebadgeNum) name:@"checkshopchartBadge" object:nil];
+        
+        [self addNotification];
     }
     return self;
 }
@@ -62,22 +64,31 @@
         
         
         badgeView = [[JSBadgeView alloc] initWithParentView:iamg1e alignment:JSBadgeViewAlignmentCenterRight];
-       
         badgeView.badgePositionAdjustment = CGPointMake(-15, -23);
         badgeView.badgeShadowColor = [UIColor whiteColor];
         badgeView.badgeBackgroundColor = YellowColor_APP;
 
         int num = [GetDefaults(@"chopchartNum") intValue];
+        NSMutableArray *shopchatlist = [NSMutableArray arrayWithArray:GetDefaults(@"shopchartlist")];
+
         if (num>0) {
-            badgeView.badgeText = [NSString stringWithFormat:@"%d", num];
+            badgeView.badgeText = [NSString stringWithFormat:@"%lu", (unsigned long)shopchatlist.count];
         }
     }
 
 }
 -(void)changebadgeNum
 {
-    int num = [GetDefaults(@"chopchartNum") intValue];
-    badgeView.badgeText = [NSString stringWithFormat:@"%d", num];
+    
+    NSMutableArray *shopchatlist = [NSMutableArray arrayWithArray:GetDefaults(@"shopchartlist")];
+//
+    badgeView.badgeText = [NSString stringWithFormat:@"%lu", (unsigned long)shopchatlist.count];
+    
+    
+    
+    
+    
+
 }
 -(void)reloadMenuView
 {
@@ -85,11 +96,11 @@
         [view removeFromSuperview];
     }
     [self setNeedsDisplay];//重新绘制
-    
-    
 }
 -(void)menuAction:(UIButton*)button
 {
+    
+    
     NSLog(@"%ld",(long)button.tag);
     self.selectIndex =button.tag;
     for(UIView *view in [self subviews]){
@@ -102,4 +113,28 @@
 }
 
 
+
+-(void)addNotification
+{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeTabbarIndex1) name:@"changetabbarindex1" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeTabbarIndex2) name:@"changetabbarindex2" object:nil];
+
+
+}
+
+-(void)changeTabbarIndex1
+{
+    
+    UIButton *btn = [[UIButton alloc]init];
+    btn.tag= 1;
+    [self menuAction:btn];
+}
+
+-(void)changeTabbarIndex2
+{
+    
+    UIButton *btn = [[UIButton alloc]init];
+    btn.tag= 2;
+    [self menuAction:btn];
+}
 @end

@@ -13,16 +13,11 @@
     UITextField *_usernameField;
     UITextField *_passwordField;
     UITextField *_comfirpasswordField;
-
     BOOL _isloading;//正在加载
-    
 }
 @property(nonatomic,retain)UITextField *_usernameField;
 @property(nonatomic,retain)UITextField *_passwordField;
-
 @property(nonatomic,retain)UITextField *_comfirpasswordField;
-
-
 @end
 
 @implementation TFregistViewController
@@ -47,9 +42,6 @@
 -(void)initView_ForLogin
 {
     @autoreleasepool {
-        
-        
-        
         UIImageView *backimagePic =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logonew.png"]];
         backimagePic.frame =CGRectMake(0, 20, 320, 200);
         [self.view addSubview:backimagePic];
@@ -66,10 +58,10 @@
         _usernameField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _usernameField.textColor = RGBAcolor(37, 156, 200,1);
         _usernameField.textColor = [UIColor blackColor];
-        _usernameField.tag=1;
+        _usernameField.tag=11;
         _usernameField.delegate=self;
         _usernameField.placeholder=@"用户名/手机号";
-        _usernameField.text=@"TST0002";
+        _usernameField.text=@"13111111111";
         [self.view addSubview:_usernameField];
         
         
@@ -86,7 +78,7 @@
         _passwordField=[[UITextField alloc]initWithFrame:CGRectMake(30, 100, WIGHT-60, 35)];
         _passwordField.borderStyle = UITextBorderStyleRoundedRect;
         _passwordField.placeholder=@"请输入密码";
-        _passwordField.tag=2;
+        _passwordField.tag=22;
         _passwordField.delegate=self;
         _passwordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _passwordField.textColor = RGBAcolor(37, 156, 200,1);
@@ -96,7 +88,7 @@
         _passwordField.returnKeyType=UIReturnKeyDone;
         _passwordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _passwordField.secureTextEntry=YES;
-        _passwordField.text=@"123456";
+        _passwordField.text=@"123";
         _passwordField.font=[UIFont systemFontOfSize:15];
         [self.view addSubview:_passwordField];
         
@@ -110,16 +102,12 @@
         _passwordField.leftView=leftvw2;
         _passwordField.leftViewMode=UITextFieldViewModeAlways;
         
-  
-        
-        
-        
         
         //登录密码
         _comfirpasswordField=[[UITextField alloc]initWithFrame:CGRectMake(30, 150, WIGHT-60, 35)];
         _comfirpasswordField.borderStyle = UITextBorderStyleRoundedRect;
         _comfirpasswordField.placeholder=@"请确认密码";
-        _comfirpasswordField.tag=2;
+        _comfirpasswordField.tag=33;
         _comfirpasswordField.delegate=self;
         _comfirpasswordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _comfirpasswordField.textColor = RGBAcolor(37, 156, 200,1);
@@ -129,10 +117,9 @@
         _comfirpasswordField.returnKeyType=UIReturnKeyDone;
         _comfirpasswordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _comfirpasswordField.secureTextEntry=YES;
-        _comfirpasswordField.text=@"123456";
+        _comfirpasswordField.text=@"123";
         _comfirpasswordField.font=[UIFont systemFontOfSize:15];
         [self.view addSubview:_comfirpasswordField];
-        
         
         
         UIView *leftvw3=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
@@ -143,17 +130,11 @@
         _comfirpasswordField.leftView=leftvw3;
         _comfirpasswordField.leftViewMode=UITextFieldViewModeAlways;
         
-        
-        
-        
-       
-        
         //登录按钮
         UIButton *loginbt=[UIButton ButtonWithFrame:CGRectMake(30, 220, WIGHT-30*2, 35) Normal:[UIImage imageNamed:@"loginbtn_image.png"] Select:[UIImage imageNamed:@"loginbtn_image.png"] Title:@"提交"];
         loginbt.backgroundColor = RGBAcolor(255, 157, 7, 1);
         [loginbt addTarget:self action:@selector(ClickBt_submit:) forControlEvents:UIControlEventTouchUpInside];
         [self .view addSubview:loginbt];
-        
         
         
     }
@@ -173,6 +154,7 @@
         }];
         return;
     }
+    
     if (![_comfirpasswordField.text isEqualToString:_passwordField.text]) {
         [SVProgressHUD showSuccessWithStatus:@"美家提醒你两次密码不一致!"];
         [UIView animateWithDuration:2 animations:^{
@@ -194,17 +176,18 @@
     SetDefaults(Defaults_LoginName, username);
     SetDefaults(Defaults_LoginPsw, pwd);
     SetDefaults(Defaults_Loginbool, [NSNumber numberWithBool:YES]);
-    
-    NSDictionary * postdic = @{@"username":username,@"password":pwd};
+
+    NSDictionary * postdic = @{@"loginMobile":username,@"password":pwd};
+    [SVProgressHUD showWithStatus:@"注册提交中..."];
 
     
-    [SVProgressHUD showWithStatus:@"注册提交中..."];
-    
-    
-    [ASIHttpMangment LoginWithRequestURL:@"http://www.kuaidi100.com/query" pragram:@{@"type":@"012",@"postid":@"1231"} success:^(NSDictionary *resultObject) {
+    [ASIHttpMangment AccountWithRequestURL:@"http://6meijia.com/register/registerJsonPost" pragram:postdic success:^(NSDictionary *resultObject) {
+        NSLog(@"注册response:%@",resultObject);
         [SVProgressHUD showSuccessWithStatus:@"注册成功"];
-        [UIView animateWithDuration:2 animations:^{
+        [UIView animateWithDuration:3 animations:^{
             [SVProgressHUD dismiss];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+
         }];
     } fail:^(NSDictionary *errdic) {
         NSLog(@"注册失败");
@@ -213,7 +196,7 @@
             [SVProgressHUD dismiss];
         }];
     }];
-    
+//
     
 }
 #pragma mark - Touch事件
@@ -225,6 +208,45 @@
 
 }
 #pragma mark - UITextFieldDelegate
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+}
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField.tag==11) {
+        if (_usernameField.text.length!=11) {
+            [SVProgressHUD showSuccessWithStatus:@"请输入正确的手机号！"];
+            [UIView animateWithDuration:2 animations:^{
+                [SVProgressHUD dismiss];
+            }];
+        }else{
+            
+            [SVProgressHUD showWithStatus:@"手机号验证中..."];
+            NSDictionary * postdic = @{@"loginMobile":_usernameField.text};
+            [ASIHttpMangment telphoneNumWithRequestURL:@"http://6meijia.com/register/loginMobileJson" pragram:postdic success:^(NSDictionary *resultObject) {
+                NSString *messgae = [[resultObject objectForKey:@"responsedata"] objectForKey:@"description"];
+                [SVProgressHUD showSuccessWithStatus:messgae];
+                [UIView animateWithDuration:3 animations:^{
+                    [SVProgressHUD dismiss];
+                    
+                }];
+            } fail:^(NSDictionary *errdic) {
+                [SVProgressHUD showSuccessWithStatus:@"验证失败"];
+                [UIView animateWithDuration:2 animations:^{
+                    [SVProgressHUD dismiss];
+                }];
+            }];
+
+        
+        
+        
+        
+        }
+            
+            
+    }
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];

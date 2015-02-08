@@ -195,6 +195,15 @@
 }
 -(void)pathDismiss:(UIButton*)btn
 {
+    //记下选择区域数据 @“上海 浦东新区”  分隔符:空格
+    NSString *string =  [NSString stringWithFormat:@"%@ %@",self.country_string,self.city_string];
+    SetDefaults(@"selectArea", string);
+    //切换地区购物车商品清空
+    GetDefaults(@"shopchartlist");
+    
+    
+    
+    
     [[self slidingPanelController] closePanel];
 
 }

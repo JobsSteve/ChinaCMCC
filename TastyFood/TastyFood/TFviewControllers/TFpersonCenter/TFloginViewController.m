@@ -77,7 +77,7 @@
         _usernameField.tag=1;
         _usernameField.delegate=self;
         _usernameField.placeholder=@"用户名/手机号";
-        _usernameField.text=@"TST0002";
+        _usernameField.text=@"18918558295";
         [self.view addSubview:_usernameField];
         
         
@@ -88,7 +88,6 @@
         [leftvw addSubview:lefview];
         _usernameField.leftView=leftvw;
         _usernameField.leftViewMode=UITextFieldViewModeAlways;
-        
         
         //登录密码
         _passwordField=[[UITextField alloc]initWithFrame:CGRectMake(30, 100, WIGHT-60, 35)];
@@ -104,7 +103,7 @@
         _passwordField.returnKeyType=UIReturnKeyDone;
         _passwordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _passwordField.secureTextEntry=YES;
-        _passwordField.text=@"123456";
+        _passwordField.text=@"18918558295";
         _passwordField.font=[UIFont systemFontOfSize:15];
         [self.view addSubview:_passwordField];
         
@@ -124,7 +123,7 @@
         
         boxBt=[UIButton ButtonWithFrame:CGRectMake(WIGHT-100, 150, 20, 20) Normal:[UIImage imageNamed:boxBt_imagename] Select:[UIImage imageNamed:boxBt_imagename] Title:nil];
         [boxBt addTarget:self action:@selector(ClickBt_boxBt:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:boxBt];
+//        [self.view addSubview:boxBt];
         
         
         
@@ -134,7 +133,7 @@
         lable.textAlignment = NSTextAlignmentRight;
         lable.font = [UIFont systemFontOfSize:12];
         lable.textColor = [UIColor grayColor];
-        [self.view addSubview:lable];
+//        [self.view addSubview:lable];
         
         //登录按钮
         UIButton *loginbt=[UIButton ButtonWithFrame:CGRectMake(30, 220, WIGHT-30*2, 35) Normal:[UIImage imageNamed:@"loginbtn_image.png"] Select:[UIImage imageNamed:@"loginbtn_image.png"] Title:@"登录"];
@@ -144,7 +143,37 @@
         
         
         
+        
+        //找回密码
+        UIButton *foundpasswordbt=[UIButton ButtonWithFrame:CGRectMake(WIGHT-120, HEIGHT-250, 100, 35) Normal:nil Select:nil Title:@"找回密码"];
+        [foundpasswordbt setTitleColor:GreenColor_APP forState:UIControlStateNormal];
+
+        [foundpasswordbt addTarget:self action:@selector(foundPsw_Action) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:foundpasswordbt];
+        
+        
     }
+}
+//找回密码
+
+-(void)foundPsw_Action
+{
+    [SVProgressHUD showWithStatus:@"信息验证中..."];
+    NSDictionary * postdic = @{@"loginMobile":_usernameField.text};
+    [ASIHttpMangment telphoneNumWithRequestURL:@"http://6meijia.com/login/passwordJson" pragram:postdic success:^(NSDictionary *resultObject) {
+        NSString *messgae = [[resultObject objectForKey:@"responsedata"] objectForKey:@"description"];
+        [SVProgressHUD showSuccessWithStatus:messgae];
+        [UIView animateWithDuration:3 animations:^{
+            [SVProgressHUD dismiss];
+            
+        }];
+    } fail:^(NSDictionary *errdic) {
+        [SVProgressHUD showSuccessWithStatus:@"验证失败"];
+        [UIView animateWithDuration:2 animations:^{
+            [SVProgressHUD dismiss];
+        }];
+    }];
+
 }
 
 
@@ -191,17 +220,20 @@
     
     NSDictionary * postdic = @{@"username":username,@"password":pwd};
     
- 
     
-    
-    [ASIHttpMangment LoginWithRequestURL:@"http://www.kuaidi100.com/query" pragram:@{@"type":@"012",@"postid":@"1231"} success:^(NSDictionary *resultObject) {
+    [ASIHttpMangment AccountWithRequestURL: @"http://6meijia.com/login/loginJson" pragram:postdic success:^(NSDictionary *resultObject) {
+        NSLog(@"登陆response:%@",resultObject);
+
+        SetDefaults(@"userinformation", [[resultObject objectForKey:@"responsedata"] objectForKey:@"result"]);
+        
+        
         
         [SVProgressHUD showSuccessWithStatus:@"success"];
-        [UIView animateWithDuration:2 animations:^{
+        [UIView animateWithDuration:3 animations:^{
             [SVProgressHUD dismiss];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
         }];
-    
-
         
     } fail:^(NSDictionary *errdic) {
         NSLog(@"login fail!");
@@ -209,9 +241,17 @@
         [UIView animateWithDuration:2 animations:^{
             [SVProgressHUD dismiss];
         }];
-    
+        
     }];
     
+    
+}
+-(void)requestFinished:(ASIHTTPRequest *)request
+{
+    NSLog(@"%@",request.responseData);
+}
+-(void)requestFailed:(ASIHTTPRequest *)request
+{
     
 }
 

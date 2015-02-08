@@ -80,9 +80,9 @@
     }
     
     [cell.contentView addSubview:[CellViews CellViewWithShoplist:nil]];
-    
     UIButton *jionButton = (UIButton*)[cell.contentView viewWithTag:201];
     [jionButton bindData:@"sa" Value:indexPath];
+    
     [jionButton addTarget:self action:@selector(jionchartAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
@@ -95,7 +95,7 @@
 -(void)jionchartAction:(UIButton *)shopCarBtt{
     
     
-    
+    NSLog(@"数据:%@",[shopCarBtt getData:@""]);
     //得到产品信息
     UITableViewCell *cell = (UITableViewCell *)[shopCarBtt superview];
     CGRect cellRectss = [self.view convertRect:cell.frame fromView:self.tableview];
@@ -108,7 +108,6 @@
 
 - (void)addAnimatedWithFrame:(CGRect)frame {
     
-    
     // 该部分动画 以self.view为参考系进行
     frame = [[UIApplication sharedApplication].keyWindow  convertRect:frame fromView:self.view];
     CGPoint endpoint = CGPointMake(frame.origin.x+40, self.view.window.bounds.size.height-49);
@@ -116,10 +115,8 @@
         
     
     ShopImage *image1 =[[ShopImage alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    image1.image = [UIImage imageNamed:@""];
     [self.view.window addSubview:image1];
     [image1 addAnimatedWithFrame:startpoint :endpoint];
-    
     
     int num = [GetDefaults(@"chopchartNum") intValue];
     SetDefaults(@"chopchartNum", [NSNumber numberWithInt:num+1]);

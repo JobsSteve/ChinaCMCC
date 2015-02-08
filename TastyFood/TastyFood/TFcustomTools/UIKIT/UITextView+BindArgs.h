@@ -10,5 +10,6 @@
 
 @interface UITextView (BindArgs)
 +(instancetype)textViewWithFrame:(CGRect)frame viewTag:(NSInteger)tag viewFont:(CGFloat)font textColor:(UIColor*)tcolor;
++(instancetype)placeholdtextViewWithFrame:(CGRect)frame viewTag:(NSInteger)tag viewFont:(CGFloat)font textColor:(UIColor*)tcolor;
 
 @end

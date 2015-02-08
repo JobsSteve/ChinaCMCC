@@ -32,19 +32,12 @@
     
     SetDefaults(Defaults_userInfo, nil);
     
-    
-    
-    
-    //  4s:320*480
-    
-    NSLog(@"--:%f",self.window.frame.size.height);
-    NSLog(@"--:%f",self.window.frame.size.width);
+
     CGRect rect = [[UIScreen mainScreen] bounds];
     CGSize size = rect.size;
     CGFloat width = size.width;
     CGFloat height = size.height;
-    NSLog(@"--:%f",width);
-
+   
     //默认不记住密码
     SetDefaults(Defaults_isRememberPsw, @NO);
     if (GetDefaults(@"chopchartNum")==nil) {
@@ -52,6 +45,7 @@
     }
     
 
+    
  
     TFmyPathViewController *leftVC =[[TFmyPathViewController alloc]init];
     CustomtabbarController *VC = [[CustomtabbarController alloc]init];

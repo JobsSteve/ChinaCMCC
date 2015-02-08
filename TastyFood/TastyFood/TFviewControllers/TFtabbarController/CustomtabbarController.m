@@ -20,6 +20,7 @@
 {
     MenuTabbarView *Menutabbar;
     
+    
 }
 @property(nonatomic,retain)MenuTabbarView *Menutabbar;
 
@@ -27,6 +28,7 @@
 
 @implementation CustomtabbarController
 @synthesize Menutabbar;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,10 +55,22 @@
     
     
 }
+//-(void)addNotification
+//{
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeTabbarIndex) name:@"changetabbarindex" object:nil];
+//    
+//}
+//-(void)changeTabbarIndex
+//{
+//    self.selectedIndex = [GetDefaults(@"toIndexVC") integerValue];
+//    
+//}
 -(void)getinfo:(int)index
 {
+    
     self.selectedIndex = index;
 }
+
 
 -(void)iniAllTabBarVC{
     
