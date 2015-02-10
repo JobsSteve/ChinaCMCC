@@ -64,15 +64,15 @@
 {
     [super viewDidAppear:animated];
     [self initdatepicker];
-
-    [self loadtime];
     if (self.dataSouerce &&self.dataSouerce.count>0) {
         [self.dataSouerce removeAllObjects];
     }
     [self.dataSouerce addObjectsFromArray:GetDefaults(@"shopchartlist")];
-    [self.tableview reloadData];
     
+    [self.tableview reloadData];
 
+    
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,7 +87,7 @@
 //初始化弹出视图
 -(void)initpopview:(NSString*)statuspic :(NSString*)numberstring{
 
-    UIView *headerview = [UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 150) :GreenColor_APP];
+//    UIView *headerview = [UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 150) :GreenColor_APP];
     
     UIImageView *iconiamge = [UIImageView imageViewWithFrame:CGRectMake(WIGHT/2-90, 50, 30, 30) :@"icon-success.gif"];
     UILabel *title = [UILabel LabelWithFrame:CGRectMake(WIGHT/2-50, 53, 100, 30) text:@"订购成功" color:GreenColor_APP font:18];
@@ -124,7 +124,7 @@
 }
 -(void)initsubview{
     
-    self.textview = [YLTextView placeholdtextViewWithFrame:CGRectMake(90, 5, 200, 60) viewTag:1 viewFont:13 textColor:[UIColor grayColor]];
+    self.textview = [YLTextView placeholdtextViewWithFrame:CGRectMake(100, 5, 200, 60) viewTag:1 viewFont:13 textColor:[UIColor grayColor]];
     self.textview.placeholder = @"可以写下您的备注信息!\n 谢谢！";
     self.textview.returnKeyType = UIReturnKeyDone;
     self.textview.delegate = self;
@@ -133,12 +133,17 @@
     
     self.addressTextField = [UITextField textFieldWithFrame:CGRectMake(0, 0, WIGHT-150, 35) fieldTag:3 fieldFont:13 textColor:[UIColor blackColor] fieldtext:@""];
     self.addressTextField.borderStyle = UITextBorderStyleNone;
+    self.addressTextField.returnKeyType = UIReturnKeyDone;
     self.addressTextField.textAlignment = NSTextAlignmentRight;
     self.addressTextField.placeholder = @"请补充详细地址";
+    self.addressTextField.delegate = self;
     
     self.telphoneTextField = [UITextField textFieldWithFrame:CGRectMake(0, 0, WIGHT-150, 35) fieldTag:3 fieldFont:13 textColor:[UIColor blackColor] fieldtext:@""];
     self.telphoneTextField.borderStyle = UITextBorderStyleNone;
     self.telphoneTextField.textAlignment = NSTextAlignmentRight;
+    self.telphoneTextField.returnKeyType = UIReturnKeyDone;
+    self.telphoneTextField.delegate = self;
+
     self.telphoneTextField.placeholder = @"手机号码";
     
     if (GetDefaults(@"userinformation")) {
@@ -171,16 +176,15 @@
     self.datePickerView = [[DatePickerView alloc]initWithFrame:CGRectMake(0,200, WIGHT, 190)];
     self.datePickerView.delegate = self;
     if (time <= 9) {
-        [self.datePickerView initShowpickerview:@[@"今天"]  : @[@"11:30前送到",@"17:30前送到"]];
+        [self.datePickerView initShowpickerview:@[@"今天",@"明天",@"后天"]  : @[@"11:30前送到",@"17:30前送到"]];
     }else if (9<time && time<=15){
-        [self.datePickerView initShowpickerview:@[@"今天"]  : @[@"17:30前送到"]];
+        [self.datePickerView initShowpickerview:@[@"今天",@"明天",@"后天"]  : @[@"11:30前送到",@"17:30前送到",]];
     }else if (15<time)
     {
         [self.datePickerView initShowpickerview:@[@"明天",@"后天"]  : @[@"11:30前送到",@"17:30前送到"]];
 
     }
-
-
+    
 }
 
 -(void)initnavigationItem
@@ -215,7 +219,7 @@
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section==0) {
-       return  @"用户信息";
+       return  @"";
     }
     return @"订单信息";
 }
@@ -228,6 +232,9 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section==0) {
+        return 0;
+    }
     return 30;
 }
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -285,16 +292,22 @@
         }
         if (indexPath.row==2) {
             cell.textLabel.text =  @"服务地址";
-           
+            if ([[GetDefaults(@"userinformation") objectForKey:@"address"] objectForKey:@"address"]) {
+                self.addressTextField.text =[[GetDefaults(@"userinformation") objectForKey:@"address"] objectForKey:@"address"];
+                
+            }
             cell.accessoryView = self.addressTextField;
+            
+           
         }
         if (indexPath.row==3) {
-            cell.textLabel.text =  @"备注";
+            cell.textLabel.text =  @"捎句话";
             [cell.contentView addSubview:textview];
         }
 
         
     }
+    
     if (indexPath.section==1) {
            [cell.contentView addSubview:[CellViews CellViewWithShopchartlistpart:[[self.dataSouerce objectAtIndex:indexPath.row] objectForKey:@"shopdetail"]]];
         
@@ -320,6 +333,11 @@
 {
     if (indexPath.section==0) {
         if (indexPath.row==1) {
+            
+            [self.telphoneTextField resignFirstResponder];
+            [self.addressTextField resignFirstResponder];
+            [textview resignFirstResponder];
+            
           [self.datePickerView ShowPickView];
         }
         if (indexPath.row==0||indexPath.row==2) {
@@ -350,17 +368,19 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.textview resignFirstResponder];
+    [self.addressTextField resignFirstResponder];
+    [self.telphoneTextField resignFirstResponder];
 }
 #pragma mark - UITextFieldDelegate
 - (void)textViewDidEndEditing:(UITextView *)textView{
     
-    
-    
+    [self.addressTextField resignFirstResponder];
+    [self.telphoneTextField resignFirstResponder];
     [self.textview resignFirstResponder];
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-   return  [self.textview resignFirstResponder];
+   return  [textField resignFirstResponder];
 
 }
 #pragma mark -- textfield delegate
@@ -437,12 +457,10 @@
 -(void)ClickBt_submitorderVC:(UIButton*)btn
 {
     
-   
-    
-    
-    
     NSMutableArray *shopchatlist_temp = [NSMutableArray arrayWithCapacity:1];
     [shopchatlist_temp addObjectsFromArray:GetDefaults(@"shopchartlist")];
+    
+    
     
     if (self.sendDate_value==nil||self.sendTime_value==nil||self.addressTextField.text==nil||self.textview.text==nil||GetDefaults(@"selectArea")==nil||shopchatlist_temp==nil||shopchatlist_temp.count==0) {
         [SVProgressHUD showSuccessWithStatus:@"请完善订单信息，再进行提交，谢谢！"];
@@ -451,8 +469,6 @@
         }];
         return;
     }
-    
-    
     NSString *mobileNumber;
     if (GetDefaults(@"userinformation")) {
         mobileNumber =   [[GetDefaults(@"userinformation") objectForKey:@"account"] objectForKey:@"loginMobile"];
@@ -481,8 +497,8 @@
         float pricesupplyjia = [[dic[@"shopdetail"] objectForKey:@"supplierPrice"] floatValue];//供应闪单价
         float weight = [[dic[@"shopdetail"] objectForKey:@"weight"] floatValue];//重量
         int totaltemp_weight = weight*[dic[@"shopNum"] floatValue];
-        float total_price = pricemeijia*totaltemp_weight;
-        float total_supplyprice = pricesupplyjia*totaltemp_weight;
+        float total_price = pricemeijia*[dic[@"shopNum"] floatValue];
+        float total_supplyprice = pricesupplyjia*[dic[@"shopNum"] floatValue];
         totalprice1=total_price+totalprice1;
         totalweight1 =totalweight1+totaltemp_weight;
         totalsupplyprice1 = total_supplyprice +totalsupplyprice1;
@@ -495,21 +511,26 @@
     NSMutableArray *freshFoodOrderDetails = [NSMutableArray arrayWithCapacity:1];
     
     
-    NSMutableDictionary *dic_one = [NSMutableDictionary dictionaryWithCapacity:1];
     
     for (NSDictionary *dic in shopchatlist_temp) {
+        NSMutableDictionary *dic_one = [NSMutableDictionary dictionaryWithCapacity:1];
+
         [dic_one setObject:[dic[@"shopdetail"] objectForKey:@"name"] forKey:@"name"];
         
         float pricemeijia_one = [[dic[@"shopdetail"] objectForKey:@"meijiaPrice"] floatValue];//美家单价
         float pricesupplyjia_one = [[dic[@"shopdetail"] objectForKey:@"supplierPrice"] floatValue];//供应闪单价
         
         float weight_one = [[dic[@"shopdetail"] objectForKey:@"weight"] floatValue];//重量
-        float totaltemp_weight_one = weight_one*[dic[@"shopNum"] floatValue];
+        float totaltemp_weight_one = weight_one*[dic[@"shopNum"] floatValue];//总重量 = 单重量*数量
         
-        float total_price_one = pricemeijia_one*totaltemp_weight_one;
-        float total_supplyprice_one = pricesupplyjia_one*totaltemp_weight_one;
+//        
+//        float total_price_one = pricemeijia_one*totaltemp_weight_one;
+//        float total_supplyprice_one = pricesupplyjia_one*totaltemp_weight_one;
+//        
+        float total_price_one = pricemeijia_one*[dic[@"shopNum"] floatValue];
+        float total_supplyprice_one = pricesupplyjia_one*[dic[@"shopNum"] floatValue];
         
-        
+        [dic_one setObject:[NSNumber numberWithFloat:pricemeijia_one] forKey:@"price"];
         [dic_one setObject:[NSNumber numberWithFloat:total_supplyprice_one] forKey:@"supplierPrice"];
         [dic_one setObject:[NSNumber numberWithFloat:totaltemp_weight_one] forKey:@"totalWeight"];
         [dic_one setObject:[NSNumber numberWithFloat:total_price_one] forKey:@"totalPrice"];
@@ -518,8 +539,6 @@
         
         [freshFoodOrderDetails addObject:dic_one];
     }
-    
-    
     
     
     NSMutableDictionary *postdic = [NSMutableDictionary dictionaryWithCapacity:1];
@@ -534,9 +553,10 @@
     [addressdic setObject:area1 forKey:@"city"];
     [addressdic setObject:area2 forKey:@"district"];
     [addressdic setObject:detailaddress forKey:@"address"];
-    
     [postdic setObject:addressdic forKey:@"address"];
+    
     NSMutableDictionary *freshFoodOrder = [NSMutableDictionary dictionaryWithCapacity:1];
+    
     [freshFoodOrder setObject:ordercontentString forKey:@"orderContent"];
     [freshFoodOrder setObject:[NSNumber numberWithFloat:totalprice1] forKey:@"totalPrice"];
     [freshFoodOrder setObject:[NSNumber numberWithFloat:totalweight1] forKey:@"totalWieght"];
@@ -608,6 +628,7 @@
 {
         [self.successPopview hide];
 }
+
 
 
 /*  例子

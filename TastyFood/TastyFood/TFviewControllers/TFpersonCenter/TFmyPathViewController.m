@@ -127,7 +127,7 @@
 {
     UIView *headerView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 100) :[UIColor clearColor]];
     
-    UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, 70, 70) Normal:[UIImage imageNamed:@"header.png"] Select:[UIImage imageNamed:@"header.png"] Title:nil];
+    UIButton *picButton = [UIButton ButtonWithFrame:CGRectMake(20, 10, 70, 70) Normal:[UIImage imageNamed:@"Icon.png"] Select:[UIImage imageNamed:@"Icon.png"] Title:nil];
     picButton.layer.cornerRadius = 70/2;
     picButton.layer.borderColor = [UIColor whiteColor].CGColor;
     picButton.layer.borderWidth = 3;

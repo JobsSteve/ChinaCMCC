@@ -22,7 +22,7 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Toolbarback.png"]];
         self.selectIndex      = 0;
-        self.titlesList       = @[@"美家鲜生",@"平价菜场",@"高端食材",@"个人",@""];
+        self.titlesList       = @[@"首页",@"平价菜场",@"高端食材",@"个人",@""];
         self.iconsList_normal = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_04.png",@""];
         self.iconsList_selected = @[@"tabbar_01selct.png",@"tabbar_02selct.png",@"tabbar_03selct.png",@"tabbar_04selct.png",@""];
         

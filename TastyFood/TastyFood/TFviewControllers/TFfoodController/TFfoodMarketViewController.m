@@ -146,7 +146,6 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     [jionButton bindData:@"indexRow" Value:[NSNumber numberWithInteger:indexPath.row]];
     [jionButton bindData:@"indexPath" Value:indexPath];
     [jionButton bindData:@"pic" Value:imageview_shoppic.image];
-    
     [jionButton bindData:@"shopNumber" Value:shopNumString];
     [jionButton bindData:@"shopdetail" Value:self.dataSource[indexPath.row]];
 
@@ -240,7 +239,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     
     [ASIHttpMangment ShoplistWithRequestURL: @"http://6meijia.com/request/firstMobile2JsonPost" pragram:postdic success:^(NSDictionary *resultObject) {
         NSLog(@"登陆response:%@",resultObject);
-        [SVProgressHUD showSuccessWithStatus:@"success"];
+        [SVProgressHUD showSuccessWithStatus:@""];
         [UIView animateWithDuration:2 animations:^{
             [SVProgressHUD dismiss];
         }];
@@ -256,7 +255,6 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
         SetDefaults(@"shopNumlist", list);
         [self.tableview reloadData];
     } fail:^(NSDictionary *errdic) {
-        NSLog(@"login fail!");
         [SVProgressHUD showSuccessWithStatus:@"网络不稳定,请重试！"];
         [UIView animateWithDuration:2 animations:^{
             [SVProgressHUD dismiss];

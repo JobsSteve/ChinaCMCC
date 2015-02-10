@@ -35,8 +35,7 @@
 
     CGRect rect = [[UIScreen mainScreen] bounds];
     CGSize size = rect.size;
-    CGFloat width = size.width;
-    CGFloat height = size.height;
+
    
     //默认不记住密码
     SetDefaults(Defaults_isRememberPsw, @NO);
@@ -44,15 +43,9 @@
         SetDefaults(@"chopchartNum", [NSNumber numberWithInt:0]);
     }
     
-
     
- 
     TFmyPathViewController *leftVC =[[TFmyPathViewController alloc]init];
     CustomtabbarController *VC = [[CustomtabbarController alloc]init];
-
-    
-   
-
     
     MSSlidingPanelController    *slidingPanelController = [[MSSlidingPanelController alloc] initWithCenterViewController:VC leftPanelController:leftVC andRightPanelController:nil];
     [slidingPanelController setLeftPanelStatusBarColor:[UIColor clearColor]];

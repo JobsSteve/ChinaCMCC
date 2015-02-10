@@ -75,8 +75,6 @@
     
     [pickerview addSubview:statusView];
     
-    
-    
     [window addSubview:pickerview];
     [self DismissPickView];
     
