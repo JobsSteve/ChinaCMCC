@@ -77,7 +77,7 @@
         _usernameField.tag=1;
         _usernameField.delegate=self;
         _usernameField.placeholder=@"用户名/手机号";
-        _usernameField.text=@"18918558295";
+//        _usernameField.text=@"18918558295";
         [self.view addSubview:_usernameField];
         
         
@@ -103,7 +103,7 @@
         _passwordField.returnKeyType=UIReturnKeyDone;
         _passwordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _passwordField.secureTextEntry=YES;
-        _passwordField.text=@"18918558295";
+//        _passwordField.text=@"18918558295";
         _passwordField.font=[UIFont systemFontOfSize:15];
         [self.view addSubview:_passwordField];
         
@@ -161,6 +161,8 @@
     [SVProgressHUD showWithStatus:@"信息验证中..."];
     NSDictionary * postdic = @{@"loginMobile":_usernameField.text};
     [ASIHttpMangment telphoneNumWithRequestURL:@"http://6meijia.com/login/passwordJson" pragram:postdic success:^(NSDictionary *resultObject) {
+        
+        
         NSString *messgae = [[resultObject objectForKey:@"responsedata"] objectForKey:@"description"];
         [SVProgressHUD showSuccessWithStatus:messgae];
         [UIView animateWithDuration:3 animations:^{
@@ -223,15 +225,17 @@
     
     [ASIHttpMangment AccountWithRequestURL: @"http://6meijia.com/login/loginJson" pragram:postdic success:^(NSDictionary *resultObject) {
         NSLog(@"登陆response:%@",resultObject);
+        NSString *status =[[resultObject objectForKey:@"responsedata"] objectForKey:@"status"];
+        if ([status isEqual:@"success"]) {
+            SetDefaults(@"userinformation", [[resultObject objectForKey:@"responsedata"] objectForKey:@"result"]);
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
 
-        SetDefaults(@"userinformation", [[resultObject objectForKey:@"responsedata"] objectForKey:@"result"]);
         
         
-        
-        [SVProgressHUD showSuccessWithStatus:@"success"];
+        [SVProgressHUD showSuccessWithStatus:status];
         [UIView animateWithDuration:3 animations:^{
             [SVProgressHUD dismiss];
-            [self.navigationController popToRootViewControllerAnimated:YES];
             
         }];
         

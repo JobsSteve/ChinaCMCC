@@ -146,6 +146,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     [jionButton bindData:@"indexRow" Value:[NSNumber numberWithInteger:indexPath.row]];
     [jionButton bindData:@"indexPath" Value:indexPath];
     [jionButton bindData:@"pic" Value:imageview_shoppic.image];
+    
     [jionButton bindData:@"shopNumber" Value:shopNumString];
     [jionButton bindData:@"shopdetail" Value:self.dataSource[indexPath.row]];
 
@@ -157,7 +158,9 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 
 //加入购物车 步骤1
 -(void)jionchartAction:(UIButton *)shopCarBtt{
+    
     NSLog(@"数量:%@",[shopCarBtt getData:@"shopNumber"]);
+    NSLog(@"1231:%@",[shopCarBtt getData:@"pic"]);
     //第几行
     NSInteger row = [[shopCarBtt getData:@"indexRow"] integerValue];
     //商品数量

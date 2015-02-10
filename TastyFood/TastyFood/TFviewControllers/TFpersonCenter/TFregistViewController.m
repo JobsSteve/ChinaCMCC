@@ -61,7 +61,7 @@
         _usernameField.tag=11;
         _usernameField.delegate=self;
         _usernameField.placeholder=@"用户名/手机号";
-        _usernameField.text=@"13111111111";
+//        _usernameField.text=@"13111111111";
         [self.view addSubview:_usernameField];
         
         
@@ -88,7 +88,7 @@
         _passwordField.returnKeyType=UIReturnKeyDone;
         _passwordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _passwordField.secureTextEntry=YES;
-        _passwordField.text=@"123";
+//        _passwordField.text=@"123";
         _passwordField.font=[UIFont systemFontOfSize:15];
         [self.view addSubview:_passwordField];
         
@@ -117,7 +117,7 @@
         _comfirpasswordField.returnKeyType=UIReturnKeyDone;
         _comfirpasswordField.clearButtonMode=UITextFieldViewModeWhileEditing;
         _comfirpasswordField.secureTextEntry=YES;
-        _comfirpasswordField.text=@"123";
+//        _comfirpasswordField.text=@"123";
         _comfirpasswordField.font=[UIFont systemFontOfSize:15];
         [self.view addSubview:_comfirpasswordField];
         
@@ -224,9 +224,16 @@
             
             [SVProgressHUD showWithStatus:@"手机号验证中..."];
             NSDictionary * postdic = @{@"loginMobile":_usernameField.text};
-            [ASIHttpMangment telphoneNumWithRequestURL:@"http://6meijia.com/register/loginMobileJson" pragram:postdic success:^(NSDictionary *resultObject) {
+            [ASIHttpMangment telphoneNumWithRequestURL:@"http://6meijia.com/register/getFamilyCustomerByMobileJson" pragram:postdic success:^(NSDictionary *resultObject) {
+                
+                
                 NSString *messgae = [[resultObject objectForKey:@"responsedata"] objectForKey:@"description"];
                 [SVProgressHUD showSuccessWithStatus:messgae];
+                
+                if ([[resultObject objectForKey:@"responsedata"] isEqual:@"success"]) {
+                    //success 说明手机号存在    清空 重新输入
+                    _usernameField.text =@"";
+                }
                 [UIView animateWithDuration:3 animations:^{
                     [SVProgressHUD dismiss];
                     

@@ -185,7 +185,7 @@
 
 -(void)initnavigationItem
 {
-    UIButton *registButton=[UIButton ButtonWithFrame:CGRectMake(WIGHT-90, 0, 80, 35) Normal:nil Select:nil Title:@"提交订单"];
+    UIButton *registButton=[UIButton ButtonWithFrame:CGRectMake(WIGHT-90, 0, 80, 35) Normal:[UIImage imageNamed:@"btn-submited.png"] Select:[UIImage imageNamed:@"btn-submited.png"] Title:nil];
     [registButton addTarget:self action:@selector(ClickBt_submitorderVC:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:registButton];
     
@@ -266,7 +266,7 @@
         
     }
 
-    NSArray *imagelist = @[@"tabbar_01.png",@"tabbar_01.png",@"tabbar_01.png",@"tabbar_01.png"];
+    NSArray *imagelist = @[@"mobileicon.png",@"clockicon.png",@"locationicon.png",@"chaticon.png"];
     if (indexPath.section==0) {
         cell.imageView.image = [UIImage imageNamed:imagelist[indexPath.row]];
         if (indexPath.row==0) {
@@ -456,6 +456,9 @@
     NSString *mobileNumber;
     if (GetDefaults(@"userinformation")) {
         mobileNumber =   [[GetDefaults(@"userinformation") objectForKey:@"account"] objectForKey:@"loginMobile"];
+    }else
+    {
+        mobileNumber = self.telphoneTextField.text;
     }
     NSString *CommentString = self.textview.text;
     NSString *dataString = self.sendDate_value;
@@ -546,17 +549,11 @@
     [postdic setObject:freshFoodOrder forKey:@"freshFoodOrder"];
     
     
-    //    [postdic setObject:freshFoodOrderDetails forKey:@"freshFoodOrderDetails"];
-    
-    
-    
-    
-    
-    
     [self submitOrderRequest:postdic];
     //购物车列表
     
-    SetDefaults(@"shopchartlist", nil);
+    
+
     [[NSNotificationCenter defaultCenter]postNotificationName:@"checkshopchartBadge" object:nil];
     
 }
@@ -582,13 +579,15 @@
         }else{
             [self initpopview:@"s2.jpg":@"100"];
         }
-            [self.successPopview show];
+    
+        [self.successPopview show];
        [self performSelector:@selector(dismisspopview) withObject:nil afterDelay:3];
-
+            SetDefaults(@"shopchartlist", nil);
+            [self.dataSouerce removeAllObjects];
+            [self.tableview reloadData];
            
         }
         
-      
         
 
     } fail:^(NSDictionary *errdic) {
@@ -607,9 +606,7 @@
 //提示页面消失
 -(void)dismisspopview
 {
-    [UIView animateWithDuration:3 animations:^{
         [self.successPopview hide];
-    }];
 }
 
 

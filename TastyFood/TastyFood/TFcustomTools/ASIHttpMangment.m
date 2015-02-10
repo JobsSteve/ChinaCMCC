@@ -78,7 +78,7 @@
     }];
     [Requestmanager addRequestHeader:@"Content-Type" value:@"application/json"];
     [Requestmanager setDelegate:self];
-    [Requestmanager setRequestMethod:@"POST"];
+    [Requestmanager setRequestMethod:@"GET"];
     [Requestmanager setTimeOutSeconds:6.f];
     [Requestmanager startAsynchronous];
 }

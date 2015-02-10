@@ -23,8 +23,8 @@
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Toolbarback.png"]];
         self.selectIndex      = 0;
         self.titlesList       = @[@"美家鲜生",@"平价菜场",@"高端食材",@"个人",@""];
-        self.iconsList_normal = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_03.png",@""];
-        self.iconsList_selected = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_03.png",@""];
+        self.iconsList_normal = @[@"tabbar_01.png",@"tabbar_02.png",@"tabbar_03.png",@"tabbar_04.png",@""];
+        self.iconsList_selected = @[@"tabbar_01selct.png",@"tabbar_02selct.png",@"tabbar_03selct.png",@"tabbar_04selct.png",@""];
         
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changebadgeNum) name:@"checkshopchartBadge" object:nil];
         
@@ -46,7 +46,7 @@
         self.MenuButton = [UIButton ButtonWithFrame:CGRectMake(WIGHT/5*i, 2, WIGHT/5, 49) topNormalimage:[UIImage imageNamed:self.iconsList_normal[i]] topSlectimage:nil Title:self.titlesList[i] titleColor:[UIColor grayColor]];
 
         if (selectIndex==i) {
-            self.MenuButton =[UIButton ButtonWithFrame:CGRectMake(WIGHT/5*i, 2, WIGHT/5, 49) topNormalimage:[UIImage imageNamed:self.iconsList_selected[selectIndex]] topSlectimage:nil Title:self.titlesList[selectIndex] titleColor:RGBAcolor(30, 140, 200, 1)];
+            self.MenuButton =[UIButton ButtonWithFrame:CGRectMake(WIGHT/5*i, 2, WIGHT/5, 49) topNormalimage:[UIImage imageNamed:self.iconsList_selected[selectIndex]] topSlectimage:nil Title:self.titlesList[selectIndex] titleColor:GreenColor_APP];
         }
         
         [self.MenuButton addTarget:self action:@selector(menuAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -54,7 +54,6 @@
         [self addSubview:self.MenuButton];
     }
 
-        float x_temp = -10;
         
         
         UIImageView *iamg1e = [UIImageView imageViewWithFrame:CGRectMake(WIGHT-WIGHT/5-8, -32, WIGHT/5, 79-10) :@"tabbarchart.png"];
@@ -68,11 +67,15 @@
         badgeView.badgeShadowColor = [UIColor whiteColor];
         badgeView.badgeBackgroundColor = YellowColor_APP;
 
-        int num = [GetDefaults(@"chopchartNum") intValue];
+       int num = [GetDefaults(@"chopchartNum") intValue];
         NSMutableArray *shopchatlist = [NSMutableArray arrayWithArray:GetDefaults(@"shopchartlist")];
 
-        if (num>0) {
+        if (shopchatlist.count>0) {
             badgeView.badgeText = [NSString stringWithFormat:@"%lu", (unsigned long)shopchatlist.count];
+            badgeView.hidden=NO;
+        }else{
+            badgeView.hidden=YES;
+
         }
     }
 
@@ -83,7 +86,13 @@
     NSMutableArray *shopchatlist = [NSMutableArray arrayWithArray:GetDefaults(@"shopchartlist")];
 //
     badgeView.badgeText = [NSString stringWithFormat:@"%lu", (unsigned long)shopchatlist.count];
-    
+    if (shopchatlist.count==0) {
+        badgeView.hidden =YES;
+    }else
+    {
+        badgeView.hidden =NO;
+
+    }
     
     
     

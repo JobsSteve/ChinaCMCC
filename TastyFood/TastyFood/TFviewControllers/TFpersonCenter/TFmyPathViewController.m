@@ -55,11 +55,19 @@
     }
     return self;
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableview reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = GreenColor_APP;
-    
-//   [self.view addSubview: [UIImageView imageViewWithFrame:self.view.bounds :@"Pathbackimage.png"]];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pathbackimage.png"]];
+
+    [self.view addSubview:[UIImageView imageViewWithFrame:self.view.bounds :@"Pathbackimage.png"]];
+
+    //   [self.view addSubview: [UIImageView imageViewWithFrame:self.view.bounds :@"Pathbackimage.png"]];
+
     
     self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT-40, self.view.frame.size.height-49) tag:4];
     self.tableview.delegate = self;
@@ -126,7 +134,8 @@
     picButton.clipsToBounds = YES;
     [headerView addSubview:picButton];
     
-    UILabel *namelabel = [UILabel LabelWithFrame:CGRectMake(100, 25, 180, 20) text:@"小明" color:[UIColor whiteColor] font:17];
+    
+    UILabel *namelabel = [UILabel LabelWithFrame:CGRectMake(100, 25, 180, 20) text:GetDefaults(Defaults_LoginName) color:[UIColor whiteColor] font:17];
     namelabel.font = [UIFont boldSystemFontOfSize:17];
     [headerView addSubview:namelabel];
     
@@ -153,7 +162,7 @@
 
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.imageView.image = [UIImage imageNamed:@"location.png"];
-        cell.textLabel.text = @"选择城市:";
+        cell.textLabel.text = @"区域:";
 
     if (self.country_string.length>0) {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",self.country_string,self.city_string];
@@ -211,12 +220,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    
-}
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];

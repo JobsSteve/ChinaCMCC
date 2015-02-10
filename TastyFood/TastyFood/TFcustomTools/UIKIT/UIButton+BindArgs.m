@@ -85,12 +85,12 @@
                  [bt setFrame:frame];
     
 
-        [bt setTitleColor:titlecolor forState:UIControlStateNormal];
-        bt.titleLabel.font = [UIFont systemFontOfSize:13];
-        bt.titleLabel.textAlignment =  NSTextAlignmentCenter;
-        [bt setTitle:title forState:UIControlStateNormal];
+    [bt setTitleColor:titlecolor forState:UIControlStateNormal];
+    bt.titleLabel.font = [UIFont systemFontOfSize:13];
+    bt.titleLabel.textAlignment =  NSTextAlignmentCenter;
+    [bt setTitle:title forState:UIControlStateNormal];
 
-    float  x_temp = -20;
+    float  x_temp = -12;
     if (isiPhone6_Wight) {
         x_temp = -15;
     }else if (isiPhone6P_Wight){
@@ -101,13 +101,17 @@
 
     if (NormalImage) {
         [bt setImage:NormalImage forState:UIControlStateNormal];
+//        [bt setBackgroundImage:NormalImage forState:UIControlStateNormal];
+
         [bt setImageEdgeInsets:UIEdgeInsetsMake(-10, WIGHT/4/2-20, 20, 0)];
         
 
     }
     if (SlectImage) {
-        [bt setBackgroundImage:SlectImage forState:UIControlStateNormal];
-        [bt setImageEdgeInsets:UIEdgeInsetsMake(-10, WIGHT/4/2, 20, 0)];
+//        [bt setBackgroundImage:SlectImage forState:UIControlStateNormal];
+        [bt setImage:SlectImage forState:UIControlStateNormal];
+
+        [bt setImageEdgeInsets:UIEdgeInsetsMake(-10, WIGHT/4/2-20, 20, 0)];
 
     }
     

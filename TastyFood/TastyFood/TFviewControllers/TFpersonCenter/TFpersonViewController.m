@@ -36,21 +36,6 @@
 {
     [super viewWillAppear:animated];
     NSLog(@"%@",GetDefaults(Defaults_LoginName));
-}
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    if (GetDefaults(Defaults_LoginName)==nil) {
-        TFloginViewController *VC = [[TFloginViewController alloc]init];
-        [self.navigationController pushViewController:VC animated:YES];
-        
-    }
-    [self.tableview reloadData];
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
     
     
     self.tableview = [UITableView tableViewWithFrame:CGRectMake(0, 0, WIGHT, self.view.frame.size.height-49) tag:1];
@@ -60,14 +45,33 @@
     
     UIView *bottomView =[UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 100) :[UIColor clearColor]];
     
-    
-    
     UIButton *logout_bt=[UIButton ButtonWithFrame:CGRectMake(30, 50, WIGHT-30*2, 35) Normal:[UIImage imageNamed:@"loginbtn_image.png"] Select:[UIImage imageNamed:@"loginbtn_image.png"] Title:@"注销登录"];
     logout_bt.backgroundColor = RGBAcolor(255, 157, 7, 1);
     [logout_bt addTarget:self action:@selector(ClickBt_Logout:) forControlEvents:UIControlEventTouchUpInside];
-    [bottomView addSubview:logout_bt];
     
+    if (GetDefaults(Defaults_LoginName)&&[GetDefaults(Defaults_LoginName) length]>0) {
+        [bottomView addSubview:logout_bt];
+ 
+    }
     self.tableview.tableFooterView = bottomView;
+
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    if (GetDefaults(Defaults_LoginName)==nil) {
+//        TFloginViewController *VC = [[TFloginViewController alloc]init];
+//        [self.navigationController pushViewController:VC animated:YES];
+//        
+//    }
+    [self.tableview reloadData];
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+ 
    
     
 }
@@ -140,21 +144,19 @@
 }
 -(void)ClickBt_submitorderVC:(UIButton*)btn
 {
-    
-    
-    
-    
-    
-    
-    
+ 
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%@",GetDefaults(Defaults_LoginName));
     UIViewController *VC ;
-//    if (indexPath.section==1&&indexPath.row==0) {
-//        VC = [[TFeditAddressViewController alloc]init];
-//        
-//    }
+    if (indexPath.section==0&&GetDefaults(Defaults_LoginName)==nil) {
+        
+        TFloginViewController *VC = [[TFloginViewController alloc]init];
+        [self.navigationController pushViewController:VC animated:YES];
+        
+        
+    }
     if (indexPath.section==1&&indexPath.row==0) {
         VC = [[TFmyOrderViewController alloc]init];
         

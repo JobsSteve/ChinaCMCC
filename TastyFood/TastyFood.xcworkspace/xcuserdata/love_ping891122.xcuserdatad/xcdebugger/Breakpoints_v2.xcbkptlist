@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
-            timestampString = "444993277.046853"
+            filePath = "TastyFood/TFviewControllers/TFfoodController/TFfoodMarketViewController.m"
+            timestampString = "445191822.443105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-getOrderlistRequest"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-jionchartAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
-            timestampString = "444993277.046853"
+            filePath = "TastyFood/TFviewControllers/TFfoodController/TFfoodMarketViewController.m"
+            timestampString = "445191867.879307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "-getOrderlistRequest"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "-jionchartAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
-            timestampString = "444993277.046853"
+            filePath = "TastyFood/TFviewControllers/TFfoodController/TFfoodMarketViewController.m"
+            timestampString = "445191867.879307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "-getOrderlistRequest"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-addAnimatedWithFrame::"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,137 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
-            timestampString = "444993277.046853"
+            filePath = "TastyFood/TFviewControllers/TFfoodController/TFfoodMarketViewController.m"
+            timestampString = "445191817.774499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "-getOrderlistRequest"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFmodleAndView/CellViews.m"
-            timestampString = "444992672.428715"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "+CellViewWithmyOrderlist:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
-            timestampString = "444993277.046853"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFshoppingcart/TFshoppingcartViewController.m"
-            timestampString = "445009066.365603"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "591"
-            endingLineNumber = "591"
-            landmarkName = "-submitOrderRequest:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__51-[TFshoppingcartViewController submitOrderRequest:]_block_invoke"
-                  moduleName = "TastyFood"
-                  urlString = "file:///Users/love_ping891122/Desktop/TastyFood/TastyFood/TFviewControllers/TFshoppingcart/TFshoppingcartViewController.m"
-                  timestampString = "445008999.256062"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "595"
-                  endingLineNumber = "595"
-                  offsetFromSymbolStart = "1049">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__51-[TFshoppingcartViewController submitOrderRequest:]_block_invoke"
-                  moduleName = "TastyFood"
-                  urlString = "file:///Users/love_ping891122/Desktop/TastyFood/TastyFood/TFviewControllers/TFshoppingcart/TFshoppingcartViewController.m"
-                  timestampString = "445008999.256322"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "595"
-                  endingLineNumber = "595"
-                  offsetFromSymbolStart = "1093">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__51-[TFshoppingcartViewController submitOrderRequest:]_block_invoke506"
-                  moduleName = "TastyFood"
-                  urlString = "file:///Users/love_ping891122/Desktop/TastyFood/TastyFood/TFviewControllers/TFshoppingcart/TFshoppingcartViewController.m"
-                  timestampString = "445008999.256559"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "595"
-                  endingLineNumber = "595"
-                  offsetFromSymbolStart = "79">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFshoppingcart/TFshoppingcartViewController.m"
-            timestampString = "445009066.365603"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "577"
-            endingLineNumber = "577"
-            landmarkName = "-submitOrderRequest:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TastyFood/TFviewControllers/TFshoppingcart/TFshoppingcartViewController.m"
-            timestampString = "445009066.365603"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "609"
-            endingLineNumber = "609"
-            landmarkName = "-dismisspopview"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

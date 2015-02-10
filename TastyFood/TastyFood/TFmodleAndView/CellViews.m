@@ -97,7 +97,7 @@
     
     
     
-    UIButton *deleteShopButton = [UIButton ButtonWithFrame:CGRectMake(WIGHT-50, 40, 25, 25) Normal:[UIImage imageNamed:@"delete.png"] Select:[UIImage imageNamed:@"delete.png"] Title:@""];
+    UIButton *deleteShopButton = [UIButton ButtonWithFrame:CGRectMake(WIGHT-50, 40, 25, 25) Normal:[UIImage imageNamed:@"btn-delete.png"] Select:[UIImage imageNamed:@"btn-delete.png"] Title:@""];
     deleteShopButton.tag = 203;
     [Cellview addSubview:deleteShopButton];
     
