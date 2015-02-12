@@ -176,14 +176,26 @@
     self.datePickerView = [[DatePickerView alloc]initWithFrame:CGRectMake(0,200, WIGHT, 190)];
     self.datePickerView.delegate = self;
     if (time <= 9) {
+        [self.datePickerView initShowpickerview:@[@"今天11:30前送到",@"今天17:30前送到",@"明天11:30前送到",@"明天17:30前送到",@"后天11:30前送到",@"后天17:30前送到"]  : @[@""]];
+    }else if (9<time && time<=15){
+        [self.datePickerView initShowpickerview:@[@"今天17:30前送到",@"明天11:30前送到",@"明天17:30前送到",@"后天11:30前送到",@"后天17:30前送到"]  : @[@""]];
+    }else if (15<time)
+    {
+        [self.datePickerView initShowpickerview:@[@"明天11:30前送到",@"明天17:30前送到",@"后天11:30前送到",@"后天17:30前送到"]  : @[@""]];
+
+    }
+    /*
+    
+    if (time <= 9) {
         [self.datePickerView initShowpickerview:@[@"今天",@"明天",@"后天"]  : @[@"11:30前送到",@"17:30前送到"]];
     }else if (9<time && time<=15){
         [self.datePickerView initShowpickerview:@[@"今天",@"明天",@"后天"]  : @[@"11:30前送到",@"17:30前送到",]];
     }else if (15<time)
     {
         [self.datePickerView initShowpickerview:@[@"明天",@"后天"]  : @[@"11:30前送到",@"17:30前送到"]];
-
+        
     }
+    */
     
 }
 

@@ -101,11 +101,11 @@
 - (void)imagePlayerView:(ImagePlayerView *)imagePlayerView didTapAtIndex:(NSInteger)index
 {
     NSLog(@"点击第%d张图片", (int)index);
-
-    TFhtmlViewController *VC = [[TFhtmlViewController alloc]init];
-    VC.htmltitleString =  @"广告";
-    VC.htmlurlString = @"http://www.baidu.com";
-    [self.navigationController pushViewController:VC animated:YES];
+//
+//    TFhtmlViewController *VC = [[TFhtmlViewController alloc]init];
+//    VC.htmltitleString =  @"广告";
+//    VC.htmlurlString = @"http://www.baidu.com";
+//    [self.navigationController pushViewController:VC animated:YES];
     
 }
 -(void)inithomeMenuButton

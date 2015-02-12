@@ -111,7 +111,7 @@
 -(void)getOrderlistRequest
 {
     
-    [SVProgressHUD showWithStatus:@"loading..."];
+    [SVProgressHUD showWithStatus:@"加载中..."];
     
     if (GetDefaults(@"userinformation")==nil) {
         return;

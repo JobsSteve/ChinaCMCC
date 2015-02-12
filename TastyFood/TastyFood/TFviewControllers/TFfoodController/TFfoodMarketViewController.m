@@ -230,7 +230,7 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 
     NSArray *arealist =[areaString componentsSeparatedByString:@" "];
     
-    [SVProgressHUD showWithStatus:@"loading..."];
+    [SVProgressHUD showWithStatus:@"数据加载中..."];
     
     
     NSDictionary * postdic = @{@"supplyTypeSearch":[NSNumber numberWithInteger:self.Current_SegmentIndex+1],@"customerType":@"individual",@"city":arealist[0],@"district":arealist[1]};
