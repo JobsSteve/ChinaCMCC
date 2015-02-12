@@ -73,13 +73,20 @@
 {
     UIView * headview = [UIView ViewWithFrame:CGRectMake(0, 0, WIGHT, 80) :GrayColor_APP];
     
-   NSString *ID = [NSString stringWithFormat:@"订单编号:%@",[[self.dataSourceArray objectAtIndex:section] objectForKey:@"id"]];
+//    NSString *ID = [NSString stringWithFormat:@"订单编号:%@",[[self.dataSourceArray objectAtIndex:section] objectForKey:@"id"]];
+    NSString *orderdate = [NSString stringWithFormat:@"日期:%@",[[self.dataSourceArray objectAtIndex:section] objectForKey:@"createDate"]];
     
-    UILabel *product_sn = [UILabel LabelWithFrame:CGRectMake(20, 10, 150, 20) text:ID color:YellowColor_APP font:14];
+    NSString *orderPrice = [NSString stringWithFormat:@"金额:¥%.2lf 元",[[[[self.dataSourceArray objectAtIndex:section] objectForKey:@"freshFoodOrder"] objectForKey:@"totalMeijiaPrice"] floatValue]];
+
     
-    UILabel *product_price = [UILabel LabelWithFrame:CGRectMake(220, 10, 80, 20) text:@"总计¥100.00 " color:[UIColor blackColor] font:14];
+    
+    
+    UILabel *product_sn = [UILabel LabelWithFrame:CGRectMake(10, 10, 150, 20) text:orderdate color:YellowColor_APP font:14];
+    
+    UILabel *product_price = [UILabel LabelWithFrame:CGRectMake(WIGHT/2, 10, WIGHT/2-10, 20) text:orderPrice color:[UIColor blackColor] font:14];
+    product_price.textAlignment = NSTextAlignmentRight;
     [headview addSubview:product_sn];
-//    [headview addSubview:product_price];
+    [headview addSubview:product_price];
     
     return headview;
 }
@@ -136,6 +143,9 @@
             }
             
             [self.dataSourceArray addObjectsFromArray:[[resultObject objectForKey:@"responsedata"] objectForKey:@"result"]];
+            
+            
+            
             [self.tableview reloadData];
         }
         

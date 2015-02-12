@@ -149,6 +149,10 @@
 		C7FB9FD51A86000E007E9E41 /* s2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7FB9FD21A86000E007E9E41 /* s2.jpg */; };
 		C7FB9FD61A86000E007E9E41 /* s3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7FB9FD31A86000E007E9E41 /* s3.jpg */; };
 		C7FB9FD81A860F69007E9E41 /* icon-success.gif in Resources */ = {isa = PBXBuildFile; fileRef = C7FB9FD71A860F69007E9E41 /* icon-success.gif */; };
+		C7FFD55E1A8C539D004967C2 /* person_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = C7FFD55B1A8C539D004967C2 /* person_icon1.png */; };
+		C7FFD55F1A8C539D004967C2 /* person_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = C7FFD55C1A8C539D004967C2 /* person_icon2.png */; };
+		C7FFD5601A8C539D004967C2 /* person_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = C7FFD55D1A8C539D004967C2 /* person_icon3.png */; };
+		C7FFD5621A8C8552004967C2 /* Addshoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = C7FFD5611A8C8552004967C2 /* Addshoppingcart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -382,6 +386,10 @@
 		C7FB9FD21A86000E007E9E41 /* s2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = s2.jpg; sourceTree = "<group>"; };
 		C7FB9FD31A86000E007E9E41 /* s3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = s3.jpg; sourceTree = "<group>"; };
 		C7FB9FD71A860F69007E9E41 /* icon-success.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "icon-success.gif"; sourceTree = "<group>"; };
+		C7FFD55B1A8C539D004967C2 /* person_icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_icon1.png; sourceTree = "<group>"; };
+		C7FFD55C1A8C539D004967C2 /* person_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_icon2.png; sourceTree = "<group>"; };
+		C7FFD55D1A8C539D004967C2 /* person_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_icon3.png; sourceTree = "<group>"; };
+		C7FFD5611A8C8552004967C2 /* Addshoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Addshoppingcart.png; sourceTree = "<group>"; };
 		D7C04C2A580B83DDA5C2D5DC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E731F1645B1D8790DB04C6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -729,6 +737,10 @@
 		C788D5EA1A36CB62009BA362 /* TFresource */ = {
 			isa = PBXGroup;
 			children = (
+				C7FFD55B1A8C539D004967C2 /* person_icon1.png */,
+				C7FFD55C1A8C539D004967C2 /* person_icon2.png */,
+				C7FFD5611A8C8552004967C2 /* Addshoppingcart.png */,
+				C7FFD55D1A8C539D004967C2 /* person_icon3.png */,
 				C74DCC591A890A9200801180 /* btn-submited.png */,
 				C74DCC461A88F3E500801180 /* chartlisticon */,
 				C7FB9FD01A86000E007E9E41 /* SubmitSuccessImages */,
@@ -1064,6 +1076,7 @@
 				C7E4B2BD1A388ED5000699B4 /* menu_1.png in Resources */,
 				C77650101A41D5DE00B5AFA9 /* tabbar_02@2x.png in Resources */,
 				C74DCC4C1A88F3E500801180 /* clockicon.png in Resources */,
+				C7FFD55F1A8C539D004967C2 /* person_icon2.png in Resources */,
 				C7EAEF121A5ECA2800BB9E13 /* bg_023@2x.png in Resources */,
 				C77650121A41D5DE00B5AFA9 /* tabbar_04@2x.png in Resources */,
 				C757CC221A5AE8D40096689F /* index_fruits.png in Resources */,
@@ -1098,7 +1111,9 @@
 				C74DCC581A8904B300801180 /* tabbar_03@2x.png in Resources */,
 				C7A4A2401A4AD7F700DC8FF1 /* location.png in Resources */,
 				C7E4B2BF1A388ED5000699B4 /* menu_3.png in Resources */,
+				C7FFD55E1A8C539D004967C2 /* person_icon1.png in Resources */,
 				C7FB9FD51A86000E007E9E41 /* s2.jpg in Resources */,
+				C7FFD5621A8C8552004967C2 /* Addshoppingcart.png in Resources */,
 				C7EAEF171A5ECA2800BB9E13 /* btn_021.press@2x.png in Resources */,
 				C757CC251A5AE8D40096689F /* index_seafood.png in Resources */,
 				C7EAEF191A5ECA2800BB9E13 /* ProvincesAndCities.plist in Resources */,
@@ -1112,6 +1127,7 @@
 				C776500E1A41D5DE00B5AFA9 /* tabbar_01@2x.png in Resources */,
 				C7798E431A36F709005EC0D4 /* password@2x.png in Resources */,
 				C7EAEF161A5ECA2800BB9E13 /* btn_021.disable@2x.png in Resources */,
+				C7FFD5601A8C539D004967C2 /* person_icon3.png in Resources */,
 				C7E4B2C21A388ED5000699B4 /* menu_6.png in Resources */,
 				C757CC331A5AEB2A0096689F /* index_shrimp.png in Resources */,
 				C757CC2F1A5AEB2A0096689F /* index_egg.png in Resources */,

@@ -10,13 +10,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TastyFood/TFviewControllers/TFshoppingcart/TFshoppingcartViewController.m"
-            timestampString = "445257543.000911"
+            timestampString = "445344618.464347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "-didselectPickerView:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
+            timestampString = "445421420.265388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "-getOrderlistRequest"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__46-[TFmyOrderViewController getOrderlistRequest]_block_invoke"
+                  moduleName = "TastyFood"
+                  urlString = "file:///Users/love_ping891122/Desktop/TastyFood/TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
+                  timestampString = "445419514.426417"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "875">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__46-[TFmyOrderViewController getOrderlistRequest]_block_invoke154"
+                  moduleName = "TastyFood"
+                  urlString = "file:///Users/love_ping891122/Desktop/TastyFood/TastyFood/TFviewControllers/TFpersonCenter/TFmyOrderViewController.m"
+                  timestampString = "445419514.426749"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

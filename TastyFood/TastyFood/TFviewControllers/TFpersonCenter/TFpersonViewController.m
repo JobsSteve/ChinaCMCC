@@ -121,8 +121,9 @@
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
     }
-    cell.imageView.image = [UIImage imageNamed:@"tabbar_04.png"];
     if (indexPath.section==0) {
+        cell.imageView.image = [UIImage imageNamed:@"person_icon1.png"];
+
         cell.textLabel.text = @"亲，您还未登录";
         
         if (GetDefaults(@"userinformation")) {
@@ -130,10 +131,11 @@
         }
     }
     if (indexPath.section==1) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        NSArray *list = @[@"常用地址",@"历史订单",@"修改密码"];
-        NSArray *list = @[@"历史订单",@"修改密码"];
+        NSArray *iconlist = @[@"person_icon2.png",@"person_icon3.png"];
 
+        cell.imageView.image = [UIImage imageNamed:iconlist[indexPath.row]];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSArray *list = @[@"历史订单",@"修改密码"];
         cell.textLabel.text = list[indexPath.row];
     }
   
